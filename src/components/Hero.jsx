@@ -25,7 +25,7 @@ function CrossfadeText() {
         className="text-center mb-2"
         style={{
           fontSize: '14px',
-          color: 'rgba(255,255,255,0.4)',
+          color: 'var(--text-light)',
           letterSpacing: '0.2em',
           fontFamily: 'var(--font-body)',
           fontWeight: 500,
@@ -47,7 +47,7 @@ function CrossfadeText() {
             style={{
               fontFamily: 'var(--font-heading)',
               fontSize: 'clamp(48px, 7vw, 96px)',
-              color: '#fff',
+              color: 'var(--text)',
               lineHeight: 1.1,
               letterSpacing: '0.02em',
             }}
@@ -122,7 +122,7 @@ export default function Hero() {
             href="/resume.pdf"
             download="Rajveer_Singh_Resume.pdf"
             className="inline-flex items-center gap-2 px-8 py-3.5 font-semibold rounded-full transition-all hover:scale-105"
-            style={{ border: '1px solid rgba(255,255,255,0.15)', color: 'var(--text)' }}
+            style={{ border: '1px solid var(--border-hover)', color: 'var(--text)' }}
           >
             Download Resume
           </a>

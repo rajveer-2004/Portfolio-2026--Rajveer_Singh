@@ -96,22 +96,30 @@ export default function Contact() {
                   <div
                     style={{
                       position: 'fixed',
-                      bottom: '32px',
+                      top: '32px',
                       left: '50%',
-                      transform: 'translateX(-50%)',
-                      background: 'rgba(99,102,241,0.9)',
-                      color: 'white',
-                      fontSize: '12px',
-                      fontFamily: 'Plus Jakarta Sans',
-                      padding: '8px 20px',
+                      transform: copied ? 'translate(-50%, 0)' : 'translate(-50%, -20px)',
+                      background: 'var(--text)',
+                      color: 'var(--bg)',
+                      fontSize: '13px',
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-body)',
+                      padding: '10px 20px',
                       borderRadius: '100px',
                       zIndex: 9999,
                       opacity: copied ? 1 : 0,
-                      transition: 'opacity 0.4s ease',
+                      transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                       pointerEvents: 'none',
-                      whiteSpace: 'nowrap'
+                      whiteSpace: 'nowrap',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      boxShadow: '0 8px 30px rgba(0,0,0,0.12)'
                     }}
                   >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
                     Email copied!
                   </div>
                 )}

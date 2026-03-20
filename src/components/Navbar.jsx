@@ -47,12 +47,9 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium transition-colors rounded-lg"
-                style={{ color: 'var(--text-muted)' }}
-                onMouseEnter={(e) => (e.target.style.color = 'var(--text)')}
-                onMouseLeave={(e) => (e.target.style.color = 'var(--text-muted)')}
+                className="nav-link block px-4 py-2 text-sm font-medium"
               >
-                {link.label}
+                <span className="nav-link-inner">{link.label}</span>
               </a>
             </li>
           ))}
@@ -97,10 +94,9 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={handleLinkClick}
-                className="block px-6 py-2 text-sm font-medium transition-colors"
-                style={{ color: 'var(--text-muted)' }}
+                className="nav-link block px-6 py-2 text-sm font-medium"
               >
-                {link.label}
+                <span className="nav-link-inner">{link.label}</span>
               </a>
             </li>
           ))}

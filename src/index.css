@@ -192,7 +192,10 @@ h1, h2, h3, h4 {
   border-radius: 50%; opacity: 0.25;
   animation: drift linear infinite;
 }
-[data-theme="light"] .particle { opacity: 0.35; }
+[data-theme="light"] .particle { 
+  opacity: 0.5; 
+  background: #8888aa; 
+}
 
 @keyframes drift {
   0% { transform: translateY(0) translateX(0); opacity: 0; }
@@ -659,10 +662,10 @@ h1, h2, h3, h4 {
 
 /* Button */
 .spotify-trigger-btn {
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 100px;
   padding: 10px 16px;
   display: flex;
@@ -670,7 +673,7 @@ h1, h2, h3, h4 {
   gap: 8px;
   font-family: var(--font-body);
   font-size: 11px;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-muted);
   cursor: none;
   transition: all 0.3s ease;
   pointer-events: auto;
@@ -678,7 +681,7 @@ h1, h2, h3, h4 {
 .spotify-trigger-btn:hover {
   border-color: rgba(99,102,241,0.5);
   box-shadow: 0 0 10px rgba(99,102,241,0.2);
-  color: rgba(255,255,255,0.9);
+  color: var(--text);
 }
 
 /* Popup Card */
@@ -799,5 +802,47 @@ h1, h2, h3, h4 {
 .spotify-trigger-btn.playing {
   border-color: rgba(99,102,241,0.5);
   animation: pulse-indigo 2s infinite;
-  color: rgba(255,255,255,0.9);
+  color: var(--text);
+}
+
+/* ─── Navbar Link Hover Effects ──────────── */
+.nav-link {
+  transition: transform 0.3s ease-in-out;
+  cursor: none;
+}
+
+.nav-link:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
+}
+
+.nav-link-inner {
+  position: relative;
+  display: inline-block;
+  color: var(--text-muted);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--text-muted);
+  transition: -webkit-text-fill-color 0.3s ease-in-out;
+}
+
+.nav-link:hover .nav-link-inner {
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link-inner::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-link:hover .nav-link-inner::after {
+  width: 100%;
 }

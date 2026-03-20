@@ -34,7 +34,7 @@ export default function About() {
               onMouseMove={magnetic.onMouseMove}
               onMouseLeave={magnetic.onMouseLeave}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 inline-block"
-              style={{ fontFamily: 'var(--font-heading)', color: '#fff' }}
+              style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}
             >
               A bit about{' '}
               <span style={{ color: '#6366f1' }}>me</span>
@@ -104,7 +104,7 @@ export default function About() {
                     style={{
                       fontFamily: "'Plus Jakarta Sans', var(--font-body)",
                       fontSize: '14px',
-                      color: 'rgba(255,255,255,0.6)',
+                      color: 'var(--text-muted)',
                       fontWeight: 500,
                     }}
                   >
@@ -115,7 +115,7 @@ export default function About() {
                       style={{
                         fontFamily: "'Plus Jakarta Sans', var(--font-body)",
                         fontSize: '11px',
-                        color: 'rgba(255,255,255,0.35)',
+                        color: 'var(--text-light)',
                       }}
                     >
                       {stat.subtitle}
