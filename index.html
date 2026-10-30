@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Rajveer Singh | Product, Data &amp; AI</title>
 <meta name="description" content="Ride through Rajveer Singh's work: NIT Delhi, Corporate Cruise, WizCommerce, six project platforms and the exit gate. Product, data and AI, NIT Delhi ECE 2026." />
+<meta name="theme-color" content="#09318D" />
 <meta name="author" content="Rajveer Singh" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://rajveers-portfolio-eta.vercel.app/" />
@@ -17,19 +18,37 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600&family=Doto:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B2026'/%3E%3Cpath d='M12 18 L32 34' stroke='%23E8A900' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M52 18 L32 34' stroke='%23C2177A' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M32 54 V34' stroke='%231E63C6' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='34' r='8' fill='white'/%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Mukta:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309318D'/%3E%3Cpath d='M12 18 L32 34' stroke='%23FD91CC' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M52 18 L32 34' stroke='%238FA8FF' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M32 54 V34' stroke='%23FCFFFF' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='34' r='8' fill='white'/%3E%3C/svg%3E" />
 <style>
+/* Theme: Deep Blue / White / Bubblegum Pink. Line colours: --blue start, --ember experience, --violet projects, --peach skills, --sky exit. */
 :root{
-  --wall:#ECEEE9; --tile:#F7F8F5; --ink:#1B2026; --muted:#5C646D; --rule:#C9CEC6;
-  --board:#1D232A; --board-ink:#F3F1E8; --amber:#FFB21A;
-  --blue:#1E63C6; --red:#D3302F; --magenta:#C2177A; --yellow:#E8A900; --green:#1F9D55;
-  --station:#FFFFFF; --steel:#C7CDD2; --steel-dark:#9EA6AD;
-  --sign:"Mukta","Segoe UI",system-ui,sans-serif; --led:"Doto",ui-monospace,monospace;
+ --wall:#09318D; --tile:#0E3C9E; --ink:#FFFFFF; --muted:#BFD0F7; --rule:rgba(255,255,255,.20);
+  --board:#061A55; --board-ink:#FFFFFF; --amber:#FD91CC;
+  --blue:#FFFFFF; --ember:#FD91CC; --violet:#8FA8FF; --peach:#FFC2E5; --sky:#B9CDFF;
+  --station:#09318D; --steel:#0C2B7A; --steel-hi:#1A44A6; --steel-dark:#071F5C;
+  --door-edge:#04163F; --door-ring:#1F4AB0; --door-ring2:#3A66D0; --sticker:#BFD0F7;
+  --tunnel-bg:#041442; --tunnel-light:rgba(253,145,204,.55); --tunnel-line:#12318A; --tunnel-line2:#0C2470;
+  --on:#061A55; --panel-dark:rgba(4,16,70,.35);
+  --glass:rgba(255,255,255,.08); --glass-line:rgba(255,255,255,.22); --glass-edge:rgba(255,255,255,.35);
+  --glass-shadow:0 10px 34px rgba(2,10,60,.45);
+  --ambient:radial-gradient(62% 56% at 28% 102%,rgba(47,107,255,.80),transparent 72%),radial-gradient(40% 46% at 94% 56%,rgba(253,145,204,.40),transparent 70%),radial-gradient(46% 40% at 70% 4%,rgba(80,120,255,.38),transparent 70%);
+  --grad-unused:none;
+  --sign:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --deva:"Mukta","Noto Sans Devanagari",sans-serif;
+  --led:"JetBrains Mono",ui-monospace,monospace;
+  --glass-blur:blur(18px) saturate(150%);
+  color-scheme:dark;
+}
+:root.day{
+ --wall:#ECF1FF; --tile:#FFFFFF; --ink:#09318D; --muted:#415FAA; --rule:#C5D2F2; --station:#FFFFFF;
+  --blue:#09318D; --violet:#6F8BF0; --peach:#FFB3DB; --sky:#8FB0FF; --steel:#C9D6F7; --steel-hi:#DDE6FB;
+  --door-edge:#8FA7E0; --door-ring:#A9BCEB; --door-ring2:#8FA7E0; --sticker:#415FAA; --panel-dark:rgba(255,255,255,.55);
+  --glass:rgba(255,255,255,.62); --glass-line:rgba(9,49,141,.12); --glass-edge:rgba(255,255,255,.95); --glass-shadow:0 10px 30px rgba(9,49,141,.14);
+  --ambient:radial-gradient(62% 56% at 28% 102%,rgba(47,107,255,.30),transparent 72%),radial-gradient(40% 46% at 94% 56%,rgba(253,145,204,.32),transparent 70%);
   color-scheme:light;
 }
-:root.night{--wall:#12171D;--tile:#1A2129;--ink:#E9ECEF;--muted:#9AA4AE;--rule:#2B343E;--board:#0B0F13;--station:#E9ECEF;--blue:#4F8BEA;--red:#E9554F;--magenta:#E0479A;--yellow:#F5BC1C;--green:#3CC57A;color-scheme:dark}
-@media (prefers-color-scheme:dark){:root:not(.day){--wall:#12171D;--tile:#1A2129;--ink:#E9ECEF;--muted:#9AA4AE;--rule:#2B343E;--board:#0B0F13;--station:#E9ECEF;--blue:#4F8BEA;--red:#E9554F;--magenta:#E0479A;--yellow:#F5BC1C;--green:#3CC57A;color-scheme:dark}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:150px}
 body{font-family:var(--sign);background:var(--wall);color:var(--ink);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -42,18 +61,18 @@ a{color:inherit}
 
 /* ================= INTRO: tap in, doors open ================= */
 #intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden}
-.door{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(90deg,var(--steel) 0%,#D8DDE1 45%,var(--steel) 100%);transition:transform 1.25s cubic-bezier(.6,0,.15,1)}
-.door.l{left:0;border-right:6px solid #20252B}
-.door.r{right:0;border-left:6px solid #20252B}
-.door .win{position:absolute;top:12%;height:44%;width:62%;border-radius:28px;background:linear-gradient(160deg,#2B3540,#151A20 60%,#26303A);box-shadow:inset 0 0 0 8px #AEB5BB,inset 0 0 0 10px #8D959C}
+.door{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(90deg,var(--steel) 0%,var(--steel-hi) 45%,var(--steel) 100%);transition:transform 1.25s cubic-bezier(.6,0,.15,1)}
+.door.l{left:0;border-right:6px solid var(--door-edge)}
+.door.r{right:0;border-left:6px solid var(--door-edge)}
+.door .win{position:absolute;top:12%;height:44%;width:62%;border-radius:28px;background:linear-gradient(160deg,#2B3540,#151A20 60%,#26303A);box-shadow:inset 0 0 0 8px var(--door-ring),inset 0 0 0 10px var(--door-ring2)}
 .door.l .win{right:14%}
 .door.r .win{left:14%}
-.door .win::after{content:"";position:absolute;inset:18px;border-radius:20px;background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(255,220,140,.18) 60px 64px);animation:pass 1.2s linear infinite}
+.door .win::after{content:"";position:absolute;inset:18px;border-radius:20px;background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(253,145,204,.22) 60px 64px);animation:pass 1.2s linear infinite}
 @keyframes pass{to{background-position:-128px 0}}
-.door .strip{position:absolute;top:0;bottom:0;width:14px;background:var(--yellow)}
+.door .strip{position:absolute;top:0;bottom:0;width:14px;background:var(--ember)}
 .door.l .strip{right:0}
 .door.r .strip{left:0}
-.door .sticker{position:absolute;bottom:16%;font-weight:500;font-size:14px;color:#3B434B;line-height:1.3;max-width:180px}
+.door .sticker{position:absolute;bottom:16%;font-weight:500;font-size:14px;color:var(--sticker);line-height:1.3;max-width:180px}
 .door.l .sticker{right:14%;text-align:right}
 .door.r .sticker{left:14%}
 .door .sticker b{display:block;font-size:12px;font-weight:500}
@@ -61,29 +80,29 @@ a{color:inherit}
 #intro.open .door.r{transform:translateX(102%)}
 .gate{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;transition:opacity .4s,transform .4s}
 #intro.open .gate{opacity:0;transform:scale(.92)}
-.gate-led{background:#000;border-radius:10px;padding:10px 20px;font-family:var(--led);font-weight:500;color:var(--amber);font-size:20px;letter-spacing:.05em;text-shadow:0 0 8px rgba(255,178,26,.5);box-shadow:0 0 0 3px #2A3036}
+.gate-led{background:#000;border-radius:10px;padding:10px 20px;font-family:var(--led);font-weight:500;color:var(--amber);font-size:20px;letter-spacing:.05em;text-shadow:0 0 8px rgba(253,145,204,.5);box-shadow:0 0 0 3px #2A3036}
 .scene{position:relative;width:420px;max-width:92vw;height:270px}
-.validator{position:absolute;right:0;top:0;width:190px;height:262px;border-radius:22px;background:#1D232A;box-shadow:inset 0 0 0 3px #000,0 20px 40px rgba(0,0,0,.35)}
+.validator{position:absolute;right:0;top:0;width:190px;height:262px;border-radius:22px;background:var(--board);box-shadow:inset 0 0 0 3px #000,0 20px 40px rgba(0,0,0,.35)}
 .validator .screen{position:absolute;left:20px;right:20px;top:24px;height:54px;border-radius:8px;background:#000;display:grid;place-items:center;font-family:var(--led);font-weight:500;color:var(--amber);font-size:16px}
 .validator .lamp{position:absolute;right:22px;top:92px;width:14px;height:14px;border-radius:50%;background:#3A434D}
 .validator .pad{position:absolute;left:30px;right:30px;bottom:30px;height:110px;border-radius:14px;border:3px dashed #56606B}
 #intro.ok .validator .lamp{background:#3CC57A;box-shadow:0 0 14px #3CC57A}
 #intro.ok .validator .screen{color:#5BE38F}
-.card{position:absolute;left:0;top:70px;width:270px;aspect-ratio:1.586;border-radius:16px;background:#F3F1E8;color:#1B2026;border:2px solid #1B2026;padding:14px 16px;text-align:left;font-family:var(--sign);cursor:pointer;transform:rotate(-8deg);transition:transform .5s cubic-bezier(.3,.7,.2,1);box-shadow:0 18px 30px rgba(0,0,0,.35);overflow:hidden;animation:nudge 2.4s ease-in-out 1.2s infinite}
+.card{position:absolute;left:0;top:70px;width:270px;aspect-ratio:1.586;border-radius:16px;background:#EEF3F6;color:#02070A;border:2px solid #02070A;padding:14px 16px;text-align:left;font-family:var(--sign);cursor:pointer;transform:rotate(-8deg);transition:transform .5s cubic-bezier(.3,.7,.2,1);box-shadow:0 18px 30px rgba(0,0,0,.35);overflow:hidden;animation:nudge 2.4s ease-in-out 1.2s infinite}
 @keyframes nudge{0%,70%,100%{transform:rotate(-8deg)}80%{transform:translateX(14px) rotate(-5deg)}90%{transform:translateX(0) rotate(-8deg)}}
 .card:hover{transform:translateX(10px) rotate(-5deg);animation:none}
 #intro.ok .card{transform:translate(118px,24px) rotate(0) scale(.9);animation:none}
 .card .row{display:flex;justify-content:space-between;font-size:11.5px;font-weight:500}
-.card .chip{width:36px;height:27px;border-radius:5px;background:linear-gradient(135deg,#D9B65A,#B8923A);margin-top:10px}
+.card .chip{width:36px;height:27px;border-radius:5px;background:linear-gradient(135deg,#FD91CC,#D9629F);margin-top:10px}
 .card .nm{font-weight:500;font-size:20px;margin-top:8px;line-height:1}
-.card .vd{font-size:11.5px;color:#4B535C;margin-top:3px;line-height:1.3}
+.card .vd{font-size:11.5px;color:#3F505C;margin-top:3px;line-height:1.3}
 .card .stripes{position:absolute;left:0;right:0;bottom:0;height:16px;display:grid;grid-template-columns:repeat(3,1fr)}
 .hint{color:#E9ECEF;font-weight:500;font-size:16px;text-shadow:0 1px 3px rgba(0,0,0,.6);background:rgba(20,24,29,.75);padding:6px 14px;border-radius:999px}
 .skip-intro{position:absolute;right:20px;bottom:20px;z-index:3;background:rgba(20,24,29,.8);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font:400 15px var(--sign);cursor:pointer}
 #intro.gone{display:none}
 
 /* ================= COACH HEADER: LED + door-top route map ================= */
-header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px solid var(--ink)}
+header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:1px solid var(--rule)}
 .bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;height:64px}
 .mark{display:flex;align-items:center;gap:10px;text-decoration:none}
 .mark svg{width:36px;height:36px}
@@ -91,10 +110,10 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 .mark small{display:block;font-size:12.5px;color:var(--muted);line-height:1.2}
 .led{background:var(--board);border-radius:8px;height:40px;overflow:hidden;position:relative;display:flex;align-items:center;box-shadow:inset 0 0 0 2px #000,inset 0 2px 10px rgba(0,0,0,.6)}
 .led::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 55%,rgba(0,0,0,.55) 56%) 0 0/4px 4px;pointer-events:none}
-.led-text{font-family:var(--led);font-weight:500;color:var(--amber);font-size:19px;letter-spacing:.06em;white-space:nowrap;padding-left:100%;animation:marquee 15s linear infinite;text-shadow:0 0 6px rgba(255,178,26,.55)}
+.led-text{font-family:var(--led);font-weight:500;color:var(--amber);font-size:19px;letter-spacing:.06em;white-space:nowrap;padding-left:100%;animation:marquee 15s linear infinite;text-shadow:0 0 6px rgba(253,145,204,.55)}
 @keyframes marquee{to{transform:translateX(-100%)}}
 .tools{display:flex;gap:8px}
-.tbtn{height:38px;min-width:38px;padding:0 11px;border-radius:8px;border:2px solid var(--ink);background:var(--tile);color:var(--ink);font:400 14px var(--sign);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.tbtn{height:38px;min-width:38px;padding:0 11px;border-radius:8px;border:1px solid var(--rule);background:var(--tile);color:var(--ink);font:400 14px var(--sign);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 .tbtn svg{width:16px;height:16px}
 .tbtn[aria-pressed="true"]{background:var(--ink);color:var(--wall)}
 .routemap{position:relative;height:80px;border-top:1px solid var(--rule)}
@@ -113,15 +132,16 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 .rm-train svg{width:100%;height:100%}
 
 /* ================= STATIONS ================= */
+#s-start,#s-exit{background:var(--glow)}
 .station{padding:90px 0 70px;min-height:76vh;display:flex;align-items:center}
 .station .wrap{width:100%}
 .st-grid{display:grid;grid-template-columns:380px 1fr;gap:48px;align-items:start}
-.nameboard{background:var(--c);color:#fff;border-radius:12px;padding:16px 22px 18px;box-shadow:0 0 0 4px var(--wall),0 0 0 6px var(--c);transform:translateX(60px);opacity:0;transition:transform .8s cubic-bezier(.15,.8,.2,1),opacity .5s}
+.nameboard{background:var(--c);color:#02070A;border-radius:12px;padding:16px 22px 18px;box-shadow:0 0 0 4px var(--wall),0 0 0 6px var(--c);transform:translateX(60px);opacity:0;transition:transform .8s cubic-bezier(.15,.8,.2,1),opacity .5s}
 .station.in .nameboard{transform:none;opacity:1}
 .nameboard .no{display:flex;justify-content:space-between;font-size:14px;font-weight:500;opacity:.9}
 .nameboard h2{font-size:clamp(34px,4.2vw,50px);font-weight:500;line-height:1;margin-top:8px;letter-spacing:-.01em}
 .nameboard .hi{display:block;font-size:22px;font-weight:500;margin-top:4px;opacity:.95}
-.nameboard.y{color:#1B2026}
+.nameboard.y{color:#02070A}
 .arrival{margin-top:18px;font-size:15px;color:var(--muted)}
 .arrival b{color:var(--ink)}
 .content{opacity:0;transform:translateY(18px);transition:opacity .6s .25s,transform .6s .25s}
@@ -135,9 +155,9 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 .content b{font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
 .chips span{font-size:14px;border:1.5px solid var(--rule);border-radius:6px;padding:2px 10px;background:var(--tile)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:10px;font:500 16px var(--sign);text-decoration:none;border:2px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
-.btn-go{background:var(--ink);color:var(--wall)}
-.btn-go:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:10px;font:500 16px var(--sign);text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
+.btn-go{background:var(--ember);border-color:var(--ember);color:var(--on)}
+.btn-go:hover{background:var(--blue);border-color:var(--blue);color:var(--on)}
 .btn:not(.btn-go):hover{background:var(--tile)}
 .row-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .linelist{display:grid;gap:10px;margin-top:20px;max-width:520px}
@@ -146,12 +166,12 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 .linelist small{color:var(--muted);font-weight:400}
 
 /* Departure board for projects */
-.board{background:var(--board);color:var(--board-ink);border-radius:14px;padding:24px 26px;box-shadow:0 0 0 3px #000 inset}
+.board{background:var(--board);color:var(--board-ink);border-radius:14px;padding:24px 26px;box-shadow:0 0 0 1px #1C2B36 inset}
 .board .top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#BFC4C8}
-.pill{display:inline-flex;font-weight:500;color:#fff;background:var(--c);padding:2px 11px;border-radius:999px;font-size:13px}
+.pill{display:inline-flex;font-weight:500;color:var(--on);background:var(--c);padding:2px 11px;border-radius:999px;font-size:13px}
 .flaps{display:flex;align-items:flex-end;gap:14px;margin-top:16px;flex-wrap:wrap}
 .flap{display:flex;gap:4px;perspective:200px}
-.flap span{font-family:var(--led);font-weight:700;font-size:40px;line-height:1;color:var(--amber);background:#000;border-radius:5px;padding:8px 7px 6px;min-width:34px;text-align:center;position:relative;text-shadow:0 0 8px rgba(255,178,26,.45)}
+.flap span{font-family:var(--led);font-weight:700;font-size:40px;line-height:1;color:var(--amber);background:#000;border-radius:5px;padding:8px 7px 6px;min-width:34px;text-align:center;position:relative;text-shadow:0 0 8px rgba(253,145,204,.45)}
 .flap span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.12)}
 .flap span.flip{animation:flip .09s linear}
 @keyframes flip{50%{transform:rotateX(90deg)}}
@@ -159,19 +179,19 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 .board .story{color:#D2D6DA;margin-top:16px;max-width:64ch}
 .board .chips span{background:transparent;border-color:#47515C;color:#C9CED3}
 .links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.links a{color:#fff;font-weight:500;font-size:15px;text-decoration:none;border:2px solid #fff;border-radius:8px;padding:6px 14px}
-.links a:hover{background:#fff;color:#1D232A}
+.links a{color:#EEF3F6;font-weight:500;font-size:15px;text-decoration:none;border:1px solid #EEF3F6;border-radius:8px;padding:6px 14px}
+.links a:hover{background:#EEF3F6;color:var(--board)}
 
 /* Interchange + tunnels */
 .interchange{padding:40px 0}
-.ix-board{display:flex;align-items:center;gap:22px;background:var(--ink);color:var(--wall);border-radius:14px;padding:20px 26px;max-width:760px}
+.ix-board{display:flex;align-items:center;gap:22px;background:var(--tile);color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule);border-radius:14px;padding:20px 26px;max-width:760px}
 .ix-board .dots{display:flex;gap:-6px}
 .ix-board .dots i{width:30px;height:30px;border-radius:50%;border:5px solid var(--c);background:var(--station);margin-right:-8px}
 .ix-board b{font-size:24px;font-weight:500;display:block;line-height:1.1}
 .ix-board span{opacity:.8}
-.tunnel{height:110px;background:#0E1216;position:relative;overflow:hidden}
-.tunnel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 140px,rgba(255,214,140,.55) 140px 146px,transparent 146px 300px);animation:lights .7s linear infinite;filter:blur(1px)}
-.tunnel::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:#2B3138;box-shadow:0 22px 0 #2B3138,0 -22px 0 #22272D}
+.tunnel{height:110px;background:var(--tunnel-bg);position:relative;overflow:hidden}
+.tunnel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 140px,var(--tunnel-light) 140px 146px,transparent 146px 300px);animation:lights .7s linear infinite;filter:blur(1px)}
+.tunnel::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--tunnel-line);box-shadow:0 22px 0 var(--tunnel-line),0 -22px 0 var(--tunnel-line2)}
 @keyframes lights{to{background-position:-300px 0}}
 .tunnel span{position:absolute;left:28px;top:50%;transform:translateY(-50%);z-index:1;font-family:var(--led);font-weight:500;color:var(--amber);font-size:16px;letter-spacing:.05em;background:#000;padding:4px 12px;border-radius:6px}
 
@@ -190,36 +210,237 @@ header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:4px
 
 /* Exit */
 .ways{display:grid;gap:10px;margin-top:22px;max-width:440px}
-.ways a,.ways button{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border:2px solid var(--ink);border-radius:10px;background:var(--tile);color:var(--ink);text-decoration:none;font:400 16.5px var(--sign);cursor:pointer;text-align:left}
+.ways a,.ways button{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border:1px solid var(--rule);border-radius:10px;background:var(--tile);color:var(--ink);text-decoration:none;font:400 16.5px var(--sign);cursor:pointer;text-align:left}
 .ways a:hover,.ways button:hover{background:var(--ink);color:var(--wall)}
 .ways small{font-weight:400;opacity:.75}
-footer{border-top:4px solid var(--ink)}
+footer{border-top:1px solid var(--rule)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:22px 28px 40px;color:var(--muted);font-size:15px}
 .kbd{display:inline-block;border:1.5px solid var(--muted);border-bottom-width:3px;border-radius:5px;padding:0 6px;font-size:12px;font-weight:500;color:var(--ink);margin:0 2px}
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#1D232A;color:var(--amber);font-family:var(--led);font-weight:500;padding:10px 18px;border-radius:8px;opacity:0;transition:.25s;z-index:120;pointer-events:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--board);color:var(--amber);font-family:var(--led);font-weight:500;padding:10px 18px;border-radius:8px;opacity:0;transition:.25s;z-index:120;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 
-/* ===== Light, elegant type ===== */
-body{font-weight:300;letter-spacing:.005em}
-b,strong{font-weight:500}
-.nameboard h2{font-weight:300;letter-spacing:-.025em;font-size:clamp(32px,3.4vw,48px);overflow-wrap:anywhere}
-.nameboard .hi{font-weight:300}
-.nameboard .no{font-weight:400;letter-spacing:.02em}
-.content h3{font-weight:300;letter-spacing:-.02em;font-size:clamp(26px,2.9vw,36px);line-height:1.15}
-.content .org,.arrival{font-weight:300}
-.lc h4{font-weight:400;font-size:20px}
-.ix-board b{font-weight:300;font-size:28px;letter-spacing:-.01em}
-.mark b{font-weight:400;letter-spacing:.01em}
-.rm-stop .lab{font-weight:400}
-.rm-stop.cur .lab{font-weight:500}
-.linelist div{font-weight:400}
-.btn{font-weight:400;letter-spacing:.01em}
-.pill{font-weight:500;letter-spacing:.02em}
-.card .nm{font-weight:400}
-.awards b{font-weight:400}
-.gate-led,.led-text,.tunnel span,.validator .screen{font-weight:500}
-.hint{font-weight:300}
+/* ===== Type: Instrument Serif for display, JetBrains Mono for text ===== */
+body{font-size:15px;line-height:1.75;font-weight:400;letter-spacing:0}
+b,strong,.content b{font-weight:600}
+.mark b{font-family:var(--serif);font-weight:400;font-size:27px;letter-spacing:0}
+.mark small{font-family:var(--deva);font-size:12px}
+.nameboard .no{font-size:11.5px;font-weight:500;letter-spacing:.02em}
+.nameboard h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,60px);line-height:.98;letter-spacing:-.01em;overflow-wrap:anywhere}
+.nameboard .hi{font-family:var(--deva);font-weight:400;font-size:19px;opacity:.85;margin-top:10px}
+.arrival{font-size:12.5px;line-height:1.6;font-weight:300}
+.content h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05;letter-spacing:-.01em}
+.content .org{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400}
+.content li{margin-top:10px}
+.chips span{font-size:12px;padding:2px 9px}
+.btn{font-family:var(--sign);font-size:13.5px;font-weight:500}
+.tbtn{font-size:12.5px;font-weight:500}
+.pill{font-size:11.5px;font-weight:700}
+.board .top{font-size:12px}
+.flap span{font-family:var(--serif);font-weight:400;font-size:54px;min-width:38px;padding:6px 8px 2px}
+.flaps p{font-size:13.5px;max-width:26ch}
+.board .story{font-size:14px}
+.links a{font-size:12.5px;font-weight:500}
+.linelist div{font-size:13.5px;font-weight:500}
+.linelist small{font-weight:300}
+.lc h4{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1}
+.mini li{font-size:13.5px}
+.awards div{font-size:12.5px}
+.awards b{font-family:var(--sign);font-size:13.5px;font-weight:600}
+.ix-board b{font-family:var(--serif);font-weight:400;font-size:38px;letter-spacing:-.005em}
+.ix-board span{font-size:13px}
+.ways a,.ways button{font-size:13.5px}
+.card .nm{font-family:var(--serif);font-weight:400;font-size:28px}
+.card .row,.card .vd{font-size:10.5px}
+.led-text{font-size:14.5px;letter-spacing:.04em;font-weight:500}
+.gate-led{font-size:15px;font-weight:500;letter-spacing:.04em}
+.validator .screen{font-size:13px;font-weight:500}
+.tunnel span{font-size:12.5px;font-weight:500}
+.toast{font-size:13px;font-weight:500}
+.hint{font-size:13.5px;font-weight:400}
+.skip-intro{font:400 13px var(--sign)}
+.door .sticker{font-size:11.5px;font-weight:400;max-width:210px}
+.door .sticker b{font-family:var(--deva);font-size:12.5px;font-weight:400}
+.rm-stop .lab{font-size:11px;font-weight:400}
+.rm-stop.cur .lab{font-weight:600}
+footer .wrap{font-size:12.5px}
+.kbd{font-size:11px;font-weight:500}
+
+
+/* ===== Glass: frosted panels over soft blue / violet / orange light ===== */
+body::before{content:"";position:fixed;inset:-8%;z-index:-1;pointer-events:none;background:var(--ambient)}
+#s-start,#s-exit{background:none}
+header{background:color-mix(in srgb,var(--wall) 82%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-bottom:1px solid var(--glass-line)}
+footer{border-top:1px solid var(--glass-line)}
+.tbtn,.btn:not(.btn-go),.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{background:var(--glass);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-color:var(--glass-line);box-shadow:inset 0 1px 0 var(--glass-edge)}
+.btn:not(.btn-go){border-width:1px}
+.tbtn[aria-pressed="true"]{background:var(--ink)}
+.ways a:hover,.ways button:hover{background:color-mix(in srgb,var(--ink) 88%,transparent)}
+.links a{color:var(--ink)}
+.links a:hover{background:var(--ink);color:var(--wall)}
+.awards div{border-style:solid}
+.lc{border:1px solid var(--glass-line);border-top:9px solid var(--c);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge)}
+.ix-board{box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge)}
+.nameboard,.nameboard.y{background:color-mix(in srgb,var(--c) 22%,var(--panel-dark));color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 70%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge),inset 0 0 40px color-mix(in srgb,var(--c) 14%,transparent)}
+.board{background:color-mix(in srgb,var(--board) 62%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.22)}
+:root.day .board{background:color-mix(in srgb,var(--board) 86%,transparent)}
+.board .chips span{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16);box-shadow:none;color:#C9D4DB}
+.board .links a{color:#EEF3F6;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);box-shadow:none}
+.board .links a:hover{background:#EEF3F6;color:var(--board)}
+.hint,.skip-intro{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  header{background:var(--wall)}
+  .nameboard,.nameboard.y{background:color-mix(in srgb,var(--c) 40%,var(--wall))}
+  .board{background:var(--board)}
+  .tbtn,.btn:not(.btn-go),.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{background:var(--tile)}
+}
+@media (prefers-reduced-transparency:reduce){
+  header,.nameboard,.nameboard.y,.board,.tbtn,.btn,.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{-webkit-backdrop-filter:none;backdrop-filter:none}
+  header{background:var(--wall)}
+  .board{background:var(--board)}
+  .nameboard,.nameboard.y{background:color-mix(in srgb,var(--c) 40%,var(--wall))}
+}
+
+/* ===== Type: light Manrope throughout ===== */
+body{font-size:16.5px;line-height:1.65;font-weight:400}
+b,strong,.content b{font-weight:600}
+.mark b{font-weight:500;font-size:22px;letter-spacing:-.01em}
+.mark small{font-size:13px}
+.nameboard .no{font-size:12px;font-weight:500}
+.nameboard h2{font-weight:300;font-size:clamp(36px,3.9vw,54px);line-height:1.02;letter-spacing:-.03em}
+.nameboard .hi{font-weight:400;font-size:20px;opacity:.9}
+.arrival{font-size:14px;font-weight:400}
+.content h3{font-weight:300;font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-.03em}
+#s-start .content h3{font-size:clamp(36px,4.6vw,62px)}
+.content .org{font-style:normal;font-size:18px;font-weight:400;color:var(--muted)}
+.chips span{font-size:13px}
+.btn{font-size:15px;font-weight:500}
+.tbtn{font-size:14px;font-weight:500}
+.pill{font-size:12.5px;font-weight:600}
+.board .top{font-size:13px}
+.flap span{font-weight:300;font-size:50px;min-width:36px}
+.flaps p{font-size:15px}
+.board .story{font-size:15.5px}
+.links a{font-size:14px}
+.linelist div{font-size:15px;font-weight:500}
+.linelist small{font-weight:400}
+.lc h4{font-weight:400;font-size:26px}
+.mini li{font-size:15px}
+.awards div{font-size:14px}
+.awards b{font-family:var(--sign);font-size:15px;font-weight:600}
+.ix-board b{font-weight:300;font-size:32px}
+.ix-board span{font-size:14.5px}
+.ways a,.ways button{font-size:15px}
+.card .nm{font-weight:500;font-size:24px}
+.card .row,.card .vd{font-size:11px}
+.hint{font-size:15px}
+.skip-intro{font:400 14px var(--sign)}
+.door .sticker{font-size:12.5px}
+.door .sticker b{font-size:13px}
+.rm-stop .lab{font-size:12px;font-weight:500}
+.rm-stop.cur .lab{font-weight:700}
+footer .wrap{font-size:14px}
+.kbd{font-size:12px}
+
+/* faint dot grid, echoing the reference */
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1.6px) 0 0/16px 16px;-webkit-mask-image:linear-gradient(to bottom,#000,transparent 70%);mask-image:linear-gradient(to bottom,#000,transparent 70%)}
+:root.day body::after{opacity:.25}
+
+/* ===== Intro: dusk forest outside the windows + push-forward transition ===== */
+html{scrollbar-gutter:stable}
+.door{transition:transform 1.5s cubic-bezier(.65,0,.25,1)}
+.door .win{z-index:0;background:radial-gradient(circle at 72% 80%,rgba(255,214,236,.95) 0,rgba(253,145,204,.45) 14%,transparent 38%),linear-gradient(180deg,#071447 0%,#143A9E 42%,#6F7FE0 70%,#FD91CC 100%);overflow:hidden;box-shadow:none}
+.door .win::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:3;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.22) 0,rgba(255,255,255,.06) 22%,transparent 40%,transparent 72%,rgba(255,255,255,.10) 100%);box-shadow:inset 0 0 0 8px var(--door-ring),inset 0 0 0 10px var(--door-ring2),inset 0 0 40px rgba(0,0,0,.35);animation:none}
+.ly{position:absolute;left:0;right:0;bottom:0;background-repeat:repeat-x;background-position:0 100%;will-change:background-position}
+.ly.far{height:190px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22700%22%20height%3D%22190%22%20viewBox%3D%220%200%20700%20190%22%3E%3Cpolygon%20fill%3D%22%234A62C4%22%20points%3D%220%2C190%200%2C95.7%2010%2C92.9%2020%2C90.6%2030%2C88.8%2040%2C87.5%2050%2C86.8%2060%2C86.5%2070%2C86.6%2080%2C87.2%2090%2C88.0%20100%2C89.2%20110%2C90.5%20120%2C91.9%20130%2C93.4%20140%2C94.8%20150%2C96.1%20160%2C97.3%20170%2C98.3%20180%2C99.0%20190%2C99.4%20200%2C99.6%20210%2C99.5%20220%2C99.2%20230%2C98.6%20240%2C97.9%20250%2C97.0%20260%2C96.1%20270%2C95.1%20280%2C94.3%20290%2C93.5%20300%2C93.0%20310%2C92.8%20320%2C92.9%20330%2C93.4%20340%2C94.4%20350%2C95.7%20360%2C97.6%20370%2C99.9%20380%2C102.7%20390%2C105.8%20400%2C109.3%20410%2C113.2%20420%2C117.2%20430%2C121.4%20440%2C125.6%20450%2C129.8%20460%2C133.9%20470%2C137.7%20480%2C141.2%20490%2C144.3%20500%2C146.8%20510%2C148.8%20520%2C150.2%20530%2C150.9%20540%2C151.0%20550%2C150.3%20560%2C149.0%20570%2C147.0%20580%2C144.4%20590%2C141.3%20600%2C137.7%20610%2C133.6%20620%2C129.3%20630%2C124.8%20640%2C120.2%20650%2C115.6%20660%2C111.1%20670%2C106.8%20680%2C102.7%20690%2C99.0%20700%2C95.7%20700%2C190%22%2F%3E%3Cg%20fill%3D%22%233F57BA%22%3E%3Crect%20x%3D%22-681.0%22%20y%3D%2292.8%22%20width%3D%222.1%22%20height%3D%223.8%22%2F%3E%3Cpolygon%20points%3D%22-679.9%2C59.0%20-684.3%2C75.5%20-675.6%2C75.5%22%2F%3E%3Cpolygon%20points%3D%22-679.9%2C66.5%20-686.0%2C83.1%20-673.9%2C83.1%22%2F%3E%3Cpolygon%20points%3D%22-679.9%2C74.0%20-687.6%2C90.6%20-672.2%2C90.6%22%2F%3E%3Cpolygon%20points%3D%22-679.9%2C81.6%20-689.3%2C95.1%20-670.5%2C95.1%22%2F%3E%3Crect%20x%3D%2219.0%22%20y%3D%2292.8%22%20width%3D%222.1%22%20height%3D%223.8%22%2F%3E%3Cpolygon%20points%3D%2220.1%2C59.0%2015.7%2C75.5%2024.4%2C75.5%22%2F%3E%3Cpolygon%20points%3D%2220.1%2C66.5%2014.0%2C83.1%2026.1%2C83.1%22%2F%3E%3Cpolygon%20points%3D%2220.1%2C74.0%2012.4%2C90.6%2027.8%2C90.6%22%2F%3E%3Cpolygon%20points%3D%2220.1%2C81.6%2010.7%2C95.1%2029.5%2C95.1%22%2F%3E%3Crect%20x%3D%22719.0%22%20y%3D%2292.8%22%20width%3D%222.1%22%20height%3D%223.8%22%2F%3E%3Cpolygon%20points%3D%22720.1%2C59.0%20715.7%2C75.5%20724.4%2C75.5%22%2F%3E%3Cpolygon%20points%3D%22720.1%2C66.5%20714.0%2C83.1%20726.1%2C83.1%22%2F%3E%3Cpolygon%20points%3D%22720.1%2C74.0%20712.4%2C90.6%20727.8%2C90.6%22%2F%3E%3Cpolygon%20points%3D%22720.1%2C81.6%20710.7%2C95.1%20729.5%2C95.1%22%2F%3E%3Crect%20x%3D%22-621.8%22%20y%3D%2289.5%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%22-620.8%2C57.4%20-624.9%2C73.1%20-616.7%2C73.1%22%2F%3E%3Cpolygon%20points%3D%22-620.8%2C64.5%20-626.5%2C80.3%20-615.1%2C80.3%22%2F%3E%3Cpolygon%20points%3D%22-620.8%2C71.7%20-628.1%2C87.4%20-613.4%2C87.4%22%2F%3E%3Cpolygon%20points%3D%22-620.8%2C78.8%20-629.7%2C91.7%20-611.8%2C91.7%22%2F%3E%3Crect%20x%3D%2278.2%22%20y%3D%2289.5%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%2279.2%2C57.4%2075.1%2C73.1%2083.3%2C73.1%22%2F%3E%3Cpolygon%20points%3D%2279.2%2C64.5%2073.5%2C80.3%2084.9%2C80.3%22%2F%3E%3Cpolygon%20points%3D%2279.2%2C71.7%2071.9%2C87.4%2086.6%2C87.4%22%2F%3E%3Cpolygon%20points%3D%2279.2%2C78.8%2070.3%2C91.7%2088.2%2C91.7%22%2F%3E%3Crect%20x%3D%22778.2%22%20y%3D%2289.5%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%22779.2%2C57.4%20775.1%2C73.1%20783.3%2C73.1%22%2F%3E%3Cpolygon%20points%3D%22779.2%2C64.5%20773.5%2C80.3%20784.9%2C80.3%22%2F%3E%3Cpolygon%20points%3D%22779.2%2C71.7%20771.9%2C87.4%20786.6%2C87.4%22%2F%3E%3Cpolygon%20points%3D%22779.2%2C78.8%20770.3%2C91.7%20788.2%2C91.7%22%2F%3E%3Crect%20x%3D%22-575.2%22%20y%3D%2294.5%22%20width%3D%222.4%22%20height%3D%224.3%22%2F%3E%3Cpolygon%20points%3D%22-574.0%2C56.0%20-578.9%2C74.8%20-569.1%2C74.8%22%2F%3E%3Cpolygon%20points%3D%22-574.0%2C64.6%20-580.8%2C83.4%20-567.2%2C83.4%22%2F%3E%3Cpolygon%20points%3D%22-574.0%2C73.1%20-582.8%2C92.0%20-565.2%2C92.0%22%2F%3E%3Cpolygon%20points%3D%22-574.0%2C81.7%20-584.7%2C97.1%20-563.3%2C97.1%22%2F%3E%3Crect%20x%3D%22124.8%22%20y%3D%2294.5%22%20width%3D%222.4%22%20height%3D%224.3%22%2F%3E%3Cpolygon%20points%3D%22126.0%2C56.0%20121.1%2C74.8%20130.9%2C74.8%22%2F%3E%3Cpolygon%20points%3D%22126.0%2C64.6%20119.2%2C83.4%20132.8%2C83.4%22%2F%3E%3Cpolygon%20points%3D%22126.0%2C73.1%20117.2%2C92.0%20134.8%2C92.0%22%2F%3E%3Cpolygon%20points%3D%22126.0%2C81.7%20115.3%2C97.1%20136.7%2C97.1%22%2F%3E%3Crect%20x%3D%22824.8%22%20y%3D%2294.5%22%20width%3D%222.4%22%20height%3D%224.3%22%2F%3E%3Cpolygon%20points%3D%22826.0%2C56.0%20821.1%2C74.8%20830.9%2C74.8%22%2F%3E%3Cpolygon%20points%3D%22826.0%2C64.6%20819.2%2C83.4%20832.8%2C83.4%22%2F%3E%3Cpolygon%20points%3D%22826.0%2C73.1%20817.2%2C92.0%20834.8%2C92.0%22%2F%3E%3Cpolygon%20points%3D%22826.0%2C81.7%20815.3%2C97.1%20836.7%2C97.1%22%2F%3E%3Crect%20x%3D%22-538.6%22%20y%3D%2299.0%22%20width%3D%222.5%22%20height%3D%224.6%22%2F%3E%3Cpolygon%20points%3D%22-537.4%2C57.4%20-542.7%2C77.7%20-532.1%2C77.7%22%2F%3E%3Cpolygon%20points%3D%22-537.4%2C66.6%20-544.8%2C86.9%20-530.0%2C86.9%22%2F%3E%3Cpolygon%20points%3D%22-537.4%2C75.9%20-546.8%2C96.2%20-527.9%2C96.2%22%2F%3E%3Cpolygon%20points%3D%22-537.4%2C85.1%20-548.9%2C101.7%20-525.8%2C101.7%22%2F%3E%3Crect%20x%3D%22161.4%22%20y%3D%2299.0%22%20width%3D%222.5%22%20height%3D%224.6%22%2F%3E%3Cpolygon%20points%3D%22162.6%2C57.4%20157.3%2C77.7%20167.9%2C77.7%22%2F%3E%3Cpolygon%20points%3D%22162.6%2C66.6%20155.2%2C86.9%20170.0%2C86.9%22%2F%3E%3Cpolygon%20points%3D%22162.6%2C75.9%20153.2%2C96.2%20172.1%2C96.2%22%2F%3E%3Cpolygon%20points%3D%22162.6%2C85.1%20151.1%2C101.7%20174.2%2C101.7%22%2F%3E%3Crect%20x%3D%22861.4%22%20y%3D%2299.0%22%20width%3D%222.5%22%20height%3D%224.6%22%2F%3E%3Cpolygon%20points%3D%22862.6%2C57.4%20857.3%2C77.7%20867.9%2C77.7%22%2F%3E%3Cpolygon%20points%3D%22862.6%2C66.6%20855.2%2C86.9%20870.0%2C86.9%22%2F%3E%3Cpolygon%20points%3D%22862.6%2C75.9%20853.2%2C96.2%20872.1%2C96.2%22%2F%3E%3Cpolygon%20points%3D%22862.6%2C85.1%20851.1%2C101.7%20874.2%2C101.7%22%2F%3E%3Crect%20x%3D%22-489.2%22%20y%3D%22101.0%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%22-488.0%2C61.1%20-493.1%2C80.6%20-482.8%2C80.6%22%2F%3E%3Cpolygon%20points%3D%22-488.0%2C69.9%20-495.1%2C89.5%20-480.8%2C89.5%22%2F%3E%3Cpolygon%20points%3D%22-488.0%2C78.8%20-497.1%2C98.4%20-478.8%2C98.4%22%2F%3E%3Cpolygon%20points%3D%22-488.0%2C87.7%20-499.1%2C103.7%20-476.8%2C103.7%22%2F%3E%3Crect%20x%3D%22210.8%22%20y%3D%22101.0%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%22212.0%2C61.1%20206.9%2C80.6%20217.2%2C80.6%22%2F%3E%3Cpolygon%20points%3D%22212.0%2C69.9%20204.9%2C89.5%20219.2%2C89.5%22%2F%3E%3Cpolygon%20points%3D%22212.0%2C78.8%20202.9%2C98.4%20221.2%2C98.4%22%2F%3E%3Cpolygon%20points%3D%22212.0%2C87.7%20200.9%2C103.7%20223.2%2C103.7%22%2F%3E%3Crect%20x%3D%22910.8%22%20y%3D%22101.0%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%22912.0%2C61.1%20906.9%2C80.6%20917.2%2C80.6%22%2F%3E%3Cpolygon%20points%3D%22912.0%2C69.9%20904.9%2C89.5%20919.2%2C89.5%22%2F%3E%3Cpolygon%20points%3D%22912.0%2C78.8%20902.9%2C98.4%20921.2%2C98.4%22%2F%3E%3Cpolygon%20points%3D%22912.0%2C87.7%20900.9%2C103.7%20923.2%2C103.7%22%2F%3E%3Crect%20x%3D%22-438.0%22%20y%3D%2298.2%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%22-437.0%2C65.6%20-441.2%2C81.5%20-432.9%2C81.5%22%2F%3E%3Cpolygon%20points%3D%22-437.0%2C72.8%20-442.8%2C88.8%20-431.3%2C88.8%22%2F%3E%3Cpolygon%20points%3D%22-437.0%2C80.1%20-444.5%2C96.0%20-429.6%2C96.0%22%2F%3E%3Cpolygon%20points%3D%22-437.0%2C87.3%20-446.1%2C100.3%20-428.0%2C100.3%22%2F%3E%3Crect%20x%3D%22262.0%22%20y%3D%2298.2%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%22263.0%2C65.6%20258.8%2C81.5%20267.1%2C81.5%22%2F%3E%3Cpolygon%20points%3D%22263.0%2C72.8%20257.2%2C88.8%20268.7%2C88.8%22%2F%3E%3Cpolygon%20points%3D%22263.0%2C80.1%20255.5%2C96.0%20270.4%2C96.0%22%2F%3E%3Cpolygon%20points%3D%22263.0%2C87.3%20253.9%2C100.3%20272.0%2C100.3%22%2F%3E%3Crect%20x%3D%22962.0%22%20y%3D%2298.2%22%20width%3D%222.0%22%20height%3D%223.6%22%2F%3E%3Cpolygon%20points%3D%22963.0%2C65.6%20958.8%2C81.5%20967.1%2C81.5%22%2F%3E%3Cpolygon%20points%3D%22963.0%2C72.8%20957.2%2C88.8%20968.7%2C88.8%22%2F%3E%3Cpolygon%20points%3D%22963.0%2C80.1%20955.5%2C96.0%20970.4%2C96.0%22%2F%3E%3Cpolygon%20points%3D%22963.0%2C87.3%20953.9%2C100.3%20972.0%2C100.3%22%2F%3E%3Crect%20x%3D%22-378.6%22%20y%3D%2293.7%22%20width%3D%223.0%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%22-377.1%2C45.2%20-383.3%2C68.9%20-370.9%2C68.9%22%2F%3E%3Cpolygon%20points%3D%22-377.1%2C56.0%20-385.7%2C79.7%20-368.5%2C79.7%22%2F%3E%3Cpolygon%20points%3D%22-377.1%2C66.7%20-388.2%2C90.4%20-366.1%2C90.4%22%2F%3E%3Cpolygon%20points%3D%22-377.1%2C77.5%20-390.6%2C96.9%20-363.7%2C96.9%22%2F%3E%3Crect%20x%3D%22321.4%22%20y%3D%2293.7%22%20width%3D%223.0%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%22322.9%2C45.2%20316.7%2C68.9%20329.1%2C68.9%22%2F%3E%3Cpolygon%20points%3D%22322.9%2C56.0%20314.3%2C79.7%20331.5%2C79.7%22%2F%3E%3Cpolygon%20points%3D%22322.9%2C66.7%20311.8%2C90.4%20333.9%2C90.4%22%2F%3E%3Cpolygon%20points%3D%22322.9%2C77.5%20309.4%2C96.9%20336.3%2C96.9%22%2F%3E%3Crect%20x%3D%221021.4%22%20y%3D%2293.7%22%20width%3D%223.0%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%221022.9%2C45.2%201016.7%2C68.9%201029.1%2C68.9%22%2F%3E%3Cpolygon%20points%3D%221022.9%2C56.0%201014.3%2C79.7%201031.5%2C79.7%22%2F%3E%3Cpolygon%20points%3D%221022.9%2C66.7%201011.8%2C90.4%201033.9%2C90.4%22%2F%3E%3Cpolygon%20points%3D%221022.9%2C77.5%201009.4%2C96.9%201036.3%2C96.9%22%2F%3E%3Crect%20x%3D%22-336.6%22%20y%3D%22100.6%22%20width%3D%222.2%22%20height%3D%223.9%22%2F%3E%3Cpolygon%20points%3D%22-335.5%2C65.2%20-340.1%2C82.5%20-331.0%2C82.5%22%2F%3E%3Cpolygon%20points%3D%22-335.5%2C73.1%20-341.8%2C90.4%20-329.2%2C90.4%22%2F%3E%3Cpolygon%20points%3D%22-335.5%2C81.0%20-343.6%2C98.3%20-327.5%2C98.3%22%2F%3E%3Cpolygon%20points%3D%22-335.5%2C88.8%20-345.4%2C103.0%20-325.7%2C103.0%22%2F%3E%3Crect%20x%3D%22363.4%22%20y%3D%22100.6%22%20width%3D%222.2%22%20height%3D%223.9%22%2F%3E%3Cpolygon%20points%3D%22364.5%2C65.2%20359.9%2C82.5%20369.0%2C82.5%22%2F%3E%3Cpolygon%20points%3D%22364.5%2C73.1%20358.2%2C90.4%20370.8%2C90.4%22%2F%3E%3Cpolygon%20points%3D%22364.5%2C81.0%20356.4%2C98.3%20372.5%2C98.3%22%2F%3E%3Cpolygon%20points%3D%22364.5%2C88.8%20354.6%2C103.0%20374.3%2C103.0%22%2F%3E%3Crect%20x%3D%221063.4%22%20y%3D%22100.6%22%20width%3D%222.2%22%20height%3D%223.9%22%2F%3E%3Cpolygon%20points%3D%221064.5%2C65.2%201059.9%2C82.5%201069.0%2C82.5%22%2F%3E%3Cpolygon%20points%3D%221064.5%2C73.1%201058.2%2C90.4%201070.8%2C90.4%22%2F%3E%3Cpolygon%20points%3D%221064.5%2C81.0%201056.4%2C98.3%201072.5%2C98.3%22%2F%3E%3Cpolygon%20points%3D%221064.5%2C88.8%201054.6%2C103.0%201074.3%2C103.0%22%2F%3E%3Crect%20x%3D%22-273.0%22%20y%3D%22121.1%22%20width%3D%223.1%22%20height%3D%225.7%22%2F%3E%3Cpolygon%20points%3D%22-271.4%2C70.0%20-278.0%2C95.0%20-264.9%2C95.0%22%2F%3E%3Cpolygon%20points%3D%22-271.4%2C81.4%20-280.5%2C106.4%20-262.4%2C106.4%22%2F%3E%3Cpolygon%20points%3D%22-271.4%2C92.7%20-283.1%2C117.7%20-259.8%2C117.7%22%2F%3E%3Cpolygon%20points%3D%22-271.4%2C104.1%20-285.6%2C124.5%20-257.2%2C124.5%22%2F%3E%3Crect%20x%3D%22427.0%22%20y%3D%22121.1%22%20width%3D%223.1%22%20height%3D%225.7%22%2F%3E%3Cpolygon%20points%3D%22428.6%2C70.0%20422.0%2C95.0%20435.1%2C95.0%22%2F%3E%3Cpolygon%20points%3D%22428.6%2C81.4%20419.5%2C106.4%20437.6%2C106.4%22%2F%3E%3Cpolygon%20points%3D%22428.6%2C92.7%20416.9%2C117.7%20440.2%2C117.7%22%2F%3E%3Cpolygon%20points%3D%22428.6%2C104.1%20414.4%2C124.5%20442.8%2C124.5%22%2F%3E%3Crect%20x%3D%221127.0%22%20y%3D%22121.1%22%20width%3D%223.1%22%20height%3D%225.7%22%2F%3E%3Cpolygon%20points%3D%221128.6%2C70.0%201122.0%2C95.0%201135.1%2C95.0%22%2F%3E%3Cpolygon%20points%3D%221128.6%2C81.4%201119.5%2C106.4%201137.6%2C106.4%22%2F%3E%3Cpolygon%20points%3D%221128.6%2C92.7%201116.9%2C117.7%201140.2%2C117.7%22%2F%3E%3Cpolygon%20points%3D%221128.6%2C104.1%201114.4%2C124.5%201142.8%2C124.5%22%2F%3E%3Crect%20x%3D%22-224.0%22%20y%3D%22141.9%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%22-222.8%2C102.7%20-227.8%2C121.9%20-217.8%2C121.9%22%2F%3E%3Cpolygon%20points%3D%22-222.8%2C111.4%20-229.8%2C130.6%20-215.9%2C130.6%22%2F%3E%3Cpolygon%20points%3D%22-222.8%2C120.1%20-231.8%2C139.3%20-213.9%2C139.3%22%2F%3E%3Cpolygon%20points%3D%22-222.8%2C128.8%20-233.7%2C144.5%20-212.0%2C144.5%22%2F%3E%3Crect%20x%3D%22476.0%22%20y%3D%22141.9%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%22477.2%2C102.7%20472.2%2C121.9%20482.2%2C121.9%22%2F%3E%3Cpolygon%20points%3D%22477.2%2C111.4%20470.2%2C130.6%20484.1%2C130.6%22%2F%3E%3Cpolygon%20points%3D%22477.2%2C120.1%20468.2%2C139.3%20486.1%2C139.3%22%2F%3E%3Cpolygon%20points%3D%22477.2%2C128.8%20466.3%2C144.5%20488.0%2C144.5%22%2F%3E%3Crect%20x%3D%221176.0%22%20y%3D%22141.9%22%20width%3D%222.4%22%20height%3D%224.4%22%2F%3E%3Cpolygon%20points%3D%221177.2%2C102.7%201172.2%2C121.9%201182.2%2C121.9%22%2F%3E%3Cpolygon%20points%3D%221177.2%2C111.4%201170.2%2C130.6%201184.1%2C130.6%22%2F%3E%3Cpolygon%20points%3D%221177.2%2C120.1%201168.2%2C139.3%201186.1%2C139.3%22%2F%3E%3Cpolygon%20points%3D%221177.2%2C128.8%201166.3%2C144.5%201188.0%2C144.5%22%2F%3E%3Crect%20x%3D%22-162.6%22%20y%3D%22153.5%22%20width%3D%221.9%22%20height%3D%223.5%22%2F%3E%3Cpolygon%20points%3D%22-161.7%2C121.9%20-165.7%2C137.3%20-157.6%2C137.3%22%2F%3E%3Cpolygon%20points%3D%22-161.7%2C128.9%20-167.3%2C144.4%20-156.0%2C144.4%22%2F%3E%3Cpolygon%20points%3D%22-161.7%2C135.9%20-168.9%2C151.4%20-154.5%2C151.4%22%2F%3E%3Cpolygon%20points%3D%22-161.7%2C143.0%20-170.4%2C155.6%20-152.9%2C155.6%22%2F%3E%3Crect%20x%3D%22537.4%22%20y%3D%22153.5%22%20width%3D%221.9%22%20height%3D%223.5%22%2F%3E%3Cpolygon%20points%3D%22538.3%2C121.9%20534.3%2C137.3%20542.4%2C137.3%22%2F%3E%3Cpolygon%20points%3D%22538.3%2C128.9%20532.7%2C144.4%20544.0%2C144.4%22%2F%3E%3Cpolygon%20points%3D%22538.3%2C135.9%20531.1%2C151.4%20545.5%2C151.4%22%2F%3E%3Cpolygon%20points%3D%22538.3%2C143.0%20529.6%2C155.6%20547.1%2C155.6%22%2F%3E%3Crect%20x%3D%221237.4%22%20y%3D%22153.5%22%20width%3D%221.9%22%20height%3D%223.5%22%2F%3E%3Cpolygon%20points%3D%221238.3%2C121.9%201234.3%2C137.3%201242.4%2C137.3%22%2F%3E%3Cpolygon%20points%3D%221238.3%2C128.9%201232.7%2C144.4%201244.0%2C144.4%22%2F%3E%3Cpolygon%20points%3D%221238.3%2C135.9%201231.1%2C151.4%201245.5%2C151.4%22%2F%3E%3Cpolygon%20points%3D%221238.3%2C143.0%201229.6%2C155.6%201247.1%2C155.6%22%2F%3E%3Crect%20x%3D%22-116.1%22%20y%3D%22144.8%22%20width%3D%222.3%22%20height%3D%224.1%22%2F%3E%3Cpolygon%20points%3D%22-115.0%2C107.9%20-119.7%2C126.0%20-110.3%2C126.0%22%2F%3E%3Cpolygon%20points%3D%22-115.0%2C116.1%20-121.5%2C134.1%20-108.4%2C134.1%22%2F%3E%3Cpolygon%20points%3D%22-115.0%2C124.3%20-123.4%2C142.3%20-106.6%2C142.3%22%2F%3E%3Cpolygon%20points%3D%22-115.0%2C132.5%20-125.2%2C147.3%20-104.7%2C147.3%22%2F%3E%3Crect%20x%3D%22583.9%22%20y%3D%22144.8%22%20width%3D%222.3%22%20height%3D%224.1%22%2F%3E%3Cpolygon%20points%3D%22585.0%2C107.9%20580.3%2C126.0%20589.7%2C126.0%22%2F%3E%3Cpolygon%20points%3D%22585.0%2C116.1%20578.5%2C134.1%20591.6%2C134.1%22%2F%3E%3Cpolygon%20points%3D%22585.0%2C124.3%20576.6%2C142.3%20593.4%2C142.3%22%2F%3E%3Cpolygon%20points%3D%22585.0%2C132.5%20574.8%2C147.3%20595.3%2C147.3%22%2F%3E%3Crect%20x%3D%221283.9%22%20y%3D%22144.8%22%20width%3D%222.3%22%20height%3D%224.1%22%2F%3E%3Cpolygon%20points%3D%221285.0%2C107.9%201280.3%2C126.0%201289.7%2C126.0%22%2F%3E%3Cpolygon%20points%3D%221285.0%2C116.1%201278.5%2C134.1%201291.6%2C134.1%22%2F%3E%3Cpolygon%20points%3D%221285.0%2C124.3%201276.6%2C142.3%201293.4%2C142.3%22%2F%3E%3Cpolygon%20points%3D%221285.0%2C132.5%201274.8%2C147.3%201295.3%2C147.3%22%2F%3E%3Crect%20x%3D%22-86.0%22%20y%3D%22133.8%22%20width%3D%222.0%22%20height%3D%223.7%22%2F%3E%3Cpolygon%20points%3D%22-85.0%2C100.7%20-89.2%2C116.9%20-80.7%2C116.9%22%2F%3E%3Cpolygon%20points%3D%22-85.0%2C108.0%20-90.9%2C124.3%20-79.1%2C124.3%22%2F%3E%3Cpolygon%20points%3D%22-85.0%2C115.4%20-92.5%2C131.6%20-77.4%2C131.6%22%2F%3E%3Cpolygon%20points%3D%22-85.0%2C122.8%20-94.2%2C136.0%20-75.8%2C136.0%22%2F%3E%3Crect%20x%3D%22614.0%22%20y%3D%22133.8%22%20width%3D%222.0%22%20height%3D%223.7%22%2F%3E%3Cpolygon%20points%3D%22615.0%2C100.7%20610.8%2C116.9%20619.3%2C116.9%22%2F%3E%3Cpolygon%20points%3D%22615.0%2C108.0%20609.1%2C124.3%20620.9%2C124.3%22%2F%3E%3Cpolygon%20points%3D%22615.0%2C115.4%20607.5%2C131.6%20622.6%2C131.6%22%2F%3E%3Cpolygon%20points%3D%22615.0%2C122.8%20605.8%2C136.0%20624.2%2C136.0%22%2F%3E%3Crect%20x%3D%221314.0%22%20y%3D%22133.8%22%20width%3D%222.0%22%20height%3D%223.7%22%2F%3E%3Cpolygon%20points%3D%221315.0%2C100.7%201310.8%2C116.9%201319.3%2C116.9%22%2F%3E%3Cpolygon%20points%3D%221315.0%2C108.0%201309.1%2C124.3%201320.9%2C124.3%22%2F%3E%3Cpolygon%20points%3D%221315.0%2C115.4%201307.5%2C131.6%201322.6%2C131.6%22%2F%3E%3Cpolygon%20points%3D%221315.0%2C122.8%201305.8%2C136.0%201324.2%2C136.0%22%2F%3E%3Crect%20x%3D%22-31.8%22%20y%3D%22107.6%22%20width%3D%222.9%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%22-30.4%2C59.3%20-36.5%2C82.9%20-24.2%2C82.9%22%2F%3E%3Cpolygon%20points%3D%22-30.4%2C70.1%20-38.9%2C93.6%20-21.8%2C93.6%22%2F%3E%3Cpolygon%20points%3D%22-30.4%2C80.8%20-41.3%2C104.3%20-19.4%2C104.3%22%2F%3E%3Cpolygon%20points%3D%22-30.4%2C91.5%20-43.8%2C110.8%20-17.0%2C110.8%22%2F%3E%3Crect%20x%3D%22668.2%22%20y%3D%22107.6%22%20width%3D%222.9%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%22669.6%2C59.3%20663.5%2C82.9%20675.8%2C82.9%22%2F%3E%3Cpolygon%20points%3D%22669.6%2C70.1%20661.1%2C93.6%20678.2%2C93.6%22%2F%3E%3Cpolygon%20points%3D%22669.6%2C80.8%20658.7%2C104.3%20680.6%2C104.3%22%2F%3E%3Cpolygon%20points%3D%22669.6%2C91.5%20656.2%2C110.8%20683.0%2C110.8%22%2F%3E%3Crect%20x%3D%221368.2%22%20y%3D%22107.6%22%20width%3D%222.9%22%20height%3D%225.4%22%2F%3E%3Cpolygon%20points%3D%221369.6%2C59.3%201363.5%2C82.9%201375.8%2C82.9%22%2F%3E%3Cpolygon%20points%3D%221369.6%2C70.1%201361.1%2C93.6%201378.2%2C93.6%22%2F%3E%3Cpolygon%20points%3D%221369.6%2C80.8%201358.7%2C104.3%201380.6%2C104.3%22%2F%3E%3Cpolygon%20points%3D%221369.6%2C91.5%201356.2%2C110.8%201383.0%2C110.8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:700px 190px;animation:sc-far 16s linear infinite}
+.ly.mid{height:200px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22200%22%20viewBox%3D%220%200%20520%20200%22%3E%3Cg%20fill%3D%22%231B2F8A%22%3E%3Crect%20x%3D%22-503.9%22%20y%3D%22187.4%22%20width%3D%228.0%22%20height%3D%2212.6%22%2F%3E%3Cpolygon%20points%3D%22-500.0%2C74.3%20-516.6%2C129.6%20-483.3%2C129.6%22%2F%3E%3Cpolygon%20points%3D%22-500.0%2C99.4%20-523.2%2C154.7%20-476.7%2C154.7%22%2F%3E%3Cpolygon%20points%3D%22-500.0%2C124.6%20-529.7%2C179.9%20-470.2%2C179.9%22%2F%3E%3Cpolygon%20points%3D%22-500.0%2C149.7%20-536.2%2C195.0%20-463.7%2C195.0%22%2F%3E%3Crect%20x%3D%2216.1%22%20y%3D%22187.4%22%20width%3D%228.0%22%20height%3D%2212.6%22%2F%3E%3Cpolygon%20points%3D%2220.0%2C74.3%203.4%2C129.6%2036.7%2C129.6%22%2F%3E%3Cpolygon%20points%3D%2220.0%2C99.4%20-3.2%2C154.7%2043.3%2C154.7%22%2F%3E%3Cpolygon%20points%3D%2220.0%2C124.6%20-9.7%2C179.9%2049.8%2C179.9%22%2F%3E%3Cpolygon%20points%3D%2220.0%2C149.7%20-16.2%2C195.0%2056.3%2C195.0%22%2F%3E%3Crect%20x%3D%22536.1%22%20y%3D%22187.4%22%20width%3D%228.0%22%20height%3D%2212.6%22%2F%3E%3Cpolygon%20points%3D%22540.0%2C74.3%20523.4%2C129.6%20556.7%2C129.6%22%2F%3E%3Cpolygon%20points%3D%22540.0%2C99.4%20516.8%2C154.7%20563.3%2C154.7%22%2F%3E%3Cpolygon%20points%3D%22540.0%2C124.6%20510.3%2C179.9%20569.8%2C179.9%22%2F%3E%3Cpolygon%20points%3D%22540.0%2C149.7%20503.8%2C195.0%20576.3%2C195.0%22%2F%3E%3Crect%20x%3D%22-430.9%22%20y%3D%22187.6%22%20width%3D%226.9%22%20height%3D%2212.4%22%2F%3E%3Cpolygon%20points%3D%22-427.5%2C76.2%20-441.9%2C130.7%20-413.0%2C130.7%22%2F%3E%3Cpolygon%20points%3D%22-427.5%2C101.0%20-447.6%2C155.4%20-407.4%2C155.4%22%2F%3E%3Cpolygon%20points%3D%22-427.5%2C125.7%20-453.2%2C180.2%20-401.7%2C180.2%22%2F%3E%3Cpolygon%20points%3D%22-427.5%2C150.5%20-458.9%2C195.0%20-396.1%2C195.0%22%2F%3E%3Crect%20x%3D%2289.1%22%20y%3D%22187.6%22%20width%3D%226.9%22%20height%3D%2212.4%22%2F%3E%3Cpolygon%20points%3D%2292.5%2C76.2%2078.1%2C130.7%20107.0%2C130.7%22%2F%3E%3Cpolygon%20points%3D%2292.5%2C101.0%2072.4%2C155.4%20112.6%2C155.4%22%2F%3E%3Cpolygon%20points%3D%2292.5%2C125.7%2066.8%2C180.2%20118.3%2C180.2%22%2F%3E%3Cpolygon%20points%3D%2292.5%2C150.5%2061.1%2C195.0%20123.9%2C195.0%22%2F%3E%3Crect%20x%3D%22609.1%22%20y%3D%22187.6%22%20width%3D%226.9%22%20height%3D%2212.4%22%2F%3E%3Cpolygon%20points%3D%22612.5%2C76.2%20598.1%2C130.7%20627.0%2C130.7%22%2F%3E%3Cpolygon%20points%3D%22612.5%2C101.0%20592.4%2C155.4%20632.6%2C155.4%22%2F%3E%3Cpolygon%20points%3D%22612.5%2C125.7%20586.8%2C180.2%20638.3%2C180.2%22%2F%3E%3Cpolygon%20points%3D%22612.5%2C150.5%20581.1%2C195.0%20643.9%2C195.0%22%2F%3E%3Crect%20x%3D%22-378.0%22%20y%3D%22189.6%22%20width%3D%226.7%22%20height%3D%2210.4%22%2F%3E%3Cpolygon%20points%3D%22-374.7%2C96.1%20-388.6%2C141.8%20-360.8%2C141.8%22%2F%3E%3Cpolygon%20points%3D%22-374.7%2C116.8%20-394.0%2C162.6%20-355.3%2C162.6%22%2F%3E%3Cpolygon%20points%3D%22-374.7%2C137.6%20-399.5%2C183.4%20-349.9%2C183.4%22%2F%3E%3Cpolygon%20points%3D%22-374.7%2C158.4%20-404.9%2C195.8%20-344.4%2C195.8%22%2F%3E%3Crect%20x%3D%22142.0%22%20y%3D%22189.6%22%20width%3D%226.7%22%20height%3D%2210.4%22%2F%3E%3Cpolygon%20points%3D%22145.3%2C96.1%20131.4%2C141.8%20159.2%2C141.8%22%2F%3E%3Cpolygon%20points%3D%22145.3%2C116.8%20126.0%2C162.6%20164.7%2C162.6%22%2F%3E%3Cpolygon%20points%3D%22145.3%2C137.6%20120.5%2C183.4%20170.1%2C183.4%22%2F%3E%3Cpolygon%20points%3D%22145.3%2C158.4%20115.1%2C195.8%20175.6%2C195.8%22%2F%3E%3Crect%20x%3D%22662.0%22%20y%3D%22189.6%22%20width%3D%226.7%22%20height%3D%2210.4%22%2F%3E%3Cpolygon%20points%3D%22665.3%2C96.1%20651.4%2C141.8%20679.2%2C141.8%22%2F%3E%3Cpolygon%20points%3D%22665.3%2C116.8%20646.0%2C162.6%20684.7%2C162.6%22%2F%3E%3Cpolygon%20points%3D%22665.3%2C137.6%20640.5%2C183.4%20690.1%2C183.4%22%2F%3E%3Cpolygon%20points%3D%22665.3%2C158.4%20635.1%2C195.8%20695.6%2C195.8%22%2F%3E%3Crect%20x%3D%22-298.8%22%20y%3D%22189.0%22%20width%3D%226.9%22%20height%3D%2211.0%22%2F%3E%3Cpolygon%20points%3D%22-295.3%2C89.8%20-309.8%2C138.3%20-280.9%2C138.3%22%2F%3E%3Cpolygon%20points%3D%22-295.3%2C111.8%20-315.4%2C160.3%20-275.2%2C160.3%22%2F%3E%3Cpolygon%20points%3D%22-295.3%2C133.9%20-321.1%2C182.4%20-269.6%2C182.4%22%2F%3E%3Cpolygon%20points%3D%22-295.3%2C155.9%20-326.8%2C195.6%20-263.9%2C195.6%22%2F%3E%3Crect%20x%3D%22221.2%22%20y%3D%22189.0%22%20width%3D%226.9%22%20height%3D%2211.0%22%2F%3E%3Cpolygon%20points%3D%22224.7%2C89.8%20210.2%2C138.3%20239.1%2C138.3%22%2F%3E%3Cpolygon%20points%3D%22224.7%2C111.8%20204.6%2C160.3%20244.8%2C160.3%22%2F%3E%3Cpolygon%20points%3D%22224.7%2C133.9%20198.9%2C182.4%20250.4%2C182.4%22%2F%3E%3Cpolygon%20points%3D%22224.7%2C155.9%20193.2%2C195.6%20256.1%2C195.6%22%2F%3E%3Crect%20x%3D%22741.2%22%20y%3D%22189.0%22%20width%3D%226.9%22%20height%3D%2211.0%22%2F%3E%3Cpolygon%20points%3D%22744.7%2C89.8%20730.2%2C138.3%20759.1%2C138.3%22%2F%3E%3Cpolygon%20points%3D%22744.7%2C111.8%20724.6%2C160.3%20764.8%2C160.3%22%2F%3E%3Cpolygon%20points%3D%22744.7%2C133.9%20718.9%2C182.4%20770.4%2C182.4%22%2F%3E%3Cpolygon%20points%3D%22744.7%2C155.9%20713.2%2C195.6%20776.1%2C195.6%22%2F%3E%3Crect%20x%3D%22-232.9%22%20y%3D%22189.1%22%20width%3D%227.2%22%20height%3D%2210.9%22%2F%3E%3Cpolygon%20points%3D%22-229.3%2C90.6%20-244.3%2C138.7%20-214.3%2C138.7%22%2F%3E%3Cpolygon%20points%3D%22-229.3%2C112.5%20-250.2%2C160.6%20-208.5%2C160.6%22%2F%3E%3Cpolygon%20points%3D%22-229.3%2C134.4%20-256.0%2C182.5%20-202.6%2C182.5%22%2F%3E%3Cpolygon%20points%3D%22-229.3%2C156.2%20-261.9%2C195.6%20-196.8%2C195.6%22%2F%3E%3Crect%20x%3D%22287.1%22%20y%3D%22189.1%22%20width%3D%227.2%22%20height%3D%2210.9%22%2F%3E%3Cpolygon%20points%3D%22290.7%2C90.6%20275.7%2C138.7%20305.7%2C138.7%22%2F%3E%3Cpolygon%20points%3D%22290.7%2C112.5%20269.8%2C160.6%20311.5%2C160.6%22%2F%3E%3Cpolygon%20points%3D%22290.7%2C134.4%20264.0%2C182.5%20317.4%2C182.5%22%2F%3E%3Cpolygon%20points%3D%22290.7%2C156.2%20258.1%2C195.6%20323.2%2C195.6%22%2F%3E%3Crect%20x%3D%22807.1%22%20y%3D%22189.1%22%20width%3D%227.2%22%20height%3D%2210.9%22%2F%3E%3Cpolygon%20points%3D%22810.7%2C90.6%20795.7%2C138.7%20825.7%2C138.7%22%2F%3E%3Cpolygon%20points%3D%22810.7%2C112.5%20789.8%2C160.6%20831.5%2C160.6%22%2F%3E%3Cpolygon%20points%3D%22810.7%2C134.4%20784.0%2C182.5%20837.4%2C182.5%22%2F%3E%3Cpolygon%20points%3D%22810.7%2C156.2%20778.1%2C195.6%20843.2%2C195.6%22%2F%3E%3Crect%20x%3D%22-158.1%22%20y%3D%22189.4%22%20width%3D%226.6%22%20height%3D%2210.6%22%2F%3E%3Cpolygon%20points%3D%22-154.7%2C93.8%20-168.6%2C140.6%20-140.8%2C140.6%22%2F%3E%3Cpolygon%20points%3D%22-154.7%2C115.1%20-174.1%2C161.8%20-135.4%2C161.8%22%2F%3E%3Cpolygon%20points%3D%22-154.7%2C136.3%20-179.5%2C183.0%20-130.0%2C183.0%22%2F%3E%3Cpolygon%20points%3D%22-154.7%2C157.5%20-184.9%2C195.8%20-124.5%2C195.8%22%2F%3E%3Crect%20x%3D%22361.9%22%20y%3D%22189.4%22%20width%3D%226.6%22%20height%3D%2210.6%22%2F%3E%3Cpolygon%20points%3D%22365.3%2C93.8%20351.4%2C140.6%20379.2%2C140.6%22%2F%3E%3Cpolygon%20points%3D%22365.3%2C115.1%20345.9%2C161.8%20384.6%2C161.8%22%2F%3E%3Cpolygon%20points%3D%22365.3%2C136.3%20340.5%2C183.0%20390.0%2C183.0%22%2F%3E%3Cpolygon%20points%3D%22365.3%2C157.5%20335.1%2C195.8%20395.5%2C195.8%22%2F%3E%3Crect%20x%3D%22881.9%22%20y%3D%22189.4%22%20width%3D%226.6%22%20height%3D%2210.6%22%2F%3E%3Cpolygon%20points%3D%22885.3%2C93.8%20871.4%2C140.6%20899.2%2C140.6%22%2F%3E%3Cpolygon%20points%3D%22885.3%2C115.1%20865.9%2C161.8%20904.6%2C161.8%22%2F%3E%3Cpolygon%20points%3D%22885.3%2C136.3%20860.5%2C183.0%20910.0%2C183.0%22%2F%3E%3Cpolygon%20points%3D%22885.3%2C157.5%20855.1%2C195.8%20915.5%2C195.8%22%2F%3E%3Crect%20x%3D%22-101.1%22%20y%3D%22185.7%22%20width%3D%229.2%22%20height%3D%2214.3%22%2F%3E%3Cpolygon%20points%3D%22-96.5%2C57.2%20-115.8%2C120.1%20-77.2%2C120.1%22%2F%3E%3Cpolygon%20points%3D%22-96.5%2C85.8%20-123.4%2C148.6%20-69.7%2C148.6%22%2F%3E%3Cpolygon%20points%3D%22-96.5%2C114.3%20-130.9%2C177.2%20-62.1%2C177.2%22%2F%3E%3Cpolygon%20points%3D%22-96.5%2C142.9%20-138.5%2C194.3%20-54.6%2C194.3%22%2F%3E%3Crect%20x%3D%22418.9%22%20y%3D%22185.7%22%20width%3D%229.2%22%20height%3D%2214.3%22%2F%3E%3Cpolygon%20points%3D%22423.5%2C57.2%20404.2%2C120.1%20442.8%2C120.1%22%2F%3E%3Cpolygon%20points%3D%22423.5%2C85.8%20396.6%2C148.6%20450.3%2C148.6%22%2F%3E%3Cpolygon%20points%3D%22423.5%2C114.3%20389.1%2C177.2%20457.9%2C177.2%22%2F%3E%3Cpolygon%20points%3D%22423.5%2C142.9%20381.5%2C194.3%20465.4%2C194.3%22%2F%3E%3Crect%20x%3D%22938.9%22%20y%3D%22185.7%22%20width%3D%229.2%22%20height%3D%2214.3%22%2F%3E%3Cpolygon%20points%3D%22943.5%2C57.2%20924.2%2C120.1%20962.8%2C120.1%22%2F%3E%3Cpolygon%20points%3D%22943.5%2C85.8%20916.6%2C148.6%20970.3%2C148.6%22%2F%3E%3Cpolygon%20points%3D%22943.5%2C114.3%20909.1%2C177.2%20977.9%2C177.2%22%2F%3E%3Cpolygon%20points%3D%22943.5%2C142.9%20901.5%2C194.3%20985.4%2C194.3%22%2F%3E%3Crect%20x%3D%22-45.0%22%20y%3D%22185.1%22%20width%3D%228.4%22%20height%3D%2214.9%22%2F%3E%3Cpolygon%20points%3D%22-40.8%2C51.1%20-58.4%2C116.6%20-23.2%2C116.6%22%2F%3E%3Cpolygon%20points%3D%22-40.8%2C80.9%20-65.3%2C146.4%20-16.3%2C146.4%22%2F%3E%3Cpolygon%20points%3D%22-40.8%2C110.7%20-72.1%2C176.2%20-9.4%2C176.2%22%2F%3E%3Cpolygon%20points%3D%22-40.8%2C140.5%20-79.0%2C194.0%20-2.5%2C194.0%22%2F%3E%3Crect%20x%3D%22475.0%22%20y%3D%22185.1%22%20width%3D%228.4%22%20height%3D%2214.9%22%2F%3E%3Cpolygon%20points%3D%22479.2%2C51.1%20461.6%2C116.6%20496.8%2C116.6%22%2F%3E%3Cpolygon%20points%3D%22479.2%2C80.9%20454.7%2C146.4%20503.7%2C146.4%22%2F%3E%3Cpolygon%20points%3D%22479.2%2C110.7%20447.9%2C176.2%20510.6%2C176.2%22%2F%3E%3Cpolygon%20points%3D%22479.2%2C140.5%20441.0%2C194.0%20517.5%2C194.0%22%2F%3E%3Crect%20x%3D%22995.0%22%20y%3D%22185.1%22%20width%3D%228.4%22%20height%3D%2214.9%22%2F%3E%3Cpolygon%20points%3D%22999.2%2C51.1%20981.6%2C116.6%201016.8%2C116.6%22%2F%3E%3Cpolygon%20points%3D%22999.2%2C80.9%20974.7%2C146.4%201023.7%2C146.4%22%2F%3E%3Cpolygon%20points%3D%22999.2%2C110.7%20967.9%2C176.2%201030.6%2C176.2%22%2F%3E%3Cpolygon%20points%3D%22999.2%2C140.5%20961.0%2C194.0%201037.5%2C194.0%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:520px 200px;animation:sc-mid 5s linear infinite}
+.ly.near{height:240px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22760%22%20height%3D%22240%22%20viewBox%3D%220%200%20760%20240%22%3E%3Cg%20fill%3D%22%2308164F%22%3E%3Crect%20x%3D%22-680.3%22%20y%3D%22218.8%22%20width%3D%2212.0%22%20height%3D%2221.2%22%2F%3E%3Cpolygon%20points%3D%22-674.3%2C27.9%20-699.5%2C121.2%20-649.2%2C121.2%22%2F%3E%3Cpolygon%20points%3D%22-674.3%2C70.3%20-709.3%2C163.6%20-639.4%2C163.6%22%2F%3E%3Cpolygon%20points%3D%22-674.3%2C112.7%20-719.1%2C206.1%20-629.5%2C206.1%22%2F%3E%3Cpolygon%20points%3D%22-674.3%2C155.2%20-729.0%2C231.5%20-619.7%2C231.5%22%2F%3E%3Crect%20x%3D%2279.7%22%20y%3D%22218.8%22%20width%3D%2212.0%22%20height%3D%2221.2%22%2F%3E%3Cpolygon%20points%3D%2285.7%2C27.9%2060.5%2C121.2%20110.8%2C121.2%22%2F%3E%3Cpolygon%20points%3D%2285.7%2C70.3%2050.7%2C163.6%20120.6%2C163.6%22%2F%3E%3Cpolygon%20points%3D%2285.7%2C112.7%2040.9%2C206.1%20130.5%2C206.1%22%2F%3E%3Cpolygon%20points%3D%2285.7%2C155.2%2031.0%2C231.5%20140.3%2C231.5%22%2F%3E%3Crect%20x%3D%22839.7%22%20y%3D%22218.8%22%20width%3D%2212.0%22%20height%3D%2221.2%22%2F%3E%3Cpolygon%20points%3D%22845.7%2C27.9%20820.5%2C121.2%20870.8%2C121.2%22%2F%3E%3Cpolygon%20points%3D%22845.7%2C70.3%20810.7%2C163.6%20880.6%2C163.6%22%2F%3E%3Cpolygon%20points%3D%22845.7%2C112.7%20800.9%2C206.1%20890.5%2C206.1%22%2F%3E%3Cpolygon%20points%3D%22845.7%2C155.2%20791.0%2C231.5%20900.3%2C231.5%22%2F%3E%3Crect%20x%3D%22-481.0%22%20y%3D%22224.7%22%20width%3D%229.6%22%20height%3D%2215.3%22%2F%3E%3Cpolygon%20points%3D%22-476.3%2C86.8%20-496.2%2C154.2%20-456.3%2C154.2%22%2F%3E%3Cpolygon%20points%3D%22-476.3%2C117.4%20-504.0%2C184.8%20-448.5%2C184.8%22%2F%3E%3Cpolygon%20points%3D%22-476.3%2C148.1%20-511.9%2C215.5%20-440.7%2C215.5%22%2F%3E%3Cpolygon%20points%3D%22-476.3%2C178.7%20-519.7%2C233.9%20-432.8%2C233.9%22%2F%3E%3Crect%20x%3D%22279.0%22%20y%3D%22224.7%22%20width%3D%229.6%22%20height%3D%2215.3%22%2F%3E%3Cpolygon%20points%3D%22283.7%2C86.8%20263.8%2C154.2%20303.7%2C154.2%22%2F%3E%3Cpolygon%20points%3D%22283.7%2C117.4%20256.0%2C184.8%20311.5%2C184.8%22%2F%3E%3Cpolygon%20points%3D%22283.7%2C148.1%20248.1%2C215.5%20319.3%2C215.5%22%2F%3E%3Cpolygon%20points%3D%22283.7%2C178.7%20240.3%2C233.9%20327.2%2C233.9%22%2F%3E%3Crect%20x%3D%221039.0%22%20y%3D%22224.7%22%20width%3D%229.6%22%20height%3D%2215.3%22%2F%3E%3Cpolygon%20points%3D%221043.7%2C86.8%201023.8%2C154.2%201063.7%2C154.2%22%2F%3E%3Cpolygon%20points%3D%221043.7%2C117.4%201016.0%2C184.8%201071.5%2C184.8%22%2F%3E%3Cpolygon%20points%3D%221043.7%2C148.1%201008.1%2C215.5%201079.3%2C215.5%22%2F%3E%3Cpolygon%20points%3D%221043.7%2C178.7%201000.3%2C233.9%201087.2%2C233.9%22%2F%3E%3Crect%20x%3D%22-261.2%22%20y%3D%22220.3%22%20width%3D%2212.7%22%20height%3D%2219.7%22%2F%3E%3Cpolygon%20points%3D%22-254.8%2C43.0%20-281.5%2C129.7%20-228.2%2C129.7%22%2F%3E%3Cpolygon%20points%3D%22-254.8%2C82.4%20-291.9%2C169.1%20-217.8%2C169.1%22%2F%3E%3Cpolygon%20points%3D%22-254.8%2C121.8%20-302.3%2C208.5%20-207.4%2C208.5%22%2F%3E%3Cpolygon%20points%3D%22-254.8%2C161.2%20-312.7%2C232.1%20-197.0%2C232.1%22%2F%3E%3Crect%20x%3D%22498.8%22%20y%3D%22220.3%22%20width%3D%2212.7%22%20height%3D%2219.7%22%2F%3E%3Cpolygon%20points%3D%22505.2%2C43.0%20478.5%2C129.7%20531.8%2C129.7%22%2F%3E%3Cpolygon%20points%3D%22505.2%2C82.4%20468.1%2C169.1%20542.2%2C169.1%22%2F%3E%3Cpolygon%20points%3D%22505.2%2C121.8%20457.7%2C208.5%20552.6%2C208.5%22%2F%3E%3Cpolygon%20points%3D%22505.2%2C161.2%20447.3%2C232.1%20563.0%2C232.1%22%2F%3E%3Crect%20x%3D%221258.8%22%20y%3D%22220.3%22%20width%3D%2212.7%22%20height%3D%2219.7%22%2F%3E%3Cpolygon%20points%3D%221265.2%2C43.0%201238.5%2C129.7%201291.8%2C129.7%22%2F%3E%3Cpolygon%20points%3D%221265.2%2C82.4%201228.1%2C169.1%201302.2%2C169.1%22%2F%3E%3Cpolygon%20points%3D%221265.2%2C121.8%201217.7%2C208.5%201312.6%2C208.5%22%2F%3E%3Cpolygon%20points%3D%221265.2%2C161.2%201207.3%2C232.1%201323.0%2C232.1%22%2F%3E%3Crect%20x%3D%22-122.6%22%20y%3D%22219.3%22%20width%3D%2212.7%22%20height%3D%2220.7%22%2F%3E%3Cpolygon%20points%3D%22-116.2%2C33.0%20-142.9%2C124.1%20-89.6%2C124.1%22%2F%3E%3Cpolygon%20points%3D%22-116.2%2C74.4%20-153.3%2C165.5%20-79.2%2C165.5%22%2F%3E%3Cpolygon%20points%3D%22-116.2%2C115.8%20-163.7%2C206.9%20-68.8%2C206.9%22%2F%3E%3Cpolygon%20points%3D%22-116.2%2C157.2%20-174.1%2C231.7%20-58.3%2C231.7%22%2F%3E%3Crect%20x%3D%22637.4%22%20y%3D%22219.3%22%20width%3D%2212.7%22%20height%3D%2220.7%22%2F%3E%3Cpolygon%20points%3D%22643.8%2C33.0%20617.1%2C124.1%20670.4%2C124.1%22%2F%3E%3Cpolygon%20points%3D%22643.8%2C74.4%20606.7%2C165.5%20680.8%2C165.5%22%2F%3E%3Cpolygon%20points%3D%22643.8%2C115.8%20596.3%2C206.9%20691.2%2C206.9%22%2F%3E%3Cpolygon%20points%3D%22643.8%2C157.2%20585.9%2C231.7%20701.7%2C231.7%22%2F%3E%3Crect%20x%3D%221397.4%22%20y%3D%22219.3%22%20width%3D%2212.7%22%20height%3D%2220.7%22%2F%3E%3Cpolygon%20points%3D%221403.8%2C33.0%201377.1%2C124.1%201430.4%2C124.1%22%2F%3E%3Cpolygon%20points%3D%221403.8%2C74.4%201366.7%2C165.5%201440.8%2C165.5%22%2F%3E%3Cpolygon%20points%3D%221403.8%2C115.8%201356.3%2C206.9%201451.2%2C206.9%22%2F%3E%3Cpolygon%20points%3D%221403.8%2C157.2%201345.9%2C231.7%201461.7%2C231.7%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%22228%22%20width%3D%22760%22%20height%3D%2212%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:760px 240px;animation:sc-near 2.2s linear infinite}
+.door.r .ly.far{animation-delay:-7s}.door.r .ly.mid{animation-delay:-2.2s}.door.r .ly.near{animation-delay:-1s}
+.door .sticker{bottom:6%}
+@keyframes sc-far{to{background-position:-700px 100%}}
+@keyframes sc-mid{to{background-position:-520px 100%}}
+@keyframes sc-near{to{background-position:-760px 100%}}
+#intro{transition:transform 1.9s cubic-bezier(.55,0,.25,1),opacity .8s ease-in 1.05s;transform-origin:50% 46%}
+#intro.open{transform:scale(1.6);opacity:0;pointer-events:none}
+#intro.gone{transition:none}
+@keyframes arrive{from{opacity:0;transform:scale(.9)}55%{opacity:1}to{opacity:1;transform:none}}
+@keyframes hdrin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+body.arriving #s-start{animation:arrive 1.8s cubic-bezier(.16,.84,.3,1) both;transform-origin:50% 40%}
+body.arriving header{animation:hdrin 1.3s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){.ly{animation:none}#intro,.door{transition:none}body.arriving #s-start,body.arriving header{animation:none}}
+
+
+/* ===== Glass v2 + smooth motion ===== */
+:root{
+  --ease:cubic-bezier(.22,1,.36,1);
+  --g-hi:rgba(255,255,255,.20); --g-lo:rgba(255,255,255,.03); --g-tint:rgba(255,255,255,.035); --g-tint-hover:rgba(255,255,255,.13);
+  --g-sheen:linear-gradient(135deg,var(--g-hi),var(--g-lo) 55%,var(--g-hi) 150%);
+  --g-ring:linear-gradient(145deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.14) 28%,rgba(255,255,255,.04) 62%,rgba(255,255,255,.40) 100%);
+  --g-blur:blur(24px) saturate(180%) brightness(1.06);
+}
+:root.day{
+  --g-hi:rgba(255,255,255,.85); --g-lo:rgba(255,255,255,.35); --g-tint:rgba(255,255,255,.25); --g-tint-hover:rgba(255,255,255,.85);
+  --g-ring:linear-gradient(145deg,#fff 0%,rgba(255,255,255,.55) 30%,rgba(9,49,141,.10) 65%,rgba(255,255,255,.95) 100%);
+  --g-blur:blur(22px) saturate(160%);
+}
+
+/* frosted surface: sheen + tint + deep blur + soft shadow */
+.tbtn,.btn:not(.btn-go),.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{background:var(--g-sheen),var(--g-tint);-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);border-color:transparent;box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.35)}
+.chips span{border-color:var(--glass-line);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.lc{border-top-color:var(--c)}
+.nameboard,.nameboard.y{background:var(--g-sheen),color-mix(in srgb,var(--c) 22%,var(--panel-dark));-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);border-color:transparent;box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.4),inset 0 -24px 44px color-mix(in srgb,var(--c) 10%,transparent)}
+.board{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.02) 45%,rgba(255,255,255,.06)),color-mix(in srgb,var(--board) 58%,transparent);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.28)}
+:root.day .board{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.02) 45%,rgba(255,255,255,.06)),color-mix(in srgb,var(--board) 84%,transparent)}
+header{background:linear-gradient(180deg,color-mix(in srgb,var(--wall) 95%,transparent),color-mix(in srgb,var(--wall) 92%,transparent));-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);box-shadow:0 1px 0 var(--glass-line),0 12px 32px rgba(0,10,50,.18)}
+
+/* gradient edge (light catches the top-left rim) */
+.nameboard,.board,.lc,.ix-board,.awards div,.ways a,.ways button,.tbtn,.btn:not(.btn-go),.links a{position:relative}
+.nameboard::before,.board::before,.lc::before,.ix-board::before,.awards div::before,.ways a::before,.ways button::before,.tbtn::before,.btn:not(.btn-go)::before,.links a::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:var(--g-ring);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
+.lc::before{inset:-9px -1px -1px -1px}
+.nameboard::before{background:linear-gradient(145deg,color-mix(in srgb,var(--c) 35%,#fff) 0%,color-mix(in srgb,var(--c) 30%,transparent) 35%,color-mix(in srgb,var(--c) 15%,transparent) 65%,color-mix(in srgb,var(--c) 85%,#fff) 100%)}
+.board::before{background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.10) 30%,rgba(255,255,255,.04) 62%,rgba(255,255,255,.30))}
+
+/* soft light that follows the pointer */
+.nameboard::after,.board::after,.lc::after,.ix-board::after,.awards div::after,.ways a::after,.ways button::after,.tbtn::after,.btn:not(.btn-go)::after,.links a::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.18),transparent 62%);opacity:0;transition:opacity .5s ease}
+@media (hover:hover){.nameboard:hover::after,.board:hover::after,.lc:hover::after,.ix-board:hover::after,.awards div:hover::after,.ways a:hover::after,.ways button:hover::after,.tbtn:hover::after,.btn:not(.btn-go):hover::after,.links a:hover::after{opacity:1}}
+
+/* hover fills keep the sheen so nothing snaps */
+.btn:not(.btn-go):hover{background:var(--g-sheen),var(--g-tint-hover)}
+.ways a:hover,.ways button:hover{background:var(--g-sheen),color-mix(in srgb,var(--ink) 90%,transparent);color:var(--wall)}
+.links a:hover{background:var(--g-sheen),var(--ink);color:var(--wall)}
+
+/* eased motion */
+.btn,.tbtn,.ways a,.ways button,.links a,.lc,.awards div,.chips span{transition:transform .45s var(--ease),box-shadow .45s var(--ease),background-color .35s ease,color .35s ease,border-color .35s ease}
+@media (hover:hover){.btn:hover,.tbtn:hover,.ways a:hover,.ways button:hover,.links a:hover,.lc:hover,.awards div:hover{transform:translateY(-2px)}}
+.btn:active,.tbtn:active,.ways a:active,.ways button:active,.links a:active{transform:translateY(0) scale(.97);transition-duration:.15s}
+.content{transition:opacity .9s .2s ease,transform 1s .2s var(--ease)}
+.rm-train{transition:left .55s var(--ease)}
+.toast{transition:opacity .4s ease,transform .5s var(--ease)}
+html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .55s ease,color .55s ease,border-color .55s ease,box-shadow .55s ease,fill .55s ease,stroke .55s ease!important}
+
+/* chime button: a pink fill grows from the centre, waves switch on */
+#sound{background:radial-gradient(circle closest-side,var(--ember) 98%,transparent 100%) 50% 50%/0% 0% no-repeat,var(--g-sheen),var(--g-tint);transition:background-size .65s var(--ease),color .35s ease,box-shadow .55s var(--ease),transform .45s var(--ease)}
+#sound[aria-pressed="true"]{background-size:320% 320%,auto,auto;color:var(--on);box-shadow:0 0 0 4px color-mix(in srgb,var(--ember) 22%,transparent),0 10px 28px color-mix(in srgb,var(--ember) 40%,transparent),inset 0 1px 0 rgba(255,255,255,.5)}
+#sound svg path{transform-origin:11px 12px}
+#sound svg path:nth-child(n+2){opacity:.28;transform:scale(.8);transition:opacity .4s ease,transform .5s var(--ease)}
+#sound[aria-pressed="true"] svg path:nth-child(n+2){opacity:1;transform:scale(1)}
+#sound[aria-pressed="true"] svg path:first-child{animation:spk .55s var(--ease)}
+#sound[aria-pressed="true"] svg path:nth-child(2){animation:wave 1.1s ease-in-out .3s 2}
+#sound[aria-pressed="true"] svg path:nth-child(3){animation:wave 1.1s ease-in-out .5s 2}
+@keyframes spk{0%{transform:scale(1)}40%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes wave{0%,100%{opacity:1}50%{opacity:.3}}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .tbtn,.btn:not(.btn-go),.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{background:var(--g-sheen),var(--tile)}
+}
+@media (prefers-reduced-transparency:reduce){
+  header,.nameboard,.nameboard.y,.board,.tbtn,.btn,.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn,.tbtn,.ways a,.ways button,.links a,.lc,.awards div,.chips span,#sound,.rm-train,.content,.toast{transition:none!important}
+  .btn:hover,.tbtn:hover,.ways a:hover,.ways button:hover,.links a:hover,.lc:hover,.awards div:hover{transform:none}
+  #sound svg path{animation:none!important;transition:none!important}
+}
 
 @media (max-width:1000px){
   .st-grid{grid-template-columns:1fr;gap:28px}
@@ -230,12 +451,12 @@ b,strong{font-weight:500}
 @media (max-width:640px){
   .bar{grid-template-columns:auto auto;height:auto;padding:8px 20px;gap:8px}
   .led{grid-column:1/-1;order:3;height:34px}
-  .led-text{font-size:16px}
+  .led-text{font-size:13px}
   .mark small,.tbtn .lbl{display:none}
   .rm-stop .d{width:14px;height:14px;border-width:3px}
   .rm-stop{top:31px}
   .station{padding:60px 0 50px;min-height:auto}
-  .flap span{font-size:30px;min-width:27px}
+  .flap span{font-size:40px;min-width:29px}
   .door .sticker{display:none}
   .scene{height:250px}
   .card{width:230px;top:80px}
@@ -257,18 +478,18 @@ b,strong{font-weight:500}
 
 <!-- ===== Opening: tap your card, the doors open ===== -->
 <div id="intro" role="dialog" aria-modal="true" aria-label="Enter the site">
-  <div class="door l" aria-hidden="true"><div class="win"></div><div class="strip"></div><p class="sticker">Please do not lean on the doors, or on assumptions<b>कृपया दरवाज़ों से टेक न लगाएँ</b></p></div>
-  <div class="door r" aria-hidden="true"><div class="win"></div><div class="strip"></div><p class="sticker">This train goes to: shipped work only<b>यह ट्रेन जाती है: मेरे काम तक</b></p></div>
+  <div class="door l" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">Please do not lean on the doors, or on assumptions<b>कृपया दरवाज़ों से टेक न लगाएँ</b></p></div>
+  <div class="door r" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">This train goes to: shipped work only<b>यह ट्रेन जाती है: मेरे काम तक</b></p></div>
   <div class="gate">
     <div class="gate-led" id="gate-led">PLATFORM 1: RAJVEER SINGH</div>
     <div class="scene">
       <div class="validator" aria-hidden="true"><div class="screen" id="v-screen">TAP CARD</div><div class="lamp"></div><div class="pad"></div></div>
       <button class="card" id="tapcard" type="button" aria-label="Tap your card to enter Rajveer's portfolio">
-        <div class="row"><span>RAJVEER CARD</span><span style="color:#1E63C6">Tap me</span></div>
+        <div class="row"><span>RAJVEER CARD</span><span style="color:#09318D">Tap me</span></div>
         <div class="chip"></div>
         <div class="nm">Rajveer Singh</div>
         <div class="vd">Valid on Product, Data and AI lines.<br>Issued NIT Delhi, 2026.</div>
-        <div class="stripes" aria-hidden="true"><i style="background:#E8A900"></i><i style="background:#1E63C6"></i><i style="background:#C2177A"></i></div>
+        <div class="stripes" aria-hidden="true"><i style="background:#FD91CC"></i><i style="background:#FCFFFF"></i><i style="background:#8FA8FF"></i></div>
       </button>
     </div>
     <p class="hint">Tap the card to board. Activation takes one tap.</p>
@@ -279,7 +500,7 @@ b,strong{font-weight:500}
 <header>
   <div class="wrap bar">
     <a class="mark" href="#s-start" aria-label="Rajveer Singh, back to start">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--ink)"/><path d="M12 18 L32 34" stroke="var(--yellow)" stroke-width="7" stroke-linecap="round"/><path d="M52 18 L32 34" stroke="var(--magenta)" stroke-width="7" stroke-linecap="round"/><path d="M32 54 V34" stroke="var(--blue)" stroke-width="7" stroke-linecap="round"/><circle cx="32" cy="34" r="8" fill="#fff" stroke="var(--ink)" stroke-width="3"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--ink)"/><path d="M12 18 L32 34" stroke="var(--peach)" stroke-width="7" stroke-linecap="round"/><path d="M52 18 L32 34" stroke="var(--violet)" stroke-width="7" stroke-linecap="round"/><path d="M32 54 V34" stroke="var(--blue)" stroke-width="7" stroke-linecap="round"/><circle cx="32" cy="34" r="8" fill="#fff" stroke="var(--ink)" stroke-width="3"/></svg>
       <span><b>Rajveer Singh</b><small>राजवीर सिंह</small></span>
     </a>
     <div class="led" role="status" aria-live="polite"><span class="led-text" id="led">Welcome aboard. This train terminates at a conversation with you.</span></div>
@@ -304,10 +525,10 @@ b,strong{font-weight:500}
       <h3>I find where users drop off, then build the fix.</h3>
       <p>Product, data and AI are my three lines. This train runs through where I've worked, what I've built and how to reach me. Scroll to ride; the map up top is your progress bar, minus the fake percentages.</p>
       <div class="linelist">
-        <div style="--c:var(--red)"><i></i>Experience line <small>3 stations</small></div>
-        <div style="--c:var(--magenta)"><i></i>Projects line <small>6 platforms</small></div>
-        <div style="--c:var(--yellow)"><i></i>Skills line <small>1 stop</small></div>
-        <div style="--c:var(--green)"><i></i>Exit gate <small>say hi</small></div>
+        <div style="--c:var(--ember)"><i></i>Experience line <small>3 stations</small></div>
+        <div style="--c:var(--violet)"><i></i>Projects line <small>6 platforms</small></div>
+        <div style="--c:var(--peach)"><i></i>Skills line <small>1 stop</small></div>
+        <div style="--c:var(--sky)"><i></i>Exit gate <small>say hi</small></div>
       </div>
       <div class="row-btns"><a class="btn btn-go" href="#s-nit">Start the journey</a><a class="btn" href="#s-exit">Jump to exit gate</a></div>
     </div>
@@ -317,8 +538,8 @@ b,strong{font-weight:500}
 <div class="tunnel" aria-hidden="true"><span>Next: NIT Delhi, where v1.0 shipped</span></div>
 
 <!-- Experience line -->
-<section class="station" id="s-nit" data-name="NIT Delhi" data-short="NIT Delhi" data-c="--red" data-msg="Next station: NIT Delhi. Version 1.0 of Rajveer shipped here. Please mind the backlog.">
-  <div class="wrap st-grid" style="--c:var(--red)">
+<section class="station" id="s-nit" data-name="NIT Delhi" data-short="NIT Delhi" data-c="--ember" data-msg="Next station: NIT Delhi. Version 1.0 of Rajveer shipped here. Please mind the backlog.">
+  <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
       <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 1</span></div><h2>NIT Delhi</h2><span class="hi">एनआईटी दिल्ली</span></div>
       <p class="arrival">Aug 2022 – May 2026</p>
@@ -338,8 +559,8 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: Corporate Cruise. Loading insights…</span></div>
 
-<section class="station" id="s-cc" data-name="Corporate Cruise" data-short="Corp. Cruise" data-c="--red" data-msg="Next station: Corporate Cruise. Passengers with SLA complaints, this is your stop.">
-  <div class="wrap st-grid" style="--c:var(--red)">
+<section class="station" id="s-cc" data-name="Corporate Cruise" data-short="Corp. Cruise" data-c="--ember" data-msg="Next station: Corporate Cruise. Passengers with SLA complaints, this is your stop.">
+  <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
       <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 2</span></div><h2>Corporate Cruise</h2><span class="hi">कॉर्पोरेट क्रूज़</span></div>
       <p class="arrival">Jun – Aug 2025, New Delhi</p>
@@ -358,8 +579,8 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: WizCommerce. Users ahead</span></div>
 
-<section class="station" id="s-wiz" data-name="WizCommerce" data-short="WizCommerce" data-c="--red" data-msg="Next station: WizCommerce. Real users, real launch blockers. Change here for the Projects line.">
-  <div class="wrap st-grid" style="--c:var(--red)">
+<section class="station" id="s-wiz" data-name="WizCommerce" data-short="WizCommerce" data-c="--ember" data-msg="Next station: WizCommerce. Real users, real launch blockers. Change here for the Projects line.">
+  <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
       <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 3</span></div><h2>WizCommerce</h2><span class="hi">विज़कॉमर्स</span></div>
       <p class="arrival">Apr – Jul 2026, Bengaluru</p>
@@ -378,15 +599,15 @@ b,strong{font-weight:500}
   </div>
 </section>
 
-<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--red)"></i><i style="--c:var(--magenta)"></i></div><div><b>Interchange</b><span>Change here for the Projects line. Six platforms, all shipped to production (or close enough).</span></div></div></div></div>
+<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--ember)"></i><i style="--c:var(--violet)"></i></div><div><b>Interchange</b><span>Change here for the Projects line. Six platforms, all shipped to production (or close enough).</span></div></div></div></div>
 <div class="tunnel" aria-hidden="true"><span>Projects line. All builds shipped</span></div>
 
 <!-- Projects line -->
-<section class="station" id="s-renter" data-name="Renter's Copilot" data-short="Renter's" data-c="--magenta" data-msg="Platform 1: Renter's Copilot. Now arriving with 115 underpriced flats. Rent responsibly.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-renter" data-name="Renter's Copilot" data-short="Renter's" data-c="--violet" data-msg="Platform 1: Renter's Copilot. Now arriving with 115 underpriced flats. Rent responsibly.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 1</span></div><h2>Renter's Copilot</h2><span class="hi">रेंटर्स कोपायलट</span></div><p class="arrival">Aug 2026, live</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">AI + Data</span><span>Live service</span></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">AI + Data</span><span>Live service</span></div>
       <div class="flaps"><div class="flap" aria-hidden="true"><span>1</span><span>1</span><span>5</span></div><p>underpriced rentals flagged every week</p></div>
       <p class="story">Renters can't tell if a listing is fairly priced. A weekly pipeline scrapes about 1,400 listings across 40 Bengaluru localities, predicts fair rent with XGBoost (23.1% error, down from 33%) and flags deals on a live app. Fixing a location bug took unique listings from 39 to 1,566. Regex beat Gemini for pulling fields out of listings (90.2% vs 89.2%, milliseconds, free), so regex shipped.</p>
       <div class="chips"><span>Python</span><span>Playwright</span><span>XGBoost</span><span>SQLite</span><span>Streamlit</span><span>GitHub Actions</span></div>
@@ -397,12 +618,12 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: CSM Hub, version 2</span></div>
 
-<section class="station" id="s-csm" data-name="CSM Hub" data-short="CSM Hub" data-c="--magenta" data-msg="Platform 2: CSM Hub. Version 2 is here because version 1 was too noisy. Iterate, don't hesitate.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-csm" data-name="CSM Hub" data-short="CSM Hub" data-c="--violet" data-msg="Platform 2: CSM Hub. Version 2 is here because version 1 was too noisy. Iterate, don't hesitate.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 2</span></div><h2>CSM Hub</h2><span class="hi">सीएसएम हब</span></div><p class="arrival">WizCommerce, used daily</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">Product + AI</span><span>In daily use</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>3</span><span>5</span></div><svg viewBox="0 0 40 20" width="40" height="20" aria-hidden="true" style="margin-bottom:14px"><path d="M2 10h32M26 3l8 7-8 7" fill="none" stroke="#FFB21A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="flap" aria-hidden="true"><span>3</span></div><p>minutes of prep per client call</p></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">Product + AI</span><span>In daily use</span></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>3</span><span>5</span></div><svg viewBox="0 0 40 20" width="40" height="20" aria-hidden="true" style="margin-bottom:14px"><path d="M2 10h32M26 3l8 7-8 7" fill="none" stroke="#FD91CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="flap" aria-hidden="true"><span>3</span></div><p>minutes of prep per client call</p></div>
       <p class="story">Customer Success Managers jumped between four tools before every call. My first attempt, AI updates dropped into Slack, buried them in noise. After sitting with the team I rebuilt it as a pre-call brief and one view per client across 71 domains, pulling HubSpot, Jira, Gmail and Gong, with Gemini sentiment scoring and a risk leaderboard. All four CSMs used it daily.</p>
       <div class="chips"><span>React</span><span>Vite</span><span>Supabase</span><span>Gemini API</span><span>Upstash Redis</span><span>Claude + MCP</span></div>
     </div></div>
@@ -411,11 +632,11 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: Credit Risk. Hold on to your AUC</span></div>
 
-<section class="station" id="s-credit" data-name="Credit Risk" data-short="Credit Risk" data-c="--magenta" data-msg="Platform 3: Credit Risk. Please mind the class imbalance between the doors and the platform.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-credit" data-name="Credit Risk" data-short="Credit Risk" data-c="--violet" data-msg="Platform 3: Credit Risk. Please mind the class imbalance between the doors and the platform.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 3</span></div><h2>Credit Risk</h2><span class="hi">क्रेडिट रिस्क</span></div><p class="arrival">Jun 2026</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">Data + ML</span><span>150K records</span></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">Data + ML</span><span>150K records</span></div>
       <div class="flaps"><div class="flap" aria-hidden="true"><span>0</span><span>.</span><span>8</span><span>6</span><span>8</span></div><p>AUC, ranking risky borrowers above safe ones</p></div>
       <p class="story">Compared logistic regression, a decision tree and XGBoost on a heavily imbalanced dataset (6.7% defaults). XGBoost won. Three risk tiers gave a 22x gap in default rates, an Isolation Forest plus simple rules gave a 4x lift on flagged accounts, and scores became approve, review or reject decisions served through FastAPI.</p>
       <div class="chips"><span>Python</span><span>XGBoost</span><span>scikit-learn</span><span>Isolation Forest</span><span>FastAPI</span></div>
@@ -426,11 +647,11 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: Veritas. No false alarms</span></div>
 
-<section class="station" id="s-veritas" data-name="Veritas" data-short="Veritas" data-c="--magenta" data-msg="Platform 4: Veritas. Two signals required before any alarm. No false positives on this train.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-veritas" data-name="Veritas" data-short="Veritas" data-c="--violet" data-msg="Platform 4: Veritas. Two signals required before any alarm. No false positives on this train.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 4</span></div><h2>Veritas</h2><span class="hi">वेरिटास</span></div><p class="arrival">Jul 2026, InCruiter hackathon</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">AI + HR tech</span><span>Hackathon build</span></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">AI + HR tech</span><span>Hackathon build</span></div>
       <div class="flaps"><div class="flap" aria-hidden="true"><span>2</span><span>+</span></div><p>independent signals before any alert fires</p></div>
       <p class="story">AI interview copilots are invisible to screen sharing, so Veritas watches for the behaviour they cause: gaze tracking, answer-timing patterns, virtual camera checks and trick questions. One odd moment can never flag an honest candidate on its own, and every alert comes with evidence a human reviews.</p>
       <div class="chips"><span>Next.js</span><span>TypeScript</span><span>WebRTC</span><span>Socket.IO</span><span>MediaPipe</span></div>
@@ -441,11 +662,11 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: Zamp Nexus</span></div>
 
-<section class="station" id="s-zamp" data-name="Zamp Nexus" data-short="Zamp" data-c="--magenta" data-msg="Platform 5: Zamp Nexus. One CSV in, fifty states out. The ride, sadly, is not tax-free.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-zamp" data-name="Zamp Nexus" data-short="Zamp" data-c="--violet" data-msg="Platform 5: Zamp Nexus. One CSV in, fifty states out. The ride, sadly, is not tax-free.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 5</span></div><h2>Zamp Nexus</h2><span class="hi">ज़ैम्प नेक्सस</span></div><p class="arrival">May 2026, live</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">AI + Fintech</span><span>Live service</span></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">AI + Fintech</span><span>Live service</span></div>
       <div class="flaps"><div class="flap" aria-hidden="true"><span>5</span><span>0</span></div><p>US states checked from one uploaded CSV</p></div>
       <p class="story">Upload a transaction file and it detects the columns, checks each state against standard economic nexus thresholds, maps exposure with filing deadlines, and has Gemini write a plain-language risk brief. Later extended into a multi-client view for accounting firms. Next step would be each state's own thresholds.</p>
       <div class="chips"><span>React</span><span>D3</span><span>Node.js</span><span>Gemini API</span><span>Docker</span></div>
@@ -456,11 +677,11 @@ b,strong{font-weight:500}
 
 <div class="tunnel" aria-hidden="true"><span>Next: MDM. Deduplicating…</span></div>
 
-<section class="station" id="s-mdm" data-name="MDM Dashboard" data-short="MDM" data-c="--magenta" data-msg="Platform 6: MDM Dashboard. Duplicate passengers will be merged at this station.">
-  <div class="wrap st-grid" style="--c:var(--magenta)">
+<section class="station" id="s-mdm" data-name="MDM Dashboard" data-short="MDM" data-c="--violet" data-msg="Platform 6: MDM Dashboard. Duplicate passengers will be merged at this station.">
+  <div class="wrap st-grid" style="--c:var(--violet)">
     <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 6</span></div><h2>MDM Dashboard</h2><span class="hi">एमडीएम डैशबोर्ड</span></div><p class="arrival">Power BI</p></div>
     <div class="content"><div class="board">
-      <div class="top"><span class="pill" style="--c:var(--magenta)">Data quality</span><span>Power BI</span></div>
+      <div class="top"><span class="pill" style="--c:var(--violet)">Data quality</span><span>Power BI</span></div>
       <div class="flaps"><div class="flap" aria-hidden="true"><span>4</span><span>1</span><span>3</span><span>0</span></div><p>customer records scored for quality</p></div>
       <p class="story">A customer master dataset seeded with duplicates and messy formats. I designed match-key deduplication (normalised name plus postal code), sorted exceptions into five types, gave every record a 0–100 quality score, and built 25+ DAX measures with an 80-week match-rate trend.</p>
       <div class="chips"><span>Power BI</span><span>DAX</span><span>Power Query M</span><span>Deduplication</span></div>
@@ -468,18 +689,18 @@ b,strong{font-weight:500}
   </div>
 </section>
 
-<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--magenta)"></i><i style="--c:var(--yellow)"></i></div><div><b>Interchange</b><span>Change here for Skills. Then the exit gate, where this funnel converts.</span></div></div></div></div>
+<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--violet)"></i><i style="--c:var(--peach)"></i></div><div><b>Interchange</b><span>Change here for Skills. Then the exit gate, where this funnel converts.</span></div></div></div></div>
 <div class="tunnel" aria-hidden="true"><span>Skills line. No scope creep</span></div>
 
 <!-- Skills -->
-<section class="station" id="s-skills" data-name="Skills" data-short="Skills" data-c="--yellow" data-msg="Next station: Skills. All three lines stop here. Feature-complete, not scope-creeping.">
-  <div class="wrap st-grid" style="--c:var(--yellow)">
+<section class="station" id="s-skills" data-name="Skills" data-short="Skills" data-c="--peach" data-msg="Next station: Skills. All three lines stop here. Feature-complete, not scope-creeping.">
+  <div class="wrap st-grid" style="--c:var(--peach)">
     <div><div class="nameboard y"><div class="no"><span>Skills line</span><span>Stop 1</span></div><h2>Skills</h2><span class="hi">कौशल</span></div><p class="arrival">What I reach for</p></div>
     <div class="content">
       <div class="lines3">
-        <div class="lc" style="--c:var(--yellow)"><h4>Product</h4><ul class="mini"><li>PRDs and user stories</li><li>UAT and launch readiness</li><li>Funnels and event tracking</li><li>A/B tests and root cause analysis</li><li>Prioritisation</li></ul></div>
+        <div class="lc" style="--c:var(--peach)"><h4>Product</h4><ul class="mini"><li>PRDs and user stories</li><li>UAT and launch readiness</li><li>Funnels and event tracking</li><li>A/B tests and root cause analysis</li><li>Prioritisation</li></ul></div>
         <div class="lc" style="--c:var(--blue)"><h4>Data</h4><ul class="mini"><li>SQL: MySQL, SQLite</li><li>Python and pandas</li><li>Metabase, Power BI, DAX</li><li>scikit-learn and XGBoost</li><li>Excel and ETL</li></ul></div>
-        <div class="lc" style="--c:var(--magenta)"><h4>AI and building</h4><ul class="mini"><li>Claude Code and MCP agents</li><li>Gemini API</li><li>React, Next.js, FastAPI</li><li>Supabase and Vercel</li><li>Playwright, GitHub Actions</li></ul></div>
+        <div class="lc" style="--c:var(--violet)"><h4>AI and building</h4><ul class="mini"><li>Claude Code and MCP agents</li><li>Gemini API</li><li>React, Next.js, FastAPI</li><li>Supabase and Vercel</li><li>Playwright, GitHub Actions</li></ul></div>
       </div>
       <div class="awards"><div><b>SQL Certification</b>Advanced</div><div><b>JavaScript Certification</b>Udemy</div><div><b>Valorant</b>Still losing. Getting better at SQL.</div></div>
     </div>
@@ -489,8 +710,8 @@ b,strong{font-weight:500}
 <div class="tunnel" aria-hidden="true"><span>Terminal: Exit gate. Conversion ahead</span></div>
 
 <!-- Exit -->
-<section class="station" id="s-exit" data-name="Exit gate" data-short="Exit" data-c="--green" data-msg="Terminal station: Exit gate. This is where the funnel converts. Please tap out with a message.">
-  <div class="wrap st-grid" style="--c:var(--green)">
+<section class="station" id="s-exit" data-name="Exit gate" data-short="Exit" data-c="--sky" data-msg="Terminal station: Exit gate. This is where the funnel converts. Please tap out with a message.">
+  <div class="wrap st-grid" style="--c:var(--sky)">
     <div><div class="nameboard"><div class="no"><span>Terminal</span><span>Exit</span></div><h2>Exit gate</h2><span class="hi">निकास</span></div><p class="arrival">Thank you for travelling with me. Rate your ride in one email.</p></div>
     <div class="content">
       <h3>This train terminates here. Let's talk.</h3>
@@ -511,7 +732,6 @@ b,strong{font-weight:500}
 <footer><div class="wrap">
   <span>Please mind the gap between my SQL and my sleep schedule.</span>
   <span>Shortcuts: <span class="kbd">S</span> chime <span class="kbd">L</span> night <span class="kbd">T</span> start</span>
-  <span>Rajveer Singh, 2026. Hand-built in HTML, CSS and JS.</span>
 </div></footer>
 <div class="toast" id="toast" role="status"></div>
 
@@ -538,9 +758,9 @@ b,strong{font-weight:500}
 
   /* ---------- Day / night ---------- */
   const themeBtn=document.getElementById('theme');
-  const isNight=()=>root.classList.contains('night')||(!root.classList.contains('day')&&matchMedia('(prefers-color-scheme: dark)').matches);
+  const isNight=()=>!root.classList.contains('day');
   const lbl=()=>themeBtn.querySelector('.lbl').textContent=isNight()?'Day':'Night';
-  function toggleTheme(){const n=isNight();root.classList.remove('night','day');root.classList.add(n?'day':'night');lbl();say(n?'Day service.':'Night service.')}
+  function toggleTheme(){const n=isNight();root.classList.add('theme-fade');clearTimeout(toggleTheme.t);toggleTheme.t=setTimeout(()=>root.classList.remove('theme-fade'),700);root.classList.toggle('day',n);lbl();say(n?'Day service.':'Night service.')}
   themeBtn.addEventListener('click',toggleTheme);lbl();
 
   /* ---------- Intro: tap card, doors open ---------- */
@@ -552,13 +772,14 @@ b,strong{font-weight:500}
     try{sessionStorage.setItem('boarded','1')}catch(e){}
     if(fast||reduce){finish();return}
     intro.classList.add('ok'); play(BEEP,true); vscreen.textContent='HI, USER #1'; gateLed.textContent='ONBOARDING…';
-    setTimeout(()=>{intro.classList.add('open');play(DING,true)},650);
-    setTimeout(finish,2050);
+    setTimeout(()=>{intro.classList.add('open');body.classList.add('arriving');play(DING,true)},650);
+    setTimeout(finish,2450);
+    setTimeout(()=>body.classList.remove('arriving'),2600);
   }
   card.addEventListener('click',()=>enter(false));
   document.getElementById('skip-intro').addEventListener('click',()=>enter(true));
   let boarded=false;try{boarded=sessionStorage.getItem('boarded')==='1'}catch(e){}
-  if(boarded||reduce) enter(true); else setTimeout(()=>card.focus(),300);
+  const autoEnter=()=>{if(boarded||reduce) enter(true); else setTimeout(()=>card.focus(),300)};
   document.getElementById('ride-again').addEventListener('click',()=>{
     entered=false;intro.classList.remove('gone','ok','open');vscreen.textContent='TAP CARD';gateLed.textContent='PLATFORM 1: RAJVEER SINGH';
     body.classList.add('locked');scrollTo({top:0,behavior:'auto'});setTimeout(()=>card.focus(),200);
@@ -607,6 +828,9 @@ b,strong{font-weight:500}
   /* ---------- Contact ---------- */
   document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('rvs51101@gmail.com');say('Email copied.')}catch(e){location.href='mailto:rvs51101@gmail.com'}});
 
+  /* ---------- Glass: light follows the pointer ---------- */
+  addEventListener('pointermove',e=>{const t=e.target.closest&&e.target.closest('.nameboard,.board,.lc,.ix-board,.awards div,.ways a,.ways button,.tbtn,.btn,.links a');if(!t)return;const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+
   /* ---------- Keyboard ---------- */
   addEventListener('keydown',e=>{
     if(!intro.classList.contains('gone')){if(e.key==='Escape') enter(true);return}
@@ -614,6 +838,7 @@ b,strong{font-weight:500}
     const k=e.key.toLowerCase();
     if(k==='s') toggleSound(); else if(k==='l') toggleTheme(); else if(k==='t') scrollTo({top:0,behavior:reduce?'auto':'smooth'});
   });
+  autoEnter();
 })();
 </script>
 </body>
