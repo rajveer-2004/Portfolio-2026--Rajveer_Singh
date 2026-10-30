@@ -473,6 +473,7 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   .led-text{animation:none;padding-left:16px}
 }
 </style>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="locked">
 <a class="skip" href="#s-start">Skip to content</a>
@@ -732,6 +733,7 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <footer><div class="wrap">
   <span>Please mind the gap between my SQL and my sleep schedule.</span>
+  <span id="visit-wrap" hidden>Passengers boarded: <strong id="visit-count">0</strong></span>
   <span>Shortcuts: <span class="kbd">S</span> chime <span class="kbd">L</span> night <span class="kbd">T</span> start</span>
 </div></footer>
 <div class="toast" id="toast" role="status"></div>
@@ -840,6 +842,25 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
     if(k==='s') toggleSound(); else if(k==='l') toggleTheme(); else if(k==='t') scrollTo({top:0,behavior:reduce?'auto':'smooth'});
   });
   autoEnter();
+})();
+</script>
+<script>
+/* Visitor counter: counts each browser once, hides itself if the service is unreachable */
+(async()=>{
+  const wrap=document.getElementById('visit-wrap'),out=document.getElementById('visit-count');
+  if(!wrap||!out) return;
+  const base='https://abacus.jasoncameron.dev';
+  const path='rajveer-portfolio/visits';
+  try{
+    const counted=localStorage.getItem('visit-counted')==='1';
+    const r=await fetch(base+(counted?'/get/':'/hit/')+path);
+    if(!r.ok) throw 0;
+    const d=await r.json();
+    if(typeof d.value!=='number') throw 0;
+    if(!counted) localStorage.setItem('visit-counted','1');
+    out.textContent=d.value.toLocaleString();
+    wrap.hidden=false;
+  }catch(e){/* stay hidden */}
 })();
 </script>
 </body>
