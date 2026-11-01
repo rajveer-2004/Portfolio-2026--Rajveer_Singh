@@ -388,8 +388,9 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 .mini a{font:500 11px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text);text-decoration:none;padding:16px 7px;background:linear-gradient(currentColor,currentColor) 7px 66%/0 1px no-repeat;transition:background-size .2s var(--ease-out)}
 .mini a:hover,.mini a:focus-visible{background-size:calc(100% - 14px) 1px}
 @keyframes breathe{from{box-shadow:var(--shadow),0 0 24px rgba(255,97,27,.24)}to{box-shadow:var(--shadow),0 0 62px rgba(255,97,27,.58)}}
-.music-on .hero{box-shadow:var(--shadow),0 0 28px rgba(255,97,27,.24),0 0 calc(var(--beat,0)*58px) calc(var(--beat,0)*9px) rgba(255,97,27,.55)}
-.music-fake .hero{animation:breathe 2.4s ease-in-out infinite alternate}
+.player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 calc(var(--beat,0)*72px) calc(var(--beat,0)*12px) rgba(255,97,27,.7)}
+.player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 calc(var(--beat,0)*72px) calc(var(--beat,0)*12px) rgba(255,97,27,.7)}
+.music-fake .player.playing,.music-fake .player.playing{animation:breathe 2.4s ease-in-out infinite alternate}
 .metric{z-index:1}
 
 
@@ -402,7 +403,8 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 .hero.offscreen h1 .lt,.hero.offscreen h1 .lt::after{animation-play-state:paused}
 /* while the page glides, pause the effects that repaint every frame */
 .is-scrolling .grid>.tile::after{opacity:0!important;transition:none}
-.is-scrolling.music-on .hero{box-shadow:var(--shadow),0 0 28px rgba(255,97,27,.24),0 0 36px 5px rgba(255,97,27,.34)}
+.is-scrolling.music-on .player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 46px 8px rgba(255,97,27,.5)}
+.is-scrolling.music-on .player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 44px 7px rgba(255,97,27,.42)}
 .is-scrolling .funnel .after{filter:none}
 
 /* tablet */
@@ -995,13 +997,13 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'End of Line (From TRON Legacy)',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'The Neighbourhood - Reflections',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
     /* TEST-START (generated placeholder tracks, safe to delete) */
     {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
     {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
