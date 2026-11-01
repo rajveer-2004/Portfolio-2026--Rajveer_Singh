@@ -380,10 +380,18 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 .grid>.tile::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 300ms var(--ease-out);background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(255,97,27,.075),transparent 62%)}
 @media (hover:hover) and (pointer:fine){.grid>.tile:hover::after{opacity:1}}
 .btn,.mail{translate:var(--mgx,0px) var(--mgy,0px);transition:transform 160ms var(--ease-out),translate 240ms var(--ease-out)}
-.player.playing{box-shadow:var(--shadow),0 0 calc(var(--beat,0)*30px) calc(var(--beat,0)*3px) rgba(255,97,27,.3)}
 .art{transform:scale(calc(1 + var(--beat,0)*.07))}
 .funnel .after{filter:drop-shadow(0 0 calc(var(--beat,0)*7px) rgba(255,97,27,.75))}
 .pill .dot{scale:calc(1 + var(--beat,0)*.5)}
+
+.mini{position:absolute;right:var(--pad);bottom:calc(var(--pad) - 12px);display:flex;gap:2px;z-index:3}
+.mini a{font:500 11px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text);text-decoration:none;padding:16px 7px;background:linear-gradient(currentColor,currentColor) 7px 66%/0 1px no-repeat;transition:background-size .2s var(--ease-out)}
+.mini a:hover,.mini a:focus-visible{background-size:calc(100% - 14px) 1px}
+@keyframes breathe{from{box-shadow:var(--shadow),0 0 24px rgba(255,97,27,.24)}to{box-shadow:var(--shadow),0 0 62px rgba(255,97,27,.58)}}
+.player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 calc(var(--beat,0)*72px) calc(var(--beat,0)*12px) rgba(255,97,27,.7)}
+.music-on .hero{box-shadow:var(--shadow),0 0 28px rgba(255,97,27,.24),0 0 calc(var(--beat,0)*58px) calc(var(--beat,0)*9px) rgba(255,97,27,.55)}
+.music-fake .player.playing,.music-fake .hero{animation:breathe 2.4s ease-in-out infinite alternate}
+.metric{z-index:1}
 
 /* tablet */
 @media (max-width:1023px){
@@ -519,6 +527,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <span class="head"><small>Headline</small>35 → 3 min</span>
           <span class="read">Read case <span class="ar">→</span></span>
         </button>
+      <div class="mini"><a href="https://csm-hub-seven.vercel.app/" target="_blank" rel="noopener" aria-label="CSM Hub live app (opens in a new tab)">Live</a></div>
       </article>
 
       <article class="tile case">
@@ -531,6 +540,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <span class="head"><small>Headline</small>115 deals/week</span>
           <span class="read">Read case <span class="ar">→</span></span>
         </button>
+      <div class="mini"><a href="https://bengaluru-renter-copilot-mutz7yduhghtw54edjhquq.streamlit.app/" target="_blank" rel="noopener" aria-label="Renter's Copilot live app (opens in a new tab)">Live</a><a href="https://github.com/rajveer-2004/bengaluru-renter-copilot" target="_blank" rel="noopener" aria-label="Renter's Copilot on GitHub (opens in a new tab)">GitHub</a></div>
       </article>
 
       <article class="tile case">
@@ -553,7 +563,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
             <div><span>Timeline</span>Apr–Jul 2026</div><div><span>Tools</span>React, Supabase, Gemini API, Upstash Redis, Claude Code + MCP</div>
           </div>
           <div class="sec">
-            <h4>Overview</h4><div><p>CSM Hub is an internal tool I built at WizCommerce that gives Customer Success Managers a pre-call brief and a client-health dashboard. It is an internal tool, so there is no public link.</p></div>
+            <h4>Overview</h4><div><p>CSM Hub is an internal tool I built at WizCommerce that gives Customer Success Managers a pre-call brief and a client-health dashboard.</p></div>
             <h4>Challenge</h4><div><p>CSMs spent about 35 minutes before every client call digging through HubSpot, Jira, Gmail and Gong.</p></div>
             <h4>Users</h4><div><p>4 CSMs and their lead.</p></div>
             <h4>What I did</h4><div><ul>
@@ -565,6 +575,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
             <h4>Impact</h4><div><div class="pull"><div><b>35 → 3–4</b><span>minutes of prep per account</span></div><div><b>4 of 4</b><span>CSMs use it daily</span></div></div></div>
             <h4>What I owned</h4><div><p>Discovery with the CSMs, the v1 to v2 product decision, and the build.</p></div>
             <h4>Next</h4><div><p>Proactive alerts for at-risk accounts.</p></div>
+            <h4>Links</h4><div class="links"><a href="https://csm-hub-seven.vercel.app/" target="_blank" rel="noopener">Live app</a></div>
           </div>
           <div class="study-foot"><button type="button" data-close="1">Close case</button><button type="button" data-next="2">Next case →</button></div>
         </div></div></section>
@@ -789,17 +800,24 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   /* case studies (inline disclosure, one at a time) */
   var tiles=$$('[data-case]');
   function setCase(n,focusPanel){
+    var wasOpen=tiles.some(function(t){return t.getAttribute('aria-expanded')==='true'});
+    var swap=!!n&&wasOpen; /* switching from one open case to another: swap in place, no animation, no scroll jump */
+    if(swap){document.documentElement.style.overflowAnchor='none';requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.style.overflowAnchor=''})})}
     tiles.forEach(function(t){
       var id=t.getAttribute('data-case'),p=$('#study-'+id),on=String(n)===id;
       t.setAttribute('aria-expanded',on?'true':'false');
-      if(on){p.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){p.classList.add('open')})})}
+      if(swap){
+        p.style.transition='none';
+        if(on){p.hidden=false;p.classList.add('open')}else{p.classList.remove('open');p.hidden=true}
+        void p.offsetHeight;p.style.transition='';
+      }else if(on){p.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){p.classList.add('open')})})}
       else{p.classList.remove('open');(function(p){setTimeout(function(){if(!p.classList.contains('open'))p.hidden=true},260)})(p)}
     });
-    if(n&&focusPanel){setTimeout(function(){var p=$('#study-'+n);smoothTo(docTop(p)-24)},60)}
+    if(n&&focusPanel){setTimeout(function(){var p=$('#study-'+n);smoothTo(docTop(p)-24)},swap?30:60)}
   }
   tiles.forEach(function(t){t.addEventListener('click',function(){
     var id=t.getAttribute('data-case');setCase(t.getAttribute('aria-expanded')==='true'?null:id,true)})});
-  $$('[data-next]').forEach(function(b){b.addEventListener('click',function(){setCase(b.getAttribute('data-next'),true)})});
+  $$('[data-next]').forEach(function(b){b.addEventListener('click',function(){var n=b.getAttribute('data-next');setCase(n,true);var nb=$('#study-'+n+' [data-next]');if(nb)nb.focus({preventScroll:true})})});
   $$('[data-close]').forEach(function(b){b.addEventListener('click',function(){var id=b.getAttribute('data-close');setCase(null);var t=$('[data-case="'+id+'"]');t.focus();t.scrollIntoView({block:'center'})})});
 
   /* email copy */
@@ -942,13 +960,13 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'End of Line (From TRON Legacy)',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'The Neighbourhood - Reflections',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
     /* TEST-START (generated placeholder tracks, safe to delete) */
     {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
     {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
@@ -984,7 +1002,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       }
       var bass=0;for(var z=0;z<6;z++)bass+=fdata[z];bass=bass/6/255;
       beat=beat*0.7+bass*0.3;
-      document.documentElement.style.setProperty('--beat',Math.min(1,Math.pow(beat,2.4)*1.6).toFixed(3));
+      document.documentElement.style.setProperty('--beat',Math.max(0.22,Math.min(1,Math.pow(beat,1.9)*2.4)).toFixed(3));
     };
     var settleBars=function(){bars.forEach(function(b){b.style.transform=''});beat=0;document.documentElement.style.setProperty('--beat','0')};
     var setupAnalyser=function(){
@@ -1005,8 +1023,8 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       if('mediaSession' in navigator&&window.MediaMetadata){navigator.mediaSession.metadata=new MediaMetadata({title:TRACKS[cur].title})}
       if(play)audio.play().catch(function(){});
     };
-    audio.addEventListener('play',function(){$('#play').setAttribute('aria-pressed','true');player.classList.add('playing');setupAnalyser();if(ac&&ac.state==='suspended')ac.resume();player.classList.toggle('fake',!an);cancelAnimationFrame(raf);loop()});
-    audio.addEventListener('pause',function(){$('#play').setAttribute('aria-pressed','false');player.classList.remove('playing');cancelAnimationFrame(raf);draw();settleBars()});
+    audio.addEventListener('play',function(){$('#play').setAttribute('aria-pressed','true');player.classList.add('playing');document.documentElement.classList.add('music-on');setupAnalyser();document.documentElement.classList.toggle('music-fake',!an);if(ac&&ac.state==='suspended')ac.resume();player.classList.toggle('fake',!an);cancelAnimationFrame(raf);loop()});
+    audio.addEventListener('pause',function(){$('#play').setAttribute('aria-pressed','false');player.classList.remove('playing');document.documentElement.classList.remove('music-on','music-fake');cancelAnimationFrame(raf);draw();settleBars()});
     audio.addEventListener('loadedmetadata',draw);
     audio.addEventListener('ended',function(){load(cur+1,TRACKS.length>1)});
     audio.addEventListener('error',function(){
