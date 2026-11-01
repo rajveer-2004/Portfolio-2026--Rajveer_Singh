@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>try{var _t=localStorage.getItem('theme');var _d=_t?_t==='day':matchMedia('(prefers-color-scheme: light)').matches;if(_d)document.documentElement.classList.add('day')}catch(e){}</script>
 <title>Rajveer Singh | Product, Data &amp; AI</title>
 <meta name="description" content="Ride through Rajveer Singh's work: NIT Delhi, Corporate Cruise, WizCommerce, six project platforms and the exit gate. Product, data and AI, NIT Delhi ECE 2026." />
 <meta name="theme-color" content="#09318D" />
@@ -18,7 +19,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Mukta:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&family=Mukta:wght@300;400;500&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309318D'/%3E%3Cpath d='M12 18 L32 34' stroke='%23FD91CC' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M52 18 L32 34' stroke='%238FA8FF' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M32 54 V34' stroke='%23FCFFFF' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='34' r='8' fill='white'/%3E%3C/svg%3E" />
 <style>
 /* Theme: Deep Blue / White / Bubblegum Pink. Line colours: --blue start, --ember experience, --violet projects, --peach skills, --sky exit. */
@@ -33,7 +34,7 @@
   --glass:rgba(255,255,255,.08); --glass-line:rgba(255,255,255,.22); --glass-edge:rgba(255,255,255,.35);
   --glass-shadow:0 10px 34px rgba(2,10,60,.45);
   --ambient:radial-gradient(62% 56% at 28% 102%,rgba(47,107,255,.80),transparent 72%),radial-gradient(40% 46% at 94% 56%,rgba(253,145,204,.40),transparent 70%),radial-gradient(46% 40% at 70% 4%,rgba(80,120,255,.38),transparent 70%);
-  --grad-unused:none;
+  
   --sign:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --deva:"Mukta","Noto Sans Devanagari",sans-serif;
@@ -44,14 +45,14 @@
 :root.day{
  --wall:#ECF1FF; --tile:#FFFFFF; --ink:#09318D; --muted:#415FAA; --rule:#C5D2F2; --station:#FFFFFF;
   --blue:#09318D; --violet:#6F8BF0; --peach:#FFB3DB; --sky:#8FB0FF; --steel:#C9D6F7; --steel-hi:#DDE6FB;
-  --door-edge:#8FA7E0; --door-ring:#A9BCEB; --door-ring2:#8FA7E0; --sticker:#415FAA; --panel-dark:rgba(255,255,255,.55);
+  --door-edge:#8FA7E0; --door-ring:#A9BCEB; --door-ring2:#8FA7E0; --sticker:#2F4C97; --panel-dark:rgba(255,255,255,.55);
   --glass:rgba(255,255,255,.62); --glass-line:rgba(9,49,141,.12); --glass-edge:rgba(255,255,255,.95); --glass-shadow:0 10px 30px rgba(9,49,141,.14);
   --ambient:radial-gradient(62% 56% at 28% 102%,rgba(47,107,255,.30),transparent 72%),radial-gradient(40% 46% at 94% 56%,rgba(253,145,204,.32),transparent 70%);
   color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{font-family:var(--sign);background:var(--wall);color:var(--ink);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sign);background:var(--wall);color:var(--ink);-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
@@ -61,29 +62,29 @@ a{color:inherit}
 
 /* ================= INTRO: tap in, doors open ================= */
 #intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden}
-.door{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(90deg,var(--steel) 0%,var(--steel-hi) 45%,var(--steel) 100%);transition:transform 1.25s cubic-bezier(.6,0,.15,1)}
+.door{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(90deg,var(--steel) 0%,var(--steel-hi) 45%,var(--steel) 100%)}
 .door.l{left:0;border-right:6px solid var(--door-edge)}
 .door.r{right:0;border-left:6px solid var(--door-edge)}
-.door .win{position:absolute;top:12%;height:44%;width:62%;border-radius:28px;background:linear-gradient(160deg,#2B3540,#151A20 60%,#26303A);box-shadow:inset 0 0 0 8px var(--door-ring),inset 0 0 0 10px var(--door-ring2)}
+.door .win{position:absolute;top:12%;height:44%;width:62%;border-radius:28px}
 .door.l .win{right:14%}
 .door.r .win{left:14%}
-.door .win::after{content:"";position:absolute;inset:18px;border-radius:20px;background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(253,145,204,.22) 60px 64px);animation:pass 1.2s linear infinite}
+
 @keyframes pass{to{background-position:-128px 0}}
 .door .strip{position:absolute;top:0;bottom:0;width:14px;background:var(--ember)}
 .door.l .strip{right:0}
 .door.r .strip{left:0}
-.door .sticker{position:absolute;bottom:16%;font-weight:500;font-size:14px;color:var(--sticker);line-height:1.3;max-width:180px}
+.door .sticker{position:absolute;color:var(--sticker);line-height:1.3}
 .door.l .sticker{right:14%;text-align:right}
 .door.r .sticker{left:14%}
-.door .sticker b{display:block;font-size:12px;font-weight:500}
+.door .sticker b{display:block}
 #intro.open .door.l{transform:translateX(-102%)}
 #intro.open .door.r{transform:translateX(102%)}
 .gate{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;transition:opacity .4s,transform .4s}
 #intro.open .gate{opacity:0;transform:scale(.92)}
-.gate-led{background:#000;border-radius:10px;padding:10px 20px;font-family:var(--led);font-weight:500;color:var(--amber);font-size:20px;letter-spacing:.05em;text-shadow:0 0 8px rgba(253,145,204,.5);box-shadow:0 0 0 3px #2A3036}
+.gate-led{background:#000;border-radius:10px;padding:10px 20px;font-family:var(--led);color:var(--amber);text-shadow:0 0 8px rgba(253,145,204,.5);box-shadow:0 0 0 3px #2A3036}
 .scene{position:relative;width:420px;max-width:92vw;height:270px}
 .validator{position:absolute;right:0;top:0;width:190px;height:262px;border-radius:22px;background:var(--board);box-shadow:inset 0 0 0 3px #000,0 20px 40px rgba(0,0,0,.35)}
-.validator .screen{position:absolute;left:20px;right:20px;top:24px;height:54px;border-radius:8px;background:#000;display:grid;place-items:center;font-family:var(--led);font-weight:500;color:var(--amber);font-size:16px}
+.validator .screen{position:absolute;left:20px;right:20px;top:24px;height:54px;border-radius:8px;background:#000;display:grid;place-items:center;font-family:var(--led);color:var(--amber)}
 .validator .lamp{position:absolute;right:22px;top:92px;width:14px;height:14px;border-radius:50%;background:#3A434D}
 .validator .pad{position:absolute;left:30px;right:30px;bottom:30px;height:110px;border-radius:14px;border:3px dashed #56606B}
 #intro.ok .validator .lamp{background:#3CC57A;box-shadow:0 0 14px #3CC57A}
@@ -92,198 +93,199 @@ a{color:inherit}
 @keyframes nudge{0%,70%,100%{transform:rotate(-8deg)}80%{transform:translateX(14px) rotate(-5deg)}90%{transform:translateX(0) rotate(-8deg)}}
 .card:hover{transform:translateX(10px) rotate(-5deg);animation:none}
 #intro.ok .card{transform:translate(118px,24px) rotate(0) scale(.9);animation:none}
-.card .row{display:flex;justify-content:space-between;font-size:11.5px;font-weight:500}
+.card .row{display:flex;justify-content:space-between;font-size:12px;font-weight:500}
 .card .chip{width:36px;height:27px;border-radius:5px;background:linear-gradient(135deg,#FD91CC,#D9629F);margin-top:10px}
-.card .nm{font-weight:500;font-size:20px;margin-top:8px;line-height:1}
-.card .vd{font-size:11.5px;color:#3F505C;margin-top:3px;line-height:1.3}
+.card .nm{margin-top:8px;line-height:1}
+.card .vd{font-size:12px;color:#3F505C;margin-top:3px;line-height:1.3}
 .card .stripes{position:absolute;left:0;right:0;bottom:0;height:16px;display:grid;grid-template-columns:repeat(3,1fr)}
-.hint{color:#E9ECEF;font-weight:500;font-size:16px;text-shadow:0 1px 3px rgba(0,0,0,.6);background:rgba(20,24,29,.75);padding:6px 14px;border-radius:999px}
-.skip-intro{position:absolute;right:20px;bottom:20px;z-index:3;background:rgba(20,24,29,.8);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font:400 15px var(--sign);cursor:pointer}
+.hint{color:#E9ECEF;text-shadow:0 1px 3px rgba(0,0,0,.6);background:rgba(20,24,29,.75);padding:6px 14px;border-radius:999px}
+.skip-intro{position:absolute;right:20px;bottom:20px;z-index:3;background:rgba(20,24,29,.8);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;cursor:pointer}
 #intro.gone{display:none}
 
 /* ================= COACH HEADER: LED + door-top route map ================= */
-header{position:sticky;top:0;z-index:60;background:var(--wall);border-bottom:1px solid var(--rule)}
+header{position:sticky;top:0;z-index:60}
 .bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;height:64px}
 .mark{display:flex;align-items:center;gap:10px;text-decoration:none}
 .mark svg{width:36px;height:36px}
-.mark b{font-weight:500;font-size:18px;line-height:1}
-.mark small{display:block;font-size:12.5px;color:var(--muted);line-height:1.2}
+.mark b{line-height:1}
+.mark small{display:block;color:var(--muted);line-height:1.2}
 .led{background:var(--board);border-radius:8px;height:40px;overflow:hidden;position:relative;display:flex;align-items:center;box-shadow:inset 0 0 0 2px #000,inset 0 2px 10px rgba(0,0,0,.6)}
 .led::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 55%,rgba(0,0,0,.55) 56%) 0 0/4px 4px;pointer-events:none}
-.led-text{font-family:var(--led);font-weight:500;color:var(--amber);font-size:19px;letter-spacing:.06em;white-space:nowrap;padding-left:100%;animation:marquee 15s linear infinite;text-shadow:0 0 6px rgba(253,145,204,.55)}
+.led-text{font-family:var(--led);color:var(--amber);white-space:nowrap;padding-left:100%;animation:marquee 15s linear infinite;text-shadow:0 0 6px rgba(253,145,204,.55)}
 @keyframes marquee{to{transform:translateX(-100%)}}
 .tools{display:flex;gap:8px}
 .tbtn{height:38px;min-width:38px;padding:0 11px;border-radius:8px;border:1px solid var(--rule);background:var(--tile);color:var(--ink);font:400 14px var(--sign);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 .tbtn svg{width:16px;height:16px}
-.tbtn[aria-pressed="true"]{background:var(--ink);color:var(--wall)}
+.tbtn[aria-pressed="true"]{color:var(--wall)}
 .routemap{position:relative;height:80px;border-top:1px solid var(--rule)}
 .rm-line{position:absolute;left:3%;right:3%;top:36px;height:8px;border-radius:4px;display:flex;overflow:hidden}
 .rm-line i{height:100%}
 .rm-stop{position:absolute;top:30px;transform:translateX(-50%);text-decoration:none;display:flex;flex-direction:column;align-items:center}
-.rm-stop .d{display:block;position:relative;z-index:1;width:20px;height:20px;border-radius:50%;background:var(--station);border:4px solid var(--c);transition:background .3s,transform .3s}
+.rm-stop .d{display:block;position:relative;z-index:1;width:20px;height:20px;border-radius:50%;background:var(--station);border:4px solid var(--c);transition:background .3s,transform 160ms var(--ease)}
 .rm-stop.passed .d{background:var(--c)}
 .rm-stop.next .d{animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{background:var(--c)}}
-.rm-stop .lab{position:absolute;left:50%;transform:translateX(-50%);font-size:12.5px;font-weight:500;white-space:nowrap;color:var(--muted)}
+.rm-stop .lab{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;color:var(--muted)}
 .rm-stop:nth-child(odd) .lab{top:-23px}
 .rm-stop:nth-child(even) .lab{top:21px}
-.rm-stop.cur .lab{color:var(--ink);font-weight:500}
+.rm-stop.cur .lab{color:var(--ink)}
 .rm-train{position:absolute;top:28px;width:40px;height:24px;transform:translateX(-50%);pointer-events:none;z-index:2}
 .rm-train svg{width:100%;height:100%}
 
 /* ================= STATIONS ================= */
-#s-start,#s-exit{background:var(--glow)}
-.station{padding:90px 0 70px;min-height:76vh;display:flex;align-items:center}
+
+.station{padding:72px 0 56px;display:flex;align-items:center}
+#s-start,#s-exit{min-height:76vh}
 .station .wrap{width:100%}
 .st-grid{display:grid;grid-template-columns:380px 1fr;gap:48px;align-items:start}
 .nameboard{background:var(--c);color:#02070A;border-radius:12px;padding:16px 22px 18px;box-shadow:0 0 0 4px var(--wall),0 0 0 6px var(--c);transform:translateX(60px);opacity:0;transition:transform .8s cubic-bezier(.15,.8,.2,1),opacity .5s}
 .station.in .nameboard{transform:none;opacity:1}
-.nameboard .no{display:flex;justify-content:space-between;font-size:14px;font-weight:500;opacity:.9}
-.nameboard h2{font-size:clamp(34px,4.2vw,50px);font-weight:500;line-height:1;margin-top:8px;letter-spacing:-.01em}
-.nameboard .hi{display:block;font-size:22px;font-weight:500;margin-top:4px;opacity:.95}
+.nameboard .no{display:flex;justify-content:space-between;opacity:.9}
+.nameboard h2,.nameboard h1{margin-top:8px}
+.nameboard .hi{display:block}
 .nameboard.y{color:#02070A}
-.arrival{margin-top:18px;font-size:15px;color:var(--muted)}
+.arrival{margin-top:18px;color:var(--muted)}
 .arrival b{color:var(--ink)}
-.content{opacity:0;transform:translateY(18px);transition:opacity .6s .25s,transform .6s .25s}
+.content{opacity:0;transform:translateY(18px)}
 .station.in .content{opacity:1;transform:none}
-.content h3{font-size:clamp(24px,2.6vw,32px);font-weight:500;line-height:1.15}
-.content .org{color:var(--muted);margin-top:4px}
+
+.content .org{margin-top:4px}
 .content ul{margin-top:16px;padding-left:20px}
-.content li{margin-top:8px}
+
 .content li::marker{color:var(--c)}
 .content p{margin-top:12px;max-width:64ch}
 .content b{font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.chips span{font-size:14px;border:1.5px solid var(--rule);border-radius:6px;padding:2px 10px;background:var(--tile)}
+.chips span{border:1.5px solid var(--rule);border-radius:6px;background:var(--tile)}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:10px;font:500 16px var(--sign);text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
 .btn-go{background:var(--ember);border-color:var(--ember);color:var(--on)}
-.btn-go:hover{background:var(--blue);border-color:var(--blue);color:var(--on)}
-.btn:not(.btn-go):hover{background:var(--tile)}
+.btn-go:hover{background:var(--blue);border-color:var(--blue);color:var(--wall)}
+
 .row-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .linelist{display:grid;gap:10px;margin-top:20px;max-width:520px}
-.linelist div{display:flex;align-items:center;gap:12px;font-weight:500}
+.linelist div{display:flex;align-items:center;gap:12px}
 .linelist i{width:40px;height:9px;border-radius:5px;background:var(--c);flex:none}
-.linelist small{color:var(--muted);font-weight:400}
+.linelist small{color:var(--muted)}
 
 /* Departure board for projects */
-.board{background:var(--board);color:var(--board-ink);border-radius:14px;padding:24px 26px;box-shadow:0 0 0 1px #1C2B36 inset}
-.board .top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#BFC4C8}
-.pill{display:inline-flex;font-weight:500;color:var(--on);background:var(--c);padding:2px 11px;border-radius:999px;font-size:13px}
+.board{color:var(--board-ink);border-radius:14px;padding:24px 26px}
+.board .top{display:flex;justify-content:space-between;gap:12px;color:#BFC4C8}
+.pill{display:inline-flex;color:var(--on);background:var(--c);padding:2px 11px;border-radius:999px}
 .flaps{display:flex;align-items:flex-end;gap:14px;margin-top:16px;flex-wrap:wrap}
 .flap{display:flex;gap:4px;perspective:200px}
-.flap span{font-family:var(--led);font-weight:700;font-size:40px;line-height:1;color:var(--amber);background:#000;border-radius:5px;padding:8px 7px 6px;min-width:34px;text-align:center;position:relative;text-shadow:0 0 8px rgba(253,145,204,.45)}
+.flap span{line-height:1;color:var(--amber);background:#000;border-radius:5px;text-align:center;position:relative;text-shadow:0 0 8px rgba(253,145,204,.45)}
 .flap span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.12)}
 .flap span.flip{animation:flip .09s linear}
 @keyframes flip{50%{transform:rotateX(90deg)}}
-.flaps p{font-size:16px;color:#D9DCDF;line-height:1.35;max-width:24ch;margin:0}
+.flaps p{color:#D9DCDF;line-height:1.35;margin:0}
 .board .story{color:#D2D6DA;margin-top:16px;max-width:64ch}
-.board .chips span{background:transparent;border-color:#47515C;color:#C9CED3}
+
 .links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.links a{color:#EEF3F6;font-weight:500;font-size:15px;text-decoration:none;border:1px solid #EEF3F6;border-radius:8px;padding:6px 14px}
-.links a:hover{background:#EEF3F6;color:var(--board)}
+.links a{text-decoration:none;border:1px solid #EEF3F6;border-radius:8px;padding:6px 14px}
+
 
 /* Interchange + tunnels */
 .interchange{padding:40px 0}
-.ix-board{display:flex;align-items:center;gap:22px;background:var(--tile);color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule);border-radius:14px;padding:20px 26px;max-width:760px}
+.ix-board{display:flex;align-items:center;gap:22px;background:var(--tile);color:var(--ink);border-radius:14px;padding:20px 26px;max-width:760px}
 .ix-board .dots{display:flex;gap:-6px}
 .ix-board .dots i{width:30px;height:30px;border-radius:50%;border:5px solid var(--c);background:var(--station);margin-right:-8px}
-.ix-board b{font-size:24px;font-weight:500;display:block;line-height:1.1}
+.ix-board b{display:block;line-height:1.1}
 .ix-board span{opacity:.8}
 .tunnel{height:110px;background:var(--tunnel-bg);position:relative;overflow:hidden}
 .tunnel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 140px,var(--tunnel-light) 140px 146px,transparent 146px 300px);animation:lights .7s linear infinite;filter:blur(1px)}
 .tunnel::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--tunnel-line);box-shadow:0 22px 0 var(--tunnel-line),0 -22px 0 var(--tunnel-line2)}
 @keyframes lights{to{background-position:-300px 0}}
-.tunnel span{position:absolute;left:28px;top:50%;transform:translateY(-50%);z-index:1;font-family:var(--led);font-weight:500;color:var(--amber);font-size:16px;letter-spacing:.05em;background:#000;padding:4px 12px;border-radius:6px}
+.tunnel span{position:absolute;left:28px;top:50%;transform:translateY(-50%);z-index:1;font-family:var(--led);color:var(--amber);letter-spacing:.05em;background:#000;padding:4px 12px;border-radius:6px}
 
 /* Skills lines */
 .lines3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:6px}
-.lc{background:var(--tile);border-radius:12px;padding:20px 22px;border-top:9px solid var(--c)}
-.lc h4{font-size:19px;font-weight:500}
+.lc{background:var(--tile);border-radius:12px;padding:20px 22px}
+
 .mini{list-style:none;margin-top:12px;position:relative;padding:0}
 .mini::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:5px;border-radius:3px;background:var(--c);transform:scaleY(0);transform-origin:top;transition:transform .9s cubic-bezier(.6,0,.2,1) .3s}
 .station.in .mini::before{transform:scaleY(1)}
-.mini li{position:relative;padding:2px 0 2px 30px;font-size:16.5px;margin:0}
+.mini li{position:relative;padding:2px 0 2px 30px;margin:0}
 .mini li::before{content:"";position:absolute;left:2px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--station);border:3px solid var(--c)}
 .awards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-.awards div{border:2px dashed var(--rule);border-radius:12px;padding:12px 16px;font-size:15px;color:var(--muted)}
-.awards b{display:block;color:var(--ink);font-weight:500;font-size:16.5px}
+.awards div{border:2px dashed var(--rule);border-radius:12px;padding:12px 16px;color:var(--muted)}
+.awards b{display:block;color:var(--ink)}
 
 /* Exit */
 .ways{display:grid;gap:10px;margin-top:22px;max-width:440px}
-.ways a,.ways button{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border:1px solid var(--rule);border-radius:10px;background:var(--tile);color:var(--ink);text-decoration:none;font:400 16.5px var(--sign);cursor:pointer;text-align:left}
-.ways a:hover,.ways button:hover{background:var(--ink);color:var(--wall)}
+.ways a,.ways button{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border:1px solid var(--rule);border-radius:10px;background:var(--tile);color:var(--ink);text-decoration:none;font:400 16px var(--sign);cursor:pointer;text-align:left}
+
 .ways small{font-weight:400;opacity:.75}
-footer{border-top:1px solid var(--rule)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:22px 28px 40px;color:var(--muted);font-size:15px}
-.kbd{display:inline-block;border:1.5px solid var(--muted);border-bottom-width:3px;border-radius:5px;padding:0 6px;font-size:12px;font-weight:500;color:var(--ink);margin:0 2px}
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--board);color:var(--amber);font-family:var(--led);font-weight:500;padding:10px 18px;border-radius:8px;opacity:0;transition:.25s;z-index:120;pointer-events:none}
+
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:22px 28px 40px;color:var(--muted)}
+.kbd{display:inline-block;border:1.5px solid var(--muted);border-bottom-width:3px;border-radius:5px;padding:0 6px;color:var(--ink);margin:0 2px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--board);color:var(--amber);font-family:var(--led);padding:10px 18px;border-radius:8px;opacity:0;z-index:120;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 
-/* ===== Type: Instrument Serif for display, JetBrains Mono for text ===== */
-body{font-size:15px;line-height:1.75;font-weight:400;letter-spacing:0}
-b,strong,.content b{font-weight:600}
-.mark b{font-family:var(--serif);font-weight:400;font-size:27px;letter-spacing:0}
-.mark small{font-family:var(--deva);font-size:12px}
-.nameboard .no{font-size:11.5px;font-weight:500;letter-spacing:.02em}
-.nameboard h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,60px);line-height:.98;letter-spacing:-.01em;overflow-wrap:anywhere}
-.nameboard .hi{font-family:var(--deva);font-weight:400;font-size:19px;opacity:.85;margin-top:10px}
-.arrival{font-size:12.5px;line-height:1.6;font-weight:300}
-.content h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05;letter-spacing:-.01em}
-.content .org{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400}
+/* ===== Type: display and text styles ===== */
+body{letter-spacing:0}
+
+.mark b{font-family:var(--serif)}
+.mark small{font-family:var(--deva)}
+.nameboard .no{letter-spacing:.02em}
+.nameboard h2,.nameboard h1{font-family:var(--serif)}
+.nameboard .hi{font-family:var(--deva);margin-top:10px}
+.arrival{line-height:1.6}
+.content h3{font-family:var(--serif)}
+.content .org{font-family:var(--serif)}
 .content li{margin-top:10px}
-.chips span{font-size:12px;padding:2px 9px}
-.btn{font-family:var(--sign);font-size:13.5px;font-weight:500}
-.tbtn{font-size:12.5px;font-weight:500}
-.pill{font-size:11.5px;font-weight:700}
-.board .top{font-size:12px}
-.flap span{font-family:var(--serif);font-weight:400;font-size:54px;min-width:38px;padding:6px 8px 2px}
-.flaps p{font-size:13.5px;max-width:26ch}
-.board .story{font-size:14px}
-.links a{font-size:12.5px;font-weight:500}
-.linelist div{font-size:13.5px;font-weight:500}
-.linelist small{font-weight:300}
-.lc h4{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1}
-.mini li{font-size:13.5px}
-.awards div{font-size:12.5px}
-.awards b{font-family:var(--sign);font-size:13.5px;font-weight:600}
-.ix-board b{font-family:var(--serif);font-weight:400;font-size:38px;letter-spacing:-.005em}
-.ix-board span{font-size:13px}
-.ways a,.ways button{font-size:13.5px}
-.card .nm{font-family:var(--serif);font-weight:400;font-size:28px}
-.card .row,.card .vd{font-size:10.5px}
-.led-text{font-size:14.5px;letter-spacing:.04em;font-weight:500}
-.gate-led{font-size:15px;font-weight:500;letter-spacing:.04em}
-.validator .screen{font-size:13px;font-weight:500}
-.tunnel span{font-size:12.5px;font-weight:500}
-.toast{font-size:13px;font-weight:500}
-.hint{font-size:13.5px;font-weight:400}
-.skip-intro{font:400 13px var(--sign)}
-.door .sticker{font-size:11.5px;font-weight:400;max-width:210px}
-.door .sticker b{font-family:var(--deva);font-size:12.5px;font-weight:400}
-.rm-stop .lab{font-size:11px;font-weight:400}
-.rm-stop.cur .lab{font-weight:600}
-footer .wrap{font-size:12.5px}
-.kbd{font-size:11px;font-weight:500}
+.chips span{padding:2px 9px}
+.btn{font-family:var(--sign)}
+
+
+
+.flap span{font-family:var(--serif);padding:6px 8px 2px}
+.flaps p{max-width:26ch}
+
+.links a{font-weight:500}
+
+
+.lc h4{font-family:var(--serif);line-height:1}
+
+
+
+.ix-board b{font-family:var(--serif);letter-spacing:-.005em}
+
+
+.card .nm{font-family:var(--serif)}
+
+.led-text{font-size:14px;letter-spacing:.04em;font-weight:500}
+.gate-led{font-size:16px;font-weight:500;letter-spacing:.04em}
+.validator .screen{font-size:14px;font-weight:500}
+.tunnel span{font-size:12px;font-weight:500}
+.toast{font-size:14px;font-weight:500}
+.hint{font-weight:400}
+
+.door .sticker{font-weight:400;max-width:210px}
+.door .sticker b{font-family:var(--deva);font-weight:400}
+
+
+
+.kbd{font-weight:500}
 
 
 /* ===== Glass: frosted panels over soft blue / violet / orange light ===== */
 body::before{content:"";position:fixed;inset:-8%;z-index:-1;pointer-events:none;background:var(--ambient)}
 #s-start,#s-exit{background:none}
-header{background:color-mix(in srgb,var(--wall) 82%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-bottom:1px solid var(--glass-line)}
+header{border-bottom:1px solid var(--glass-line)}
 footer{border-top:1px solid var(--glass-line)}
-.tbtn,.btn:not(.btn-go),.chips span,.links a,.ways a,.ways button,.awards div,.lc,.ix-board{background:var(--glass);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-color:var(--glass-line);box-shadow:inset 0 1px 0 var(--glass-edge)}
+
 .btn:not(.btn-go){border-width:1px}
 .tbtn[aria-pressed="true"]{background:var(--ink)}
-.ways a:hover,.ways button:hover{background:color-mix(in srgb,var(--ink) 88%,transparent)}
+
 .links a{color:var(--ink)}
-.links a:hover{background:var(--ink);color:var(--wall)}
+
 .awards div{border-style:solid}
 .lc{border:1px solid var(--glass-line);border-top:9px solid var(--c);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge)}
 .ix-board{box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge)}
-.nameboard,.nameboard.y{background:color-mix(in srgb,var(--c) 22%,var(--panel-dark));color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 70%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-edge),inset 0 0 40px color-mix(in srgb,var(--c) 14%,transparent)}
-.board{background:color-mix(in srgb,var(--board) 62%,transparent);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.22)}
-:root.day .board{background:color-mix(in srgb,var(--board) 86%,transparent)}
+.nameboard,.nameboard.y{color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 70%,transparent)}
+
+
 .board .chips span{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16);box-shadow:none;color:#C9D4DB}
 .board .links a{color:#EEF3F6;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);box-shadow:none}
 .board .links a:hover{background:#EEF3F6;color:var(--board)}
@@ -302,42 +304,42 @@ footer{border-top:1px solid var(--glass-line)}
 }
 
 /* ===== Type: light Manrope throughout ===== */
-body{font-size:16.5px;line-height:1.65;font-weight:400}
+body{font-size:16px;line-height:1.65;font-weight:400}
 b,strong,.content b{font-weight:600}
-.mark b{font-weight:500;font-size:22px;letter-spacing:-.01em}
-.mark small{font-size:13px}
+.mark b{font-weight:500;font-size:20px;letter-spacing:-.01em}
+.mark small{font-size:14px}
 .nameboard .no{font-size:12px;font-weight:500}
 .st-grid>div:first-child{container-type:inline-size;min-width:0}
-.nameboard h2{font-weight:300;font-size:clamp(28px,11cqi,52px);line-height:1.02;letter-spacing:-.03em;overflow-wrap:break-word;hyphens:manual}
+.nameboard h2,.nameboard h1{font-weight:300;font-size:clamp(28px,11cqi,52px);line-height:1.02;letter-spacing:-.03em;overflow-wrap:break-word;hyphens:manual}
 .nameboard .hi{font-weight:400;font-size:20px;opacity:.9}
 .arrival{font-size:14px;font-weight:400}
 .content h3{font-weight:300;font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-.03em}
 #s-start .content h3{font-size:clamp(36px,4.6vw,62px)}
-.content .org{font-style:normal;font-size:18px;font-weight:400;color:var(--muted)}
-.chips span{font-size:13px}
-.btn{font-size:15px;font-weight:500}
+.content .org{font-style:normal;font-size:20px;font-weight:400;color:var(--muted)}
+.chips span{font-size:14px}
+.btn{font-size:16px;font-weight:500}
 .tbtn{font-size:14px;font-weight:500}
-.pill{font-size:12.5px;font-weight:600}
-.board .top{font-size:13px}
-.flap span{font-weight:300;font-size:50px;min-width:36px}
-.flaps p{font-size:15px}
-.board .story{font-size:15.5px}
+.pill{font-size:12px;font-weight:600}
+.board .top{font-size:14px}
+.flap span{font-weight:300;font-size:52px;min-width:36px}
+.flaps p{font-size:16px}
+.board .story{font-size:16px}
 .links a{font-size:14px}
-.linelist div{font-size:15px;font-weight:500}
+.linelist div{font-size:16px;font-weight:500}
 .linelist small{font-weight:400}
-.lc h4{font-weight:400;font-size:26px}
-.mini li{font-size:15px}
+.lc h4{font-weight:400;font-size:24px}
+.mini li{font-size:16px}
 .awards div{font-size:14px}
-.awards b{font-family:var(--sign);font-size:15px;font-weight:600}
+.awards b{font-family:var(--sign);font-size:16px;font-weight:600}
 .ix-board b{font-weight:300;font-size:32px}
-.ix-board span{font-size:14.5px}
-.ways a,.ways button{font-size:15px}
+.ix-board span{font-size:14px}
+.ways a,.ways button{font-size:16px}
 .card .nm{font-weight:500;font-size:24px}
-.card .row,.card .vd{font-size:11px}
-.hint{font-size:15px}
+.card .row,.card .vd{font-size:12px}
+.hint{font-size:16px}
 .skip-intro{font:400 14px var(--sign)}
-.door .sticker{font-size:12.5px}
-.door .sticker b{font-size:13px}
+.door .sticker{font-size:12px}
+.door .sticker b{font-size:14px}
 .rm-stop .lab{font-size:12px;font-weight:500}
 .rm-stop.cur .lab{font-weight:700}
 footer .wrap{font-size:14px}
@@ -349,7 +351,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 
 /* ===== Intro: dusk forest outside the windows + push-forward transition ===== */
 html{scrollbar-gutter:stable}
-.door{transition:transform 1.5s cubic-bezier(.65,0,.25,1)}
+.door{transition:transform 1.1s cubic-bezier(.65,0,.25,1)}
 .door .win{z-index:0;background:radial-gradient(circle at 72% 80%,rgba(255,214,236,.95) 0,rgba(253,145,204,.45) 14%,transparent 38%),linear-gradient(180deg,#071447 0%,#143A9E 42%,#6F7FE0 70%,#FD91CC 100%);overflow:hidden;box-shadow:none}
 .door .win::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:3;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.22) 0,rgba(255,255,255,.06) 22%,transparent 40%,transparent 72%,rgba(255,255,255,.10) 100%);box-shadow:inset 0 0 0 8px var(--door-ring),inset 0 0 0 10px var(--door-ring2),inset 0 0 40px rgba(0,0,0,.35);animation:none}
 .ly{position:absolute;left:0;right:0;bottom:0;background-repeat:repeat-x;background-position:0 100%;will-change:background-position}
@@ -361,13 +363,13 @@ html{scrollbar-gutter:stable}
 @keyframes sc-far{to{background-position:-700px 100%}}
 @keyframes sc-mid{to{background-position:-520px 100%}}
 @keyframes sc-near{to{background-position:-760px 100%}}
-#intro{transition:transform 1.9s cubic-bezier(.55,0,.25,1),opacity .8s ease-in 1.05s;transform-origin:50% 46%}
+#intro{transition:transform 1.3s cubic-bezier(.55,0,.25,1),opacity .6s ease-in .6s;transform-origin:50% 46%}
 #intro.open{transform:scale(1.6);opacity:0;pointer-events:none}
 #intro.gone{transition:none}
 @keyframes arrive{from{opacity:0;transform:scale(.9)}55%{opacity:1}to{opacity:1;transform:none}}
 @keyframes hdrin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-body.arriving #s-start{animation:arrive 1.8s cubic-bezier(.16,.84,.3,1) both;transform-origin:50% 40%}
-body.arriving header{animation:hdrin 1.3s cubic-bezier(.2,.8,.2,1) both}
+body.arriving #s-start{animation:arrive 1.2s cubic-bezier(.16,.84,.3,1) both;transform-origin:50% 40%}
+body.arriving header{animation:hdrin .9s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion:reduce){.ly{animation:none}#intro,.door{transition:none}body.arriving #s-start,body.arriving header{animation:none}}
 
 
@@ -417,7 +419,6 @@ header{background:linear-gradient(180deg,color-mix(in srgb,var(--wall) 95%,trans
 .content{transition:opacity .9s .2s ease,transform 1s .2s var(--ease)}
 .rm-train{transition:left .55s var(--ease)}
 .toast{transition:opacity .4s ease,transform .5s var(--ease)}
-html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .55s ease,color .55s ease,border-color .55s ease,box-shadow .55s ease,fill .55s ease,stroke .55s ease!important}
 
 /* chime button: a pink fill grows from the centre, waves switch on */
 #sound{background:radial-gradient(circle closest-side,var(--ember) 98%,transparent 100%) 50% 50%/0% 0% no-repeat,var(--g-sheen),var(--g-tint);transition:background-size .65s var(--ease),color .35s ease,box-shadow .55s var(--ease),transform .45s var(--ease)}
@@ -446,13 +447,14 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 @media (max-width:1000px){
   .st-grid{grid-template-columns:1fr;gap:28px}
   .lines3,.awards{grid-template-columns:1fr}
-  .rm-stop .lab{display:none}
-  .rm-stop.cur .lab{display:block;top:21px}
+  .rm-stop .lab{display:block;opacity:0;pointer-events:none;transition:opacity 150ms var(--ease)}
+  .rm-stop:nth-child(n) .lab{top:21px}
+  .rm-stop.cur .lab{opacity:1}
 }
 @media (max-width:640px){
   .bar{grid-template-columns:auto auto;height:auto;padding:8px 20px;gap:8px}
   .led{grid-column:1/-1;order:3;height:34px}
-  .led-text{font-size:13px}
+  .led-text{font-size:14px}
   .mark small,.tbtn .lbl{display:none}
   .rm-stop .d{width:14px;height:14px;border-width:3px}
   .rm-stop{top:31px}
@@ -472,16 +474,200 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   .tunnel::before,.door .win::after,.card,.rm-stop.next .d{animation:none}
   .led-text{animation:none;padding-left:16px}
 }
+
+/* ===== Review fixes ===== */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+/* route-map strokes: day-only darker tokens so dots and line clear 3:1 */
+:root{--blue-ui:var(--blue);--ember-ui:var(--ember);--violet-ui:var(--violet);--peach-ui:var(--peach);--sky-ui:var(--sky)}
+:root.day{--blue-ui:#09318D;--ember-ui:#D6338A;--violet-ui:#5A73DD;--peach-ui:#E0489A;--sky-ui:#4F7FE8}
+/* touch targets */
+.tbtn{height:44px;min-width:44px}
+.tbtn[hidden]{display:none}
+.skip-intro{padding:12px 20px}
+.rm-stop::before{content:"";position:absolute;inset:-15px}
+/* route map sits inside the page grid; rule spans full width */
+.rm-wrap{border-top:1px solid var(--rule)}
+.routemap{border-top:0}
+/* LED ticker: pausable */
+.led:hover .led-text,.led:focus-within .led-text{animation-play-state:paused}
+main:focus{outline:none}
+/* skills card headings are now h3; keep their size */
+.lc h3{font-size:24px;font-weight:400;line-height:1;letter-spacing:normal}
+/* chips are too small for backdrop blur to show; skip the GPU cost */
+.chips span{-webkit-backdrop-filter:none;backdrop-filter:none}
+/* two award tiles remain */
+@media (min-width:1001px){.awards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .led{display:none}
+  .routemap{height:60px}
+  .rm-line{top:26px}
+  .rm-stop{top:23px}
+  .rm-train{top:18px}
+  .rm-stop:nth-child(n) .lab{top:17px}
+  .rm-wrap .wrap{padding:0 8px}
+  .rm-stop::before{inset:-15px -7px}
+  html{scroll-padding-top:130px}
+}
+
+/* ===== Motion additions ===== */
+/* 1. copy button: inline Copy -> Copied crossfade */
+.swap{display:inline-grid}
+.swap>span{grid-area:1/1;text-align:right;transition:opacity 120ms var(--ease)}
+.swap .b{opacity:0}
+#copy[data-copied] .swap .a{opacity:0}
+#copy[data-copied] .swap .b{opacity:1}
+/* 3. ride again: intro fades back in */
+#intro.returning{transition:opacity 250ms var(--ease)}
+/* 5. route-map dots: hover and press */
+@media (hover:hover) and (pointer:fine){.rm-stop:hover .d{transform:scale(1.15)}}
+.rm-stop:active .d{transform:scale(.9)}
+@media (prefers-reduced-motion:reduce){
+  .swap>span{transition:none}
+  #intro.returning{transition-duration:120ms}
+  .rm-stop .d{transition:background .3s,transform 100ms linear}
+  .rm-stop:active .d{transform:scale(.95)}
+}
+@media (prefers-reduced-motion:reduce) and (hover:hover) and (pointer:fine){.rm-stop:hover .d{transform:scale(1.08)}}
+@media (max-width:1000px) and (prefers-reduced-motion:reduce){.rm-stop .lab{transition-duration:100ms}}
+
+/* ===== Product-design pass ===== */
+/* focus ring stays visible on the dark boards in day mode */
+.board :focus-visible{outline-color:#fff}
+/* theme switch: browser crossfades one snapshot, no per-element transitions */
+::view-transition-old(root),::view-transition-new(root){animation-duration:250ms;animation-timing-function:ease}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:120ms}}
+/* hierarchy: company + dates live in the nameboard, role is a smaller, heavier line */
+.nameboard .when{display:block;margin-top:10px;font-size:14px;font-weight:400;line-height:1.4;opacity:.8}
+#s-nit .content h3,#s-cc .content h3,#s-wiz .content h3{font-size:clamp(24px,2.6vw,32px);font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.outcomes{display:flex;flex-wrap:wrap;gap:14px 32px;margin-top:20px}
+.outcomes div{border-left:3px solid var(--c);padding-left:12px}
+.content .outcomes b{display:block;font-weight:300;font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1.05}
+.outcomes span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+/* project CTAs: live app is primary */
+.board .links a.primary{background:var(--ember);border-color:var(--ember);color:#061A55;font-weight:600;padding:8px 18px}
+.board .links a.primary:hover{background:#fff;border-color:#fff;color:#061A55}
+.board .links a.primary::before,.board .links a.primary::after{display:none}
+/* boards: tags as plain text, not a third level of bordered containers */
+.board .chips{gap:2px 0}
+.board .chips span{border:0;background:none;box-shadow:none;padding:0;border-radius:0}
+.board .chips span+span::before{content:"\00b7";margin:0 .65em;opacity:.55}
+/* fewer backdrop blurs: small controls don't need them */
+.tbtn,.btn:not(.btn-go),.links a,.ways a,.ways button,.awards div,.ix-board{-webkit-backdrop-filter:none;backdrop-filter:none}
+/* tunnels: lights only run while visible; shorter */
+.tunnel{height:76px}
+.tunnel::before{animation-play-state:paused}
+.tunnel.vis::before{animation-play-state:running}
+/* slimmer sticky header on desktop */
+@media (min-width:641px){
+  .bar{height:56px}
+  .routemap{height:68px}
+  .rm-line{top:30px}
+  .rm-stop{top:24px}
+  .rm-train{top:22px}
+  html{scroll-padding-top:130px}
+}
+@media (max-width:640px){#s-start,#s-exit{min-height:auto}}
+/* header is ~93% opaque already, so its blur was invisible but repainted on every scroll frame */
+header{-webkit-backdrop-filter:none;backdrop-filter:none}
+
+/* ===== Bento pass: flat tiles, 28px radius, 16px gaps, neutral uppercase labels ===== */
+:root{--neutral:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+
+/* Start: line tiles */
+#s-start .linelist{grid-template-columns:repeat(2,1fr);gap:16px;max-width:560px;margin-top:28px}
+#s-start .linelist div{flex-direction:column;align-items:flex-start;gap:0;min-height:150px;padding:20px 24px;border-radius:28px;background:var(--c);color:var(--on)}
+#s-start .linelist span{font:700 13px/1 var(--neutral);letter-spacing:.08em;text-transform:uppercase}
+#s-start .linelist b{margin-top:auto;font-size:clamp(48px,5vw,64px);font-weight:400;line-height:1;letter-spacing:-.03em}
+#s-start .linelist b.txt{font-size:clamp(28px,3vw,36px);letter-spacing:-.02em}
+#s-start .linelist span{line-height:1.2}
+#s-start .linelist small{color:inherit;opacity:.75;font-size:16px;font-weight:500;margin-top:2px}
+
+@media (min-width:1001px){#s-start .linelist{grid-template-columns:repeat(4,1fr);max-width:none}}
+#s-start .linelist div{min-height:160px}
+#s-start .linelist b{font-size:clamp(44px,4.4vw,56px)}
+#s-exit .ways small{opacity:.78}
+/* Experience outcomes: metric tiles */
+.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:none;margin-top:22px}
+.outcomes>div{border:0;padding:20px 22px;border-radius:28px;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--fill);color:var(--tx)}
+.outcomes>div:nth-child(1){--fill:#FD91CC;--tx:var(--on)}
+.outcomes>div:nth-child(2){--fill:#061A55;--tx:#fff}
+.outcomes>div:nth-child(3){--fill:#8FA8FF;--tx:var(--on)}
+.content .outcomes b{font-size:clamp(34px,3.4vw,44px);font-weight:400;letter-spacing:-.04em}
+.outcomes span{color:inherit;opacity:.75}
+
+/* Skills: bento grid */
+#s-skills .content{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+#s-skills .lines3,#s-skills .awards{display:contents}
+#s-skills .lc{grid-column:span 2;border:0;border-radius:28px;padding:28px 28px 32px;background:var(--fill);color:var(--tx);--c:var(--tx);--station:var(--fill);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+#s-skills .lc::before,#s-skills .lc::after,#s-skills .awards div::before,#s-skills .awards div::after{display:none}
+#s-skills .lc:hover,#s-skills .awards div:hover{transform:none}
+#s-skills .lc:nth-child(1){--fill:#FD91CC;--tx:var(--on)}
+#s-skills .lc:nth-child(2){--fill:#061A55;--tx:#fff}
+#s-skills .lc:nth-child(3){--fill:#8FA8FF;--tx:var(--on)}
+#s-skills .lc h3{font:700 14px/1 var(--neutral);letter-spacing:.08em;text-transform:uppercase}
+#s-skills .mini{margin-top:22px}
+#s-skills .mini li{font-size:18px;font-weight:500;line-height:1.35;padding-top:3px;padding-bottom:3px}
+#s-skills .awards div{grid-column:span 3;border:0;border-radius:28px;padding:24px 28px;background:var(--fill);color:var(--tx);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;font-size:16px}
+#s-skills .awards div:nth-child(1){--fill:#fff;--tx:var(--on)}
+#s-skills .awards div:nth-child(2){--fill:#FFC2E5;--tx:var(--on)}
+#s-skills .awards b{color:inherit;font-size:22px;font-weight:600;margin-bottom:2px}
+
+/* Exit: contact tiles */
+#s-exit .ways{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(120px,auto);gap:16px;max-width:none;margin-top:28px}
+#s-exit .ways>*{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;padding:22px 24px;border:0;border-radius:28px;background:var(--fill);color:var(--tx);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;font:600 20px/1.2 var(--sign);text-align:left}
+#s-exit .ways>*::before,#s-exit .ways>*::after{display:none}
+#s-exit .ways>*:hover{background:var(--fill);color:var(--tx)}
+#s-exit .ways small{order:-1;margin-bottom:auto;font:700 12px/1 var(--neutral);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+#s-exit .swap>span{text-align:left}
+#s-exit .ways>:nth-child(1){grid-column:1/3;grid-row:1/3;--fill:#FD91CC;--tx:var(--on);font-size:clamp(20px,2vw,26px);font-weight:500;overflow-wrap:anywhere}
+#s-exit .ways>:nth-child(2){--fill:#8FA8FF;--tx:var(--on)}
+#s-exit .ways>:nth-child(3){--fill:#061A55;--tx:#fff}
+#s-exit .ways>:nth-child(4){--fill:#fff;--tx:var(--on)}
+#s-exit .ways>:nth-child(5){--fill:#FFC2E5;--tx:var(--on)}
+
+@media (max-width:1000px){
+  #s-skills .content{grid-template-columns:1fr}
+  #s-skills .lc,#s-skills .awards div{grid-column:auto}
+  #s-exit .ways{grid-template-columns:repeat(2,1fr)}
+  #s-exit .ways>:nth-child(1){grid-column:1/-1;grid-row:auto;min-height:150px}
+}
+@media (max-width:640px){
+  .outcomes{grid-template-columns:1fr}
+  .outcomes>div{min-height:0;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:14px}
+}
+
+/* ===== Skills: full bento composition (hero + varied tiles) ===== */
+#s-skills .st-grid{grid-template-columns:1fr}
+#s-skills .content{grid-template-columns:repeat(4,1fr);grid-template-areas:"hero prod data ai" "hero sql sql js"}
+#s-skills .hero-tile{grid-area:hero;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:300px;padding:28px;border-radius:28px;background:#061A55;color:#fff}
+#s-skills .hero-tile .no{display:flex;justify-content:space-between;align-items:center;font:700 14px/1 var(--neutral);letter-spacing:.08em;text-transform:uppercase}
+#s-skills .hero-tile .pill{font:700 12px/1 var(--neutral);letter-spacing:.02em;text-transform:none;padding:6px 12px;color:#061A55;background:#FD91CC}
+#s-skills .hero-tile h2{font-size:clamp(52px,6vw,80px);font-weight:400;letter-spacing:-.04em;line-height:1}
+#s-skills .hero-tile p{margin-top:10px;font-size:18px;font-weight:500;opacity:.8}
+#s-skills .lc,#s-skills .awards div{grid-column:auto}
+#s-skills .lc:nth-child(1){grid-area:prod;--fill:#FD91CC;--tx:var(--on)}
+#s-skills .lc:nth-child(2){grid-area:data;--fill:#8FA8FF;--tx:var(--on)}
+#s-skills .lc:nth-child(3){grid-area:ai;--fill:#fff;--tx:var(--on)}
+#s-skills .awards div:nth-child(1){grid-area:sql;--fill:#FFC2E5;--tx:var(--on)}
+#s-skills .awards div:nth-child(2){grid-area:js;--fill:#B9CDFF;--tx:var(--on)}
+#s-skills .mini li{font-size:17px}
+@media (max-width:1000px){
+  #s-skills .content{grid-template-columns:1fr;grid-template-areas:none}
+  #s-skills .hero-tile,#s-skills .lc:nth-child(n),#s-skills .awards div:nth-child(n){grid-area:auto}
+  #s-skills .hero-tile{min-height:220px}
+}
+#s-skills .awards b{line-height:1.2}
 </style>
+<noscript><style>#intro{display:none}body.locked{overflow:auto}.nameboard,.content{opacity:1;transform:none}.mini::before{transform:none}</style></noscript>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="locked">
-<a class="skip" href="#s-start">Skip to content</a>
+<a class="skip" href="#main" id="skip-link">Skip to content</a>
 
 <!-- ===== Opening: tap your card, the doors open ===== -->
 <div id="intro" role="dialog" aria-modal="true" aria-label="Enter the site">
-  <div class="door l" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">Please do not lean on the doors, or on assumptions<b>कृपया दरवाज़ों से टेक न लगाएँ</b></p></div>
-  <div class="door r" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">This train goes to: shipped work only<b>यह ट्रेन जाती है: मेरे काम तक</b></p></div>
+  <div class="door l" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">Please do not lean on the doors, or on assumptions<b lang="hi">कृपया दरवाज़ों से टेक न लगाएँ</b></p></div>
+  <div class="door r" aria-hidden="true"><div class="win"><i class="ly far"></i><i class="ly mid"></i><i class="ly near"></i></div><div class="strip"></div><p class="sticker">This train goes to: work I actually built<b lang="hi">यह ट्रेन जाती है: मेरे काम तक</b></p></div>
   <div class="gate">
     <div class="gate-led" id="gate-led">PLATFORM 1: RAJVEER SINGH</div>
     <div class="scene">
@@ -494,7 +680,7 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
         <div class="stripes" aria-hidden="true"><i style="background:#FD91CC"></i><i style="background:#FCFFFF"></i><i style="background:#8FA8FF"></i></div>
       </button>
     </div>
-    <p class="hint">Tap the card to board. Activation takes one tap.</p>
+    <p class="hint">Boarding starts on its own in a moment. Tap the card to go now.</p>
   </div>
   <button class="skip-intro" id="skip-intro" type="button">Skip intro</button>
 </div>
@@ -503,34 +689,34 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   <div class="wrap bar">
     <a class="mark" href="#s-start" aria-label="Rajveer Singh, back to start">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--ink)"/><path d="M12 18 L32 34" stroke="var(--peach)" stroke-width="7" stroke-linecap="round"/><path d="M52 18 L32 34" stroke="var(--violet)" stroke-width="7" stroke-linecap="round"/><path d="M32 54 V34" stroke="var(--blue)" stroke-width="7" stroke-linecap="round"/><circle cx="32" cy="34" r="8" fill="#fff" stroke="var(--ink)" stroke-width="3"/></svg>
-      <span><b>Rajveer Singh</b><small>राजवीर सिंह</small></span>
+      <span><b>Rajveer Singh</b><small lang="hi">राजवीर सिंह</small></span>
     </a>
-    <div class="led" role="status" aria-live="polite"><span class="led-text" id="led">Welcome aboard. This train terminates at a conversation with you.</span></div>
+    <div class="led"><span class="led-text" id="led">Welcome aboard. This train terminates at a conversation with you.</span></div><span class="sr-only" id="led-live" role="status" aria-live="polite"></span>
     <div class="tools">
-      <button class="tbtn" id="sound" aria-pressed="false" aria-label="Station chime (S)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg><span class="lbl">Chime</span></button>
-      <button class="tbtn" id="theme" aria-label="Day or night service (L)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="lbl">Night</span></button>
+      <button class="tbtn" id="sound" aria-pressed="false" aria-label="Station chime (Alt+Shift+S)" aria-keyshortcuts="Alt+Shift+S"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg><span class="lbl">Chime</span></button>
+      <button class="tbtn" id="theme" aria-label="Day or night service (Alt+Shift+L)" aria-keyshortcuts="Alt+Shift+L"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="lbl">Night</span></button>
       <a class="tbtn" href="https://rajveers-portfolio-eta.vercel.app/resume.pdf" download="Rajveer_Singh_Resume.pdf">Resume</a>
     </div>
   </div>
-  <nav class="routemap" id="routemap" aria-label="Stations on this journey"></nav>
+  <div class="rm-wrap"><div class="wrap"><nav class="routemap" id="routemap" aria-label="Stations on this journey"></nav></div></div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- Start -->
 <section class="station" id="s-start" data-name="Platform 1" data-short="Start" data-c="--blue" data-msg="Now at Platform 1. Onboarding complete. Please keep your attention span inside the train.">
   <div class="wrap st-grid" style="--c:var(--blue)">
     <div>
-      <div class="nameboard"><div class="no"><span>Platform 1</span><span>Start</span></div><h2>Rajveer Singh</h2><span class="hi">राजवीर सिंह</span></div>
+      <div class="nameboard"><div class="no"><span>Platform 1</span><span>Start</span></div><h1>Rajveer Singh</h1><span class="hi" lang="hi">राजवीर सिंह</span></div>
       <p class="arrival">NIT Delhi ECE, class of 2026. <b>Open to product and data roles.</b></p>
     </div>
     <div class="content">
       <h3>I find where users drop off, then build the fix.</h3>
       <p>Product, data and AI are my three lines. This train runs through where I've worked, what I've built and how to reach me. Scroll to ride; the map up top is your progress bar, minus the fake percentages.</p>
       <div class="linelist">
-        <div style="--c:var(--ember)"><i></i>Experience line <small>3 stations</small></div>
-        <div style="--c:var(--violet)"><i></i>Projects line <small>6 platforms</small></div>
-        <div style="--c:var(--peach)"><i></i>Skills line <small>1 stop</small></div>
-        <div style="--c:var(--sky)"><i></i>Exit gate <small>say hi</small></div>
+        <div style="--c:var(--ember)"><span>Experience line</span><b>3</b><small>stations</small></div>
+        <div style="--c:var(--violet)"><span>Projects line</span><b>6</b><small>platforms</small></div>
+        <div style="--c:var(--peach)"><span>Skills line</span><b>1</b><small>stop</small></div>
+        <div style="--c:var(--sky)"><span>Exit gate</span><b class="txt">Say hi</b></div>
       </div>
       <div class="row-btns"><a class="btn btn-go" href="#s-nit">Start the journey</a><a class="btn" href="#s-exit">Jump to exit gate</a></div>
     </div>
@@ -543,8 +729,7 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 <section class="station" id="s-nit" data-name="NIT Delhi" data-short="NIT Delhi" data-c="--ember" data-msg="Next station: NIT Delhi. Version 1.0 of Rajveer shipped here. Please mind the backlog.">
   <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
-      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 1</span></div><h2>NIT Delhi</h2><span class="hi">एनआईटी दिल्ली</span></div>
-      <p class="arrival">Aug 2022 – May 2026</p>
+      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 1</span></div><h2>NIT Delhi</h2><span class="when">Aug 2022 – May 2026</span></div>
     </div>
     <div class="content">
       <h3>B.Tech, Electronics and Communication Engineering</h3>
@@ -564,11 +749,11 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 <section class="station" id="s-cc" data-name="Corporate Cruise" data-short="Corp. Cruise" data-c="--ember" data-msg="Next station: Corporate Cruise. Passengers with SLA complaints, this is your stop.">
   <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
-      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 2</span></div><h2>Corporate Cruise</h2><span class="hi">कॉर्पोरेट क्रूज़</span></div>
-      <p class="arrival">Jun – Aug 2025, New Delhi</p>
+      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 2</span></div><h2>Corporate Cruise</h2><span class="when">Jun – Aug 2025, New Delhi</span></div>
     </div>
     <div class="content">
       <h3>Data Analyst Intern</h3>
+      <div class="outcomes"><div><b>15%</b><span>SLA lag found</span></div><div><b>2</b><span>bottlenecks traced</span></div><div><b>40%</b><span>less report prep</span></div></div>
       <ul>
         <li>Broke the support ticket pipeline into stages in Python and SQL and found a <b>15% lag</b> against the resolution SLA that nobody had flagged.</li>
         <li>Traced it to <b>two bottlenecks</b> and took a fix plan to leadership.</li>
@@ -584,12 +769,12 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 <section class="station" id="s-wiz" data-name="WizCommerce" data-short="WizCommerce" data-c="--ember" data-msg="Next station: WizCommerce. Real users, real launch blockers. Change here for the Projects line.">
   <div class="wrap st-grid" style="--c:var(--ember)">
     <div>
-      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 3</span></div><h2>WizCommerce</h2><span class="hi">विज़कॉमर्स</span></div>
-      <p class="arrival">Apr – Jul 2026, Bengaluru</p>
+      <div class="nameboard"><div class="no"><span>Experience line</span><span>Stop 3</span></div><h2>WizCommerce</h2><span class="when">Apr – Jul 2026, Bengaluru</span></div>
     </div>
     <div class="content">
       <h3>Product Management Intern</h3>
       <p class="org">B2B e-commerce for US wholesale brands</p>
+      <div class="outcomes"><div><b>424</b><span>launch test cases</span></div><div><b>20+</b><span>blockers ranked</span></div><div><b>35→3–4</b><span>min of call prep</span></div></div>
       <ul>
         <li>Owned launch readiness for <b>3 US client stores</b>, homepage to checkout: <b>424 test cases</b> and 20+ launch blockers ranked by user impact with engineering.</li>
         <li>Turned catalogue gap analyses into PRDs, user stories and Jira tickets.</li>
@@ -601,19 +786,19 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   </div>
 </section>
 
-<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--ember)"></i><i style="--c:var(--violet)"></i></div><div><b>Interchange</b><span>Change here for the Projects line. Six platforms, all shipped to production (or close enough).</span></div></div></div></div>
-<div class="tunnel" aria-hidden="true"><span>Projects line. All builds shipped</span></div>
+<div class="interchange"><div class="wrap"><div class="ix-board"><div class="dots" aria-hidden="true"><i style="--c:var(--ember)"></i><i style="--c:var(--violet)"></i></div><div><b>Interchange</b><span>Change here for the Projects line. Six builds: two live apps, one internal tool in daily use, two repos, one dashboard.</span></div></div></div></div>
+<div class="tunnel" aria-hidden="true"><span>Projects line. Six builds</span></div>
 
 <!-- Projects line -->
 <section class="station" id="s-renter" data-name="Renter's Copilot" data-short="Renter's" data-c="--violet" data-msg="Platform 1: Renter's Copilot. Now arriving with 115 underpriced flats. Rent responsibly.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 1</span></div><h2>Renter's Copilot</h2><span class="hi">रेंटर्स कोपायलट</span></div><p class="arrival">Aug 2026, live</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 1</span></div><h2>Renter's Copilot</h2><span class="when">Aug 2026, live</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">AI + Data</span><span>Live service</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>1</span><span>1</span><span>5</span></div><p>underpriced rentals flagged every week</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>1</span><span>1</span><span>5</span></div><span class="sr-only">115 </span><p>underpriced rentals flagged every week</p></div>
       <p class="story">Renters can't tell if a listing is fairly priced. A weekly pipeline scrapes about 1,400 listings across 40 Bengaluru localities, predicts fair rent with XGBoost (23.1% error, down from 33%) and flags deals on a live app. Fixing a location bug took unique listings from 39 to 1,566. Regex beat Gemini for pulling fields out of listings (90.2% vs 89.2%, milliseconds, free), so regex shipped.</p>
       <div class="chips"><span>Python</span><span>Playwright</span><span>XGBoost</span><span>SQLite</span><span>Streamlit</span><span>GitHub Actions</span></div>
-      <div class="links"><a href="https://bengaluru-renter-copilot-mutz7yduhghtw54edjhquq.streamlit.app" target="_blank" rel="noopener noreferrer">Open live app</a><a href="https://github.com/rajveer-2004/bengaluru-renter-copilot" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
+      <div class="links"><a class="primary" href="https://bengaluru-renter-copilot-mutz7yduhghtw54edjhquq.streamlit.app" target="_blank" rel="noopener noreferrer">Open live app</a><a href="https://github.com/rajveer-2004/bengaluru-renter-copilot" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
     </div></div>
   </div>
 </section>
@@ -622,10 +807,10 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <section class="station" id="s-csm" data-name="CSM Hub" data-short="CSM Hub" data-c="--violet" data-msg="Platform 2: CSM Hub. Version 2 is here because version 1 was too noisy. Iterate, don't hesitate.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 2</span></div><h2>CSM Hub</h2><span class="hi">सीएसएम हब</span></div><p class="arrival">WizCommerce, used daily</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 2</span></div><h2>CSM Hub</h2><span class="when">WizCommerce, used daily</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">Product + AI</span><span>In daily use</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>3</span><span>5</span></div><svg viewBox="0 0 40 20" width="40" height="20" aria-hidden="true" style="margin-bottom:14px"><path d="M2 10h32M26 3l8 7-8 7" fill="none" stroke="#FD91CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="flap" aria-hidden="true"><span>3</span></div><p>minutes of prep per client call</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>3</span><span>5</span></div><svg viewBox="0 0 40 20" width="40" height="20" aria-hidden="true" style="margin-bottom:14px"><path d="M2 10h32M26 3l8 7-8 7" fill="none" stroke="#FD91CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="flap" aria-hidden="true"><span>3</span></div><span class="sr-only">35 to 3 </span><p>minutes of prep per client call</p></div>
       <p class="story">Customer Success Managers jumped between four tools before every call. My first attempt, AI updates dropped into Slack, buried them in noise. After sitting with the team I rebuilt it as a pre-call brief and one view per client across 71 domains, pulling HubSpot, Jira, Gmail and Gong, with Gemini sentiment scoring and a risk leaderboard. All four CSMs used it daily.</p>
       <div class="chips"><span>React</span><span>Vite</span><span>Supabase</span><span>Gemini API</span><span>Upstash Redis</span><span>Claude + MCP</span></div>
     </div></div>
@@ -636,10 +821,10 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <section class="station" id="s-credit" data-name="Credit Risk" data-short="Credit Risk" data-c="--violet" data-msg="Platform 3: Credit Risk. Please mind the class imbalance between the doors and the platform.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 3</span></div><h2>Credit Risk</h2><span class="hi">क्रेडिट रिस्क</span></div><p class="arrival">Jun 2026</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 3</span></div><h2>Credit Risk</h2><span class="when">Jun 2026</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">Data + ML</span><span>150K records</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>0</span><span>.</span><span>8</span><span>6</span><span>8</span></div><p>AUC, ranking risky borrowers above safe ones</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>0</span><span>.</span><span>8</span><span>6</span><span>8</span></div><span class="sr-only">0.868 </span><p>AUC, ranking risky borrowers above safe ones</p></div>
       <p class="story">Compared logistic regression, a decision tree and XGBoost on a heavily imbalanced dataset (6.7% defaults). XGBoost won. Three risk tiers gave a 22x gap in default rates, an Isolation Forest plus simple rules gave a 4x lift on flagged accounts, and scores became approve, review or reject decisions served through FastAPI.</p>
       <div class="chips"><span>Python</span><span>XGBoost</span><span>scikit-learn</span><span>Isolation Forest</span><span>FastAPI</span></div>
       <div class="links"><a href="https://github.com/rajveer-2004/credit-risk-fraud-detection" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
@@ -651,10 +836,10 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <section class="station" id="s-veritas" data-name="Veritas" data-short="Veritas" data-c="--violet" data-msg="Platform 4: Veritas. Two signals required before any alarm. No false positives on this train.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 4</span></div><h2>Veritas</h2><span class="hi">वेरिटास</span></div><p class="arrival">Jul 2026, InCruiter hackathon</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 4</span></div><h2>Veritas</h2><span class="when">Jul 2026, InCruiter hackathon</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">AI + HR tech</span><span>Hackathon build</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>2</span><span>+</span></div><p>independent signals before any alert fires</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>2</span><span>+</span></div><span class="sr-only">2 or more </span><p>independent signals before any alert fires</p></div>
       <p class="story">AI interview copilots are invisible to screen sharing, so Veritas watches for the behaviour they cause: gaze tracking, answer-timing patterns, virtual camera checks and trick questions. One odd moment can never flag an honest candidate on its own, and every alert comes with evidence a human reviews.</p>
       <div class="chips"><span>Next.js</span><span>TypeScript</span><span>WebRTC</span><span>Socket.IO</span><span>MediaPipe</span></div>
       <div class="links"><a href="https://github.com/rajveer-2004/veritas" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
@@ -666,13 +851,13 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <section class="station" id="s-zamp" data-name="Zamp Nexus" data-short="Zamp" data-c="--violet" data-msg="Platform 5: Zamp Nexus. One CSV in, fifty states out. The ride, sadly, is not tax-free.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 5</span></div><h2>Zamp Nexus</h2><span class="hi">ज़ैम्प नेक्सस</span></div><p class="arrival">May 2026, live</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 5</span></div><h2>Zamp Nexus</h2><span class="when">May 2026, live</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">AI + Fintech</span><span>Live service</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>5</span><span>0</span></div><p>US states checked from one uploaded CSV</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>5</span><span>0</span></div><span class="sr-only">50 </span><p>US states checked from one uploaded CSV</p></div>
       <p class="story">Upload a transaction file and it detects the columns, checks each state against standard economic nexus thresholds, maps exposure with filing deadlines, and has Gemini write a plain-language risk brief. Later extended into a multi-client view for accounting firms. Next step would be each state's own thresholds.</p>
       <div class="chips"><span>React</span><span>D3</span><span>Node.js</span><span>Gemini API</span><span>Docker</span></div>
-      <div class="links"><a href="https://nexus-analyzer-wine.vercel.app/" target="_blank" rel="noopener noreferrer">Open live app</a><a href="https://github.com/rajveer-2004/nexus-analyzer" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
+      <div class="links"><a class="primary" href="https://nexus-analyzer-wine.vercel.app/" target="_blank" rel="noopener noreferrer">Open live app</a><a href="https://github.com/rajveer-2004/nexus-analyzer" target="_blank" rel="noopener noreferrer">Code on GitHub</a></div>
     </div></div>
   </div>
 </section>
@@ -681,10 +866,10 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 
 <section class="station" id="s-mdm" data-name="MDM Dashboard" data-short="MDM" data-c="--violet" data-msg="Platform 6: MDM Dashboard. Duplicate passengers will be merged at this station.">
   <div class="wrap st-grid" style="--c:var(--violet)">
-    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 6</span></div><h2>MDM Dashboard</h2><span class="hi">एमडीएम डैशबोर्ड</span></div><p class="arrival">Power BI</p></div>
+    <div><div class="nameboard"><div class="no"><span>Projects line</span><span>Platform 6</span></div><h2>MDM Dashboard</h2><span class="when">Power BI</span></div></div>
     <div class="content"><div class="board">
       <div class="top"><span class="pill" style="--c:var(--violet)">Data quality</span><span>Power BI</span></div>
-      <div class="flaps"><div class="flap" aria-hidden="true"><span>4</span><span>1</span><span>3</span><span>0</span></div><p>customer records scored for quality</p></div>
+      <div class="flaps"><div class="flap" aria-hidden="true"><span>4</span><span>1</span><span>3</span><span>0</span></div><span class="sr-only">4,130 </span><p>customer records scored for quality</p></div>
       <p class="story">A customer master dataset seeded with duplicates and messy formats. I designed match-key deduplication (normalised name plus postal code), sorted exceptions into five types, gave every record a 0–100 quality score, and built 25+ DAX measures with an 80-week match-rate trend.</p>
       <div class="chips"><span>Power BI</span><span>DAX</span><span>Power Query M</span><span>Deduplication</span></div>
     </div></div>
@@ -697,14 +882,14 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 <!-- Skills -->
 <section class="station" id="s-skills" data-name="Skills" data-short="Skills" data-c="--peach" data-msg="Next station: Skills. All three lines stop here. Feature-complete, not scope-creeping.">
   <div class="wrap st-grid" style="--c:var(--peach)">
-    <div><div class="nameboard y"><div class="no"><span>Skills line</span><span>Stop 1</span></div><h2>Skills</h2><span class="hi">कौशल</span></div><p class="arrival">What I reach for</p></div>
     <div class="content">
+      <div class="hero-tile"><div class="no"><span>Skills line</span><b class="pill">Stop 1</b></div><div><h2>Skills</h2><p>What I reach for</p></div></div>
       <div class="lines3">
-        <div class="lc" style="--c:var(--peach)"><h4>Product</h4><ul class="mini"><li>PRDs and user stories</li><li>UAT and launch readiness</li><li>Funnels and event tracking</li><li>A/B tests and root cause analysis</li><li>Prioritisation</li></ul></div>
-        <div class="lc" style="--c:var(--blue)"><h4>Data</h4><ul class="mini"><li>SQL: MySQL, SQLite</li><li>Python and pandas</li><li>Metabase, Power BI, DAX</li><li>scikit-learn and XGBoost</li><li>Excel and ETL</li></ul></div>
-        <div class="lc" style="--c:var(--violet)"><h4>AI and building</h4><ul class="mini"><li>Claude Code and MCP agents</li><li>Gemini API</li><li>React, Next.js, FastAPI</li><li>Supabase and Vercel</li><li>Playwright, GitHub Actions</li></ul></div>
+        <div class="lc"><h3>Product</h3><ul class="mini"><li>PRDs and user stories</li><li>UAT and launch readiness</li><li>Funnels and event tracking</li><li>A/B tests and root cause analysis</li><li>Prioritisation</li></ul></div>
+        <div class="lc"><h3>Data</h3><ul class="mini"><li>SQL: MySQL, SQLite</li><li>Python and pandas</li><li>Metabase, Power BI, DAX</li><li>scikit-learn and XGBoost</li><li>Excel and ETL</li></ul></div>
+        <div class="lc"><h3>AI and building</h3><ul class="mini"><li>Claude Code and MCP agents</li><li>Gemini API</li><li>React, Next.js, FastAPI</li><li>Supabase and Vercel</li><li>Playwright, GitHub Actions</li></ul></div>
       </div>
-      <div class="awards"><div><b>SQL Certification</b>Advanced</div><div><b>JavaScript Certification</b>Udemy</div><div><b>Valorant</b>Still losing. Getting better at SQL.</div></div>
+      <div class="awards"><div><b>SQL Certification</b>Advanced</div><div><b>JavaScript Certification</b>Udemy</div></div>
     </div>
   </div>
 </section>
@@ -714,15 +899,15 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 <!-- Exit -->
 <section class="station" id="s-exit" data-name="Exit gate" data-short="Exit" data-c="--sky" data-msg="Terminal station: Exit gate. This is where the funnel converts. Please tap out with a message.">
   <div class="wrap st-grid" style="--c:var(--sky)">
-    <div><div class="nameboard"><div class="no"><span>Terminal</span><span>Exit</span></div><h2>Exit gate</h2><span class="hi">निकास</span></div><p class="arrival">Thank you for travelling with me. Rate your ride in one email.</p></div>
+    <div><div class="nameboard"><div class="no"><span>Terminal</span><span>Exit</span></div><h2>Exit gate</h2></div><p class="arrival">Thank you for travelling with me. Rate your ride in one email.</p></div>
     <div class="content">
       <h3>This train terminates here. Let's talk.</h3>
       <p>Hiring for product, product analyst or data roles, or just have an interesting problem? I'd like to hear about it.</p>
       <div class="ways">
-        <button type="button" id="copy">rvs51101@gmail.com <small>Copy</small></button>
-        <a href="mailto:rvs51101@gmail.com?subject=Hi%20Rajveer">Email me <small>Opens your mail app</small></a>
+        <button type="button" id="copy">rvs51101@gmail.com <small class="swap"><span class="a">Copy</span><span class="b" aria-hidden="true">Copied</span></small></button>
         <a href="https://www.linkedin.com/in/rajveer-singh-142597255/" target="_blank" rel="noopener noreferrer">LinkedIn <small>Message me</small></a>
         <a href="https://github.com/rajveer-2004" target="_blank" rel="noopener noreferrer">GitHub <small>rajveer-2004</small></a>
+        <a href="mailto:rvs51101@gmail.com?subject=Hi%20Rajveer">Email me <small>Opens your mail app</small></a>
         <a href="https://rajveers-portfolio-eta.vercel.app/resume.pdf" download="Rajveer_Singh_Resume.pdf">Resume <small>Download PDF</small></a>
       </div>
       <div class="row-btns"><button class="btn" id="ride-again" type="button">Ride again (retention is a metric too)</button></div>
@@ -732,9 +917,9 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
 </main>
 
 <footer><div class="wrap">
-  <span>Please mind the gap between my SQL and my sleep schedule.</span>
+  <span>Please mind the gap between my SQL and my sleep schedule. Still losing at Valorant, getting better at SQL.</span>
   <span id="visit-wrap" hidden>Passengers boarded: <strong id="visit-count">0</strong></span>
-  <span>Shortcuts: <span class="kbd">S</span> chime <span class="kbd">L</span> night <span class="kbd">T</span> start</span>
+  <span>Shortcuts: <span class="kbd">Alt+Shift+S</span> chime <span class="kbd">Alt+Shift+L</span> night <span class="kbd">Alt+Shift+G</span> start</span>
 </div></footer>
 <div class="toast" id="toast" role="status"></div>
 
@@ -743,58 +928,82 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   const root=document.documentElement, body=document.body;
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const led=document.getElementById('led'), toast=document.getElementById('toast');
+  const live=document.getElementById('led-live'); let navAt=0;
+  document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('a[href^="#"]')) navAt=Date.now()});
+  /* page behind the intro is inert until boarding */
+  const gated=[...document.querySelectorAll('header,main,footer')];
+  const setInert=v=>gated.forEach(el=>{el.inert=v});
+  setInert(true);
   const say=t=>{toast.textContent=t;toast.classList.add('show');clearTimeout(say.t);say.t=setTimeout(()=>toast.classList.remove('show'),1700)};
 
   /* ---------- Sound (off by default) ---------- */
-  let ctx=null,soundOn=false;const soundBtn=document.getElementById('sound');
+  let ctx=null,soundOn=false,soundPref=null;const soundBtn=document.getElementById('sound');
   function play(notes,force){
     if(!soundOn&&!force) return;
     try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+    if(ctx.state==='suspended') ctx.resume();
     let t=ctx.currentTime;
     notes.forEach(([f,d])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=f;
       g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.16,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+d);
       o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+d);t+=d*.55});
   }
   const DING=[[880,.45],[698,.6]], BEEP=[[1320,.16]];
-  function toggleSound(){soundOn=!soundOn;soundBtn.setAttribute('aria-pressed',soundOn);if(soundOn) play(DING);say(soundOn?'Chime on.':'Chime off.')}
+  function toggleSound(){soundOn=!soundOn;soundPref=soundOn;soundBtn.setAttribute('aria-pressed',soundOn);if(soundOn) play(DING);say(soundOn?'Chime on.':'Chime off.')}
   soundBtn.addEventListener('click',toggleSound);
+
 
   /* ---------- Day / night ---------- */
   const themeBtn=document.getElementById('theme');
   const isNight=()=>!root.classList.contains('day');
   const lbl=()=>themeBtn.querySelector('.lbl').textContent=isNight()?'Day':'Night';
-  function toggleTheme(){const n=isNight();root.classList.add('theme-fade');clearTimeout(toggleTheme.t);toggleTheme.t=setTimeout(()=>root.classList.remove('theme-fade'),700);root.classList.toggle('day',n);lbl();say(n?'Day service.':'Night service.')}
-  themeBtn.addEventListener('click',toggleTheme);lbl();
+  const tcMeta=document.querySelector('meta[name="theme-color"]');
+  const syncMeta=()=>{tcMeta&&tcMeta.setAttribute('content',isNight()?'#09318D':'#ECF1FF')};
+  function toggleTheme(){
+    const toDay=isNight();
+    const apply=()=>{root.classList.toggle('day',toDay);lbl();syncMeta();try{localStorage.setItem('theme',toDay?'day':'night')}catch(e){}};
+    if(document.startViewTransition) document.startViewTransition(apply); else apply();
+    say(toDay?'Day service.':'Night service.')
+  }
+  themeBtn.addEventListener('click',toggleTheme);lbl();syncMeta();
+  matchMedia('(prefers-color-scheme: light)').addEventListener&&matchMedia('(prefers-color-scheme: light)').addEventListener('change',e=>{try{if(localStorage.getItem('theme')) return}catch(_){}root.classList.toggle('day',e.matches);lbl();syncMeta()});
 
   /* ---------- Intro: tap card, doors open ---------- */
   const intro=document.getElementById('intro'), card=document.getElementById('tapcard'), vscreen=document.getElementById('v-screen'), gateLed=document.getElementById('gate-led');
   let entered=false;
-  function finish(){intro.classList.add('gone');body.classList.remove('locked');startStations()}
-  function enter(fast){
+  function finish(){intro.classList.add('gone');body.classList.remove('locked');setInert(false);startStations()}
+  function enter(fast,byTap){
     if(entered) return; entered=true;
     try{sessionStorage.setItem('boarded','1')}catch(e){}
-    if(fast||reduce){finish();return}
-    intro.classList.add('ok'); play(BEEP,true); vscreen.textContent='HI, USER #1'; gateLed.textContent='ONBOARDING…';
-    setTimeout(()=>{intro.classList.add('open');body.classList.add('arriving');play(DING,true)},650);
-    setTimeout(finish,2450);
-    setTimeout(()=>body.classList.remove('arriving'),2600);
+    if(fast||reduce){if(byTap&&!fast&&soundPref!==false) play(BEEP,true);finish();return}
+    intro.classList.add('ok'); const chime=byTap&&soundPref!==false;play(BEEP,chime); vscreen.textContent='HI, USER #1'; gateLed.textContent='ONBOARDING…';
+    setTimeout(()=>{intro.classList.add('open');body.classList.add('arriving');play(DING,chime)},350);
+    setTimeout(finish,1700);
+    setTimeout(()=>body.classList.remove('arriving'),1850);
   }
-  card.addEventListener('click',()=>enter(false));
+  card.addEventListener('click',()=>enter(false,true));
   document.getElementById('skip-intro').addEventListener('click',()=>enter(true));
   let boarded=false;try{boarded=sessionStorage.getItem('boarded')==='1'}catch(e){}
-  const autoEnter=()=>{if(boarded||reduce) enter(true); else setTimeout(()=>card.focus(),300)};
+  const autoEnter=()=>{if(boarded||reduce) enter(true); else {setTimeout(()=>card.focus(),300);let autoT=setTimeout(()=>enter(false),1000);card.addEventListener('pointerenter',()=>{clearTimeout(autoT);autoT=setTimeout(()=>enter(false),2500)},{once:true})}};
+  document.getElementById('skip-link').addEventListener('click',()=>enter(true));
   document.getElementById('ride-again').addEventListener('click',()=>{
-    entered=false;intro.classList.remove('gone','ok','open');vscreen.textContent='TAP CARD';gateLed.textContent='PLATFORM 1: RAJVEER SINGH';
-    body.classList.add('locked');scrollTo({top:0,behavior:'auto'});setTimeout(()=>card.focus(),200);
+    entered=false;
+    intro.classList.add('returning');intro.style.opacity='0';
+    intro.classList.remove('gone','ok','open');vscreen.textContent='TAP CARD';gateLed.textContent='PLATFORM 1: RAJVEER SINGH';
+    void intro.offsetWidth;
+    const done=()=>{intro.classList.remove('returning');intro.style.opacity=''};
+    const h=e=>{if(e.target!==intro||e.propertyName!=='opacity') return;intro.removeEventListener('transitionend',h);done()};
+    intro.addEventListener('transitionend',h);setTimeout(()=>{intro.removeEventListener('transitionend',h);done()},450);
+    requestAnimationFrame(()=>{intro.style.opacity='1'});
+    setInert(true);body.classList.add('locked');scrollTo({top:0,behavior:'auto'});setTimeout(()=>card.focus(),200);
   });
 
   /* ---------- Route map (door-top style) ---------- */
   const stations=[...document.querySelectorAll('.station')];
   const map=document.getElementById('routemap');
   const pos=stations.map((_,i)=>3+i*(94/(stations.length-1)));
-  let segs='';stations.forEach((s,i)=>{if(i<stations.length-1) segs+=`<i style="width:${100/(stations.length-1)}%;background:var(${stations[i+1].dataset.c})"></i>`});
+  let segs='';stations.forEach((s,i)=>{if(i<stations.length-1) segs+=`<i style="width:${100/(stations.length-1)}%;background:var(${stations[i+1].dataset.c}-ui)"></i>`});
   map.innerHTML=`<div class="rm-line" aria-hidden="true">${segs}</div>`+
-    stations.map((s,i)=>`<a class="rm-stop" href="#${s.id}" style="left:${pos[i]}%;--c:var(${s.dataset.c})" aria-label="${s.dataset.name}"><span class="d"></span><span class="lab">${s.dataset.short}</span></a>`).join('')+
+    stations.map((s,i)=>`<a class="rm-stop" href="#${s.id}" style="left:${pos[i]}%;--c:var(${s.dataset.c}-ui)" aria-label="${s.dataset.name}"><span class="d"></span><span class="lab">${s.dataset.short}</span></a>`).join('')+
     `<div class="rm-train" id="rm-train" aria-hidden="true"><svg viewBox="0 0 40 24"><rect x="1" y="2" width="38" height="20" rx="9" fill="var(--ink)"/><rect x="6" y="7" width="7" height="6" rx="1.5" fill="#9FB7D9"/><rect x="16" y="7" width="7" height="6" rx="1.5" fill="#9FB7D9"/><rect x="31" y="6" width="5" height="9" rx="1.5" fill="var(--amber)"/></svg></div>`;
   const stops=[...map.querySelectorAll('.rm-stop')], train=document.getElementById('rm-train');
 
@@ -812,7 +1021,7 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
     if(i!==current){current=i;arrive(stations[i])}
   }
   function arrive(st){
-    led.textContent=st.dataset.msg; if(!reduce){led.style.animation='none';void led.offsetWidth;led.style.animation=''}
+    led.textContent=st.dataset.msg; if(Date.now()-navAt<2500) live.textContent=st.dataset.msg; if(!reduce){led.style.animation='none';void led.offsetWidth;led.style.animation=''}
     play(DING);
   }
   let started=false;function startStations(){track();if(started) return;started=true;addEventListener('scroll',track,{passive:true});addEventListener('resize',track)}
@@ -829,7 +1038,8 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   stations.forEach(s=>reduce?s.classList.add('in'):io.observe(s));
 
   /* ---------- Contact ---------- */
-  document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('rvs51101@gmail.com');say('Email copied.')}catch(e){location.href='mailto:rvs51101@gmail.com'}});
+  const copyBtn=document.getElementById('copy');
+  copyBtn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('rvs51101@gmail.com');say('Email copied.');copyBtn.dataset.copied='';clearTimeout(copyBtn.t);copyBtn.t=setTimeout(()=>{delete copyBtn.dataset.copied},1700)}catch(e){location.href='mailto:rvs51101@gmail.com'}});
 
   /* ---------- Glass: light follows the pointer ---------- */
   addEventListener('pointermove',e=>{const t=e.target.closest&&e.target.closest('.nameboard,.board,.lc,.ix-board,.awards div,.ways a,.ways button,.tbtn,.btn,.links a');if(!t)return;const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
@@ -837,10 +1047,12 @@ html.theme-fade,html.theme-fade *,html.theme-fade *::before,html.theme-fade *::a
   /* ---------- Keyboard ---------- */
   addEventListener('keydown',e=>{
     if(!intro.classList.contains('gone')){if(e.key==='Escape') enter(true);return}
-    if(e.metaKey||e.ctrlKey||e.altKey||e.target.closest('input,textarea')) return;
-    const k=e.key.toLowerCase();
-    if(k==='s') toggleSound(); else if(k==='l') toggleTheme(); else if(k==='t') scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    if(e.metaKey||e.ctrlKey||!(e.altKey&&e.shiftKey)||e.target.closest('input,textarea')) return;
+    const c=e.code;
+    if(c==='KeyS'){e.preventDefault();toggleSound()} else if(c==='KeyL'){e.preventDefault();toggleTheme()} else if(c==='KeyG'){e.preventDefault();scrollTo({top:0,behavior:reduce?'auto':'smooth'})}
   });
+  const tio=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('vis',e.isIntersecting)));
+  document.querySelectorAll('.tunnel').forEach(t=>tio.observe(t));
   autoEnter();
 })();
 </script>
