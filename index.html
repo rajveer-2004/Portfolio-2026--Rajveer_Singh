@@ -332,7 +332,7 @@ footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
 .playing .hook .a{display:none}
 .playing .hook .b{display:inline}
 
-.pl-text{min-width:0}
+.pl-text{flex:1;min-width:0}
 .byline{font-size:14px;line-height:1.3;color:var(--muted);margin-top:2px}
 .byline .serif{font-size:1.25em;color:var(--text)}
 
@@ -388,10 +388,22 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 .mini a{font:500 11px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text);text-decoration:none;padding:16px 7px;background:linear-gradient(currentColor,currentColor) 7px 66%/0 1px no-repeat;transition:background-size .2s var(--ease-out)}
 .mini a:hover,.mini a:focus-visible{background-size:calc(100% - 14px) 1px}
 @keyframes breathe{from{box-shadow:var(--shadow),0 0 24px rgba(255,97,27,.24)}to{box-shadow:var(--shadow),0 0 62px rgba(255,97,27,.58)}}
-.player.playing{box-shadow:var(--shadow),0 0 34px rgba(255,97,27,.32),0 0 calc(var(--beat,0)*72px) calc(var(--beat,0)*12px) rgba(255,97,27,.7)}
 .music-on .hero{box-shadow:var(--shadow),0 0 28px rgba(255,97,27,.24),0 0 calc(var(--beat,0)*58px) calc(var(--beat,0)*9px) rgba(255,97,27,.55)}
-.music-fake .player.playing,.music-fake .hero{animation:breathe 2.4s ease-in-out infinite alternate}
+.music-fake .hero{animation:breathe 2.4s ease-in-out infinite alternate}
 .metric{z-index:1}
+
+
+.hero h1 .w{display:inline-block;white-space:nowrap}
+.hero h1 .lt{position:relative;display:inline-block;animation:nameRipple 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*-.16s)}
+.hero h1 .lt::after{content:attr(data-a);position:absolute;left:0;right:0;top:.03em;text-align:center;font-size:.8em;line-height:1;color:transparent;pointer-events:none;animation:nameMark 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*-.16s)}
+.hero h1 .lt.tall::after{top:-.17em}
+@keyframes nameRipple{0%,100%{color:var(--text)}35%{color:var(--accent)}55%{color:var(--text)}}
+@keyframes nameMark{0%,29.5%{color:transparent}35%{color:var(--accent)}40.5%,100%{color:transparent}}
+.hero.offscreen h1 .lt,.hero.offscreen h1 .lt::after{animation-play-state:paused}
+/* while the page glides, pause the effects that repaint every frame */
+.is-scrolling .grid>.tile::after{opacity:0!important;transition:none}
+.is-scrolling.music-on .hero{box-shadow:var(--shadow),0 0 28px rgba(255,97,27,.24),0 0 36px 5px rgba(255,97,27,.34)}
+.is-scrolling .funnel .after{filter:none}
 
 /* tablet */
 @media (max-width:1023px){
@@ -456,7 +468,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
         </div>
         <div style="margin-top:48px">
           <span class="label">Product · Data · AI</span>
-          <h1 id="name">Rajveer Singh</h1>
+          <h1 id="name" aria-label="Rajveer Singh"><span class="w"><span class="lt" aria-hidden="true" style="--i:0">R</span><span class="lt" aria-hidden="true" style="--i:1">a</span><span class="lt" aria-hidden="true" style="--i:2">j</span><span class="lt" aria-hidden="true" style="--i:3">v</span><span class="lt" aria-hidden="true" style="--i:4">e</span><span class="lt" aria-hidden="true" style="--i:5">e</span><span class="lt" aria-hidden="true" style="--i:6">r</span></span> <span class="w"><span class="lt" aria-hidden="true" style="--i:7">S</span><span class="lt" aria-hidden="true" style="--i:8">i</span><span class="lt" aria-hidden="true" style="--i:9">n</span><span class="lt" aria-hidden="true" style="--i:10">g</span><span class="lt" aria-hidden="true" style="--i:11">h</span></span></h1>
           <p class="one">I find where users <span class="serif ul">drop off<svg viewBox="0 0 100 6" aria-hidden="true"><path pathLength="1" d="M1 4 Q13 .5 25 3.5 T50 3.5 T75 3.5 T99 2.5"/></svg></span>, then build the fix.</p>
           <p class="small">NIT Delhi ECE '26. Product at WizCommerce, data at Corporate Cruise.</p>
         </div>
@@ -927,6 +939,24 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     });
   }
 
+  /* name accents: a tiny mark rides the ripple, a new shape every pass */
+  (function(){
+    var MK=['\u00B4','\u0060','\u02C6','\u00A8','\u02D8','\u00AF','\u02C7'];
+    $$('.hero h1 .lt').forEach(function(l,i){
+      var c=l.textContent,k=i;
+      if('RSjih'.indexOf(c)>-1)l.classList.add('tall');
+      function next(){l.setAttribute('data-a',MK[k%MK.length]);k+=3}
+      next();
+      l.addEventListener('animationiteration',function(e){if(e.animationName==='nameMark')next()});
+    });
+  })();
+
+  /* save work: pause the name ripple while the name card is off screen */
+  (function(){
+    var h=$('.hero');if(!h||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es){es.forEach(function(e){h.classList.toggle('offscreen',!e.isIntersecting)})}).observe(h);
+  })();
+
   /* eased in-page scrolling: dock, hero buttons, badge and case panels all glide the same way */
   var scrolling=0;
   function docTop(el){var y=0;while(el){y+=el.offsetTop;el=el.offsetParent}return y}
@@ -935,16 +965,21 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     var y0=scrollY,d=y-y0;if(Math.abs(d)<2)return;
     var root=document.documentElement;
     if(reduce){root.style.scrollBehavior='auto';scrollTo(0,y);root.style.scrollBehavior='';return}
-    var dur=Math.min(1200,Math.max(600,Math.abs(d)*0.5)),t0=null;
-    cancelAnimationFrame(scrolling);root.style.scrollBehavior='auto';
+    /* cards along the route appear instantly, so nothing animates in while the page glides past */
+    var lo=Math.min(y0,y),hi=Math.max(y0,y)+innerHeight;
+    $$('.grid>.tile:not(.seen)').forEach(function(t){var tt=docTop(t);if(tt<hi&&tt+t.offsetHeight>lo){t.style.transition='none';t.classList.add('seen')}});
+    void document.body.offsetHeight;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){$$('.grid>.tile').forEach(function(t){t.style.transition=''})})});
+    var dur=Math.min(2600,Math.max(700,500+Math.abs(d)*0.55)),t0=null;
+    cancelAnimationFrame(scrolling);root.style.scrollBehavior='auto';root.classList.add('is-scrolling');
     function step(ts){
-      if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+      if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/dur),e=-(Math.cos(Math.PI*k)-1)/2;
       scrollTo(0,y0+d*e);
-      if(k<1)scrolling=requestAnimationFrame(step);else root.style.scrollBehavior='';
+      if(k<1)scrolling=requestAnimationFrame(step);else{root.style.scrollBehavior='';root.classList.remove('is-scrolling')}
     }
     scrolling=requestAnimationFrame(step);
   }
-  ['wheel','touchstart','keydown'].forEach(function(ev){addEventListener(ev,function(){cancelAnimationFrame(scrolling);document.documentElement.style.scrollBehavior=''},{passive:true})});
+  ['wheel','touchstart','keydown'].forEach(function(ev){addEventListener(ev,function(){cancelAnimationFrame(scrolling);document.documentElement.style.scrollBehavior='';document.documentElement.classList.remove('is-scrolling')},{passive:true})});
   $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){
     var id=a.getAttribute('href').slice(1),t=id&&document.getElementById(id);if(!t)return;
     e.preventDefault();smoothTo(docTop(t)-24);
@@ -960,13 +995,13 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'End of Line (From TRON Legacy)',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'The Neighbourhood - Reflections',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
     /* TEST-START (generated placeholder tracks, safe to delete) */
     {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
     {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
@@ -1002,7 +1037,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       }
       var bass=0;for(var z=0;z<6;z++)bass+=fdata[z];bass=bass/6/255;
       beat=beat*0.7+bass*0.3;
-      document.documentElement.style.setProperty('--beat',Math.max(0.22,Math.min(1,Math.pow(beat,1.9)*2.4)).toFixed(3));
+      if(!document.documentElement.classList.contains('is-scrolling'))document.documentElement.style.setProperty('--beat',Math.max(0.22,Math.min(1,Math.pow(beat,1.9)*2.4)).toFixed(3));
     };
     var settleBars=function(){bars.forEach(function(b){b.style.transform=''});beat=0;document.documentElement.style.setProperty('--beat','0')};
     var setupAnalyser=function(){
