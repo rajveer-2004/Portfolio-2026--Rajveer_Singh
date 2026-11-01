@@ -8,9 +8,12 @@
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rajveer Singh | Product &amp; Data">
-<meta property="og:description" content="I find where users drop off, then build the fix. Case studies in product, data and AI.">
+<meta property="og:description" content="Case studies in product, data and AI: call prep cut from 35 to 3 minutes, 3 US client go-lives, and a live ML rent-deal finder. Open to APM and analyst roles.">
 <meta property="og:url" content="https://rajveers-portfolio-eta.vercel.app/">
 <meta property="og:image" content="https://rajveers-portfolio-eta.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rajveer Singh, product and data portfolio: I find where users drop off, then build the fix.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Rajveer Singh","email":"mailto:rvs51101@gmail.com","url":"https://rajveers-portfolio-eta.vercel.app/","jobTitle":"Product and data analyst","alumniOf":"National Institute of Technology Delhi","sameAs":["https://www.linkedin.com/in/rajveersingh4u/","https://github.com/rajveer-2004"]}
@@ -103,7 +106,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 /* player */
 .player{grid-column:8/13}
 .pl-head{display:flex;gap:12px;align-items:center;margin-bottom:16px}
-.art{width:48px;height:48px;border-radius:8px;flex:none;background:repeating-linear-gradient(135deg,var(--accent) 0 6px,var(--inset) 6px 12px)}
+.art{width:48px;height:48px;border-radius:50%;flex:none;position:relative;overflow:hidden}
+.art.has-cover{border-radius:8px}
+.disc{width:100%;height:100%;display:block}
+.has-cover .disc{display:none}
+.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+.playing .disc{animation:spin 3.4s linear infinite}
 .pl-title{font-size:15px;line-height:1.3}
 .pl-title .serif{font-size:1.15em;color:var(--muted)}
 .pl-row{display:flex;align-items:center;gap:12px}
@@ -122,7 +131,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 
 /* cases */
 .case{grid-column:span 4;display:flex;flex-direction:column;transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out);padding:0}
-@media (hover:hover) and (pointer:fine){.case:hover{transform:translateY(-2px);box-shadow:var(--shadow-up)}}
+@media (hover:hover) and (pointer:fine){.case:hover{transform:perspective(900px) translateY(-2px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:var(--shadow-up)}}
 .case>button{padding:var(--pad);display:flex;flex-direction:column;flex:1;border-radius:24px;width:100%;position:relative;transition:transform 160ms var(--ease-out)}
 .case>button:active{transform:scale(.98)}
 .case>button::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:12px;height:2px;border-radius:2px;background:var(--accent);opacity:0;transform:scaleX(0);transform-origin:left;transition:transform 150ms var(--ease-out),opacity 150ms var(--ease-out)}
@@ -349,6 +358,33 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 
 .player.broken .pl-ctrl,.player.broken .pl-row{opacity:.4;pointer-events:none}
 
+.pl-vol{position:absolute;right:var(--pad);top:calc(var(--pad) - 6px);width:44px;z-index:5}
+.player .hook{max-width:calc(100% - 56px)}
+.vol-wrap{position:absolute;left:0;top:calc(100% + 8px);width:44px;height:116px;border-radius:22px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow-up);opacity:0;visibility:hidden;transform:translateY(-8px) scaleY(.92);transform-origin:top;transition:opacity 180ms var(--ease-out),transform 240ms var(--ease-out),visibility 0s linear 240ms}
+.vol-wrap::before{content:"";position:absolute;left:-8px;right:-8px;top:-14px;height:14px}
+.pl-vol:hover .vol-wrap,.pl-vol:has(:focus-visible) .vol-wrap{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+@media (hover:none){.vol-wrap{opacity:1;visibility:visible;transform:none}}
+.pl-vol .skip svg{width:16px;height:16px}
+.v-off{display:none}
+.skip.muted .v-on{display:none}
+.skip.muted .v-off{display:block}
+.vol{-webkit-appearance:none;appearance:none;position:absolute;left:50%;top:50%;width:88px;height:44px;margin:0;transform:translate(-50%,-50%) rotate(-90deg);background:transparent;cursor:pointer;--v:80%}
+.vol::-webkit-slider-runnable-track{height:4px;border-radius:999px;background:linear-gradient(90deg,var(--accent) var(--v),transparent var(--v)),linear-gradient(180deg,#005874,#002d3c)}
+.vol::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;margin-top:-5px;border-radius:50%;border:0;background:var(--accent)}
+.vol::-moz-range-track{height:4px;border-radius:999px;background:linear-gradient(90deg,var(--accent) var(--v),transparent var(--v)),linear-gradient(180deg,#005874,#002d3c)}
+.vol::-moz-range-thumb{width:14px;height:14px;border-radius:50%;border:0;background:var(--accent)}
+.vol:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+/* reactive page */
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+.grid>.tile::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 300ms var(--ease-out);background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(255,97,27,.075),transparent 62%)}
+@media (hover:hover) and (pointer:fine){.grid>.tile:hover::after{opacity:1}}
+.btn,.mail{translate:var(--mgx,0px) var(--mgy,0px);transition:transform 160ms var(--ease-out),translate 240ms var(--ease-out)}
+.player.playing{box-shadow:var(--shadow),0 0 calc(var(--beat,0)*30px) calc(var(--beat,0)*3px) rgba(255,97,27,.3)}
+.art{transform:scale(calc(1 + var(--beat,0)*.07))}
+.funnel .after{filter:drop-shadow(0 0 calc(var(--beat,0)*7px) rgba(255,97,27,.75))}
+.pill .dot{scale:calc(1 + var(--beat,0)*.5)}
+
 /* tablet */
 @media (max-width:1023px){
   .grid{grid-template-columns:repeat(6,1fr)}
@@ -392,6 +428,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 </style>
 </head>
 <body>
+<div class="progress" id="prog" aria-hidden="true"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="goo" x="-20%" y="-80%" width="140%" height="260%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></defs></svg>
 <div class="wrap">
   <header class="top">
@@ -444,7 +481,10 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
         <span class="label">Now playing</span>
         <p class="hook serif" id="hook"><span class="a">So you're not boreddddd.</span><span class="b">Now you're really not bored.</span></p>
         <div class="pl-head">
-          <div class="art" aria-hidden="true"></div>
+          <div class="art" aria-hidden="true">
+            <svg class="disc" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23.5" fill="#0c1a21"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="16.5" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="13" fill="none" stroke="#fff" stroke-opacity=".09"/><path d="M8 24a16 16 0 0 1 16-16" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="9" fill="var(--accent)"/><circle cx="24" cy="24" r="9" fill="none" stroke="#005874" stroke-width="1.4"/><circle cx="24" cy="24" r="2" fill="#0c1a21"/></svg>
+            <img class="cover" alt="" hidden>
+          </div>
           <div class="pl-text"><div class="pl-title" id="pltitle">Music</div><div class="byline"><span class="serif">curated by</span> Rajveer</div></div>
         </div>
         <div class="pl-ctrl">
@@ -460,6 +500,10 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <span class="time" id="tcur">0:00</span>
           <div class="bar" aria-hidden="true"><i id="fill"></i><b id="knob"></b></div>
           <span class="time" id="tdur">0:00</span>
+        </div>
+        <div class="pl-vol">
+          <button class="skip" id="mute" type="button" aria-pressed="false" aria-label="Mute"><svg class="v-on" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.6 5.6a3.4 3.4 0 0 1 0 4.8M12.4 3.8a6 6 0 0 1 0 8.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><svg class="v-off" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.5 6l4 4M14.5 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+          <div class="vol-wrap"><input class="vol" id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"></div>
         </div>
       </section>
 
@@ -795,7 +839,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     setTimeout(function(){var m=$('#mail');m.classList.add('nudge');setTimeout(function(){m.classList.remove('nudge')},1500)},500);
   });
   if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
-    $$('.metric,.clock').forEach(function(t){
+    $$('.metric,.clock,.case').forEach(function(t){
       t.addEventListener('pointermove',function(e){
         var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
         t.style.setProperty('--rx',(-y*8)+'deg');t.style.setProperty('--ry',(x*8)+'deg');
@@ -829,6 +873,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   var dock=$('#dock'),dl=$$('a',dock),secs=['cases','experience','contact'].map(function(id){return document.getElementById(id)}),dq=false;
   function dockUpdate(){
     dq=false;dock.classList.toggle('show',scrollY>560);
+    var pmax=document.documentElement.scrollHeight-innerHeight;$('#prog').style.transform='scaleX('+(pmax>0?Math.min(1,scrollY/pmax):0).toFixed(4)+')';
     var cur=-1;secs.forEach(function(sc,i){if(sc&&sc.getBoundingClientRect().top<innerHeight*.45)cur=i});
     dl.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
     curIdx=cur;placeBlobs(false);
@@ -842,6 +887,26 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       pull=Math.max(-12,Math.min(12,(cx-c)*.14));placeBlobs();
     });
     dock.addEventListener('pointerleave',function(){pull=0;placeBlobs()});
+  }
+
+  /* cursor-reactive page: card glow and magnetic buttons (mouse devices only) */
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
+    var gridEl=$('.grid');
+    gridEl.addEventListener('pointermove',function(e){
+      var t=e.target.closest&&e.target.closest('.tile');if(!t)return;
+      var r=t.getBoundingClientRect();
+      t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+    var mags=$$('.btn,.mail');
+    document.addEventListener('pointermove',function(e){
+      mags.forEach(function(m){
+        var r=m.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+        if(Math.hypot(dx,dy)<r.width/2+80){
+          m.style.setProperty('--mgx',Math.max(-10,Math.min(10,dx*.2)).toFixed(1)+'px');
+          m.style.setProperty('--mgy',Math.max(-8,Math.min(8,dy*.26)).toFixed(1)+'px');
+        }else{m.style.setProperty('--mgx','0px');m.style.setProperty('--mgy','0px')}
+      });
+    });
   }
 
   /* eased in-page scrolling: dock, hero buttons, badge and case panels all glide the same way */
@@ -872,16 +937,18 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   /* HOW THE MUSIC LIST WORKS
      Your files go in the /audio folder next to index.html (song1.mp3 ... song7.mp3).
      Change the 'title' text below to each song's real name whenever you like.
+     Optional: add a cover picture to any song, e.g. {title:'Name',src:'audio/song1.mp3',cover:'audio/covers/song1.jpg'}.
+     Songs without a cover show the spinning record.
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'End of Line (From TRON Legacy)',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'The Neighbourhood - Reflections',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
     /* TEST-START (generated placeholder tracks, safe to delete) */
     {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
     {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
@@ -895,7 +962,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   if(!TRACKS.length){player.hidden=true}
   else{
     audio=new Audio();audio.preload='metadata';
-    var bar=$('.bar'),titleEl=$('#pltitle'),cur=0,raf=0,bad={},wantPlay=false,ac=null,an=null,fdata=null,bars=[],barsEl=$('#bars');
+    var bar=$('.bar'),titleEl=$('#pltitle'),cur=0,raf=0,bad={},wantPlay=false,ac=null,an=null,fdata=null,bars=[],beat=0,barsEl=$('#bars');
     bar.classList.add('seek');bar.removeAttribute('aria-hidden');bar.tabIndex=0;
     bar.setAttribute('role','slider');bar.setAttribute('aria-label','Seek');bar.setAttribute('aria-valuemin','0');
     var draw=function(){
@@ -915,8 +982,11 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
         var v=(c?sum/c:0)/255;v=Math.min(1,v*(1+k*1.4));v=Math.pow(v,2.1);
         bars[i].style.transform='scaleY('+(0.1+v*0.9).toFixed(3)+')';
       }
+      var bass=0;for(var z=0;z<6;z++)bass+=fdata[z];bass=bass/6/255;
+      beat=beat*0.7+bass*0.3;
+      document.documentElement.style.setProperty('--beat',Math.min(1,Math.pow(beat,2.4)*1.6).toFixed(3));
     };
-    var settleBars=function(){bars.forEach(function(b){b.style.transform=''})};
+    var settleBars=function(){bars.forEach(function(b){b.style.transform=''});beat=0;document.documentElement.style.setProperty('--beat','0')};
     var setupAnalyser=function(){
       if(ac||/^file:/.test(location.protocol))return;
       try{
@@ -929,6 +999,8 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     var load=function(i,play){
       cur=(i+TRACKS.length)%TRACKS.length;wantPlay=!!play;audio.src=TRACKS[cur].src;
       titleEl.textContent=TRACKS[cur].title;
+      var cv=$('.cover'),art=$('.art');
+      if(TRACKS[cur].cover){cv.src=TRACKS[cur].cover;cv.hidden=false;art.classList.add('has-cover')}else{cv.hidden=true;art.classList.remove('has-cover')}
       draw();
       if('mediaSession' in navigator&&window.MediaMetadata){navigator.mediaSession.metadata=new MediaMetadata({title:TRACKS[cur].title})}
       if(play)audio.play().catch(function(){});
@@ -961,6 +1033,16 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       navigator.mediaSession.setActionHandler('nexttrack',function(){load(cur+1,true)});
       navigator.mediaSession.setActionHandler('previoustrack',function(){load(cur-1,true)});
     }
+    var volEl=$('#vol'),muteEl=$('#mute');
+    var setVol=function(v){
+      v=Math.max(0,Math.min(100,v));volEl.value=v;volEl.style.setProperty('--v',v+'%');audio.volume=v/100;
+      var m=audio.muted||v===0;muteEl.classList.toggle('muted',m);muteEl.setAttribute('aria-pressed',m?'true':'false');
+      try{localStorage.setItem('vol',String(v))}catch(e){}
+    };
+    volEl.addEventListener('input',function(){audio.muted=false;setVol(+volEl.value)});
+    muteEl.addEventListener('click',function(){audio.muted=!audio.muted;if(!audio.muted&&+volEl.value===0)volEl.value=60;setVol(+volEl.value)});
+    var savedVol=null;try{savedVol=localStorage.getItem('vol')}catch(e){}
+    setVol(savedVol!==null&&savedVol!==''?+savedVol:80);
     load(0,false);
   }
 })();
