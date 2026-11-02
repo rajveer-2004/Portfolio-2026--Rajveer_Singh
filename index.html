@@ -255,9 +255,20 @@ footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
 .viz .x{transform-box:fill-box;transform-origin:left}
 .viz .d{transform-box:fill-box;transform-origin:center}
 .viz .c{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
-.case.go .viz .x{animation:grow 600ms var(--ease-out) both}
-.case.go .viz .d{animation:pop 300ms var(--ease-out) calc(var(--i,0)*40ms) both}
-.case.go .viz .c{animation:draw 400ms var(--ease-out) calc(var(--i,0)*150ms) both}
+.viz [fill="var(--inset)"]{fill:var(--muted);fill-opacity:.4}
+.viz circle[stroke]{stroke:var(--muted);stroke-opacity:.45}
+@keyframes vzBar1{0%{transform:scaleX(0);opacity:1}18%{transform:scaleX(1)}78%{transform:scaleX(1);opacity:1}92%,100%{transform:scaleX(1);opacity:0}}
+@keyframes vzBar2{0%,22%{transform:scaleX(0);opacity:1}36%{transform:scaleX(1)}78%{transform:scaleX(1);opacity:1}92%,100%{transform:scaleX(1);opacity:0}}
+@keyframes vzTwinkle{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes vzPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.55)}}
+@keyframes vzTick{0%{stroke-dashoffset:1;opacity:1}16%{stroke-dashoffset:0}78%{stroke-dashoffset:0;opacity:1}92%,100%{stroke-dashoffset:0;opacity:0}}
+.viz .x:nth-child(1){animation:vzBar1 4.2s cubic-bezier(.4,0,.2,1) infinite}
+.viz .x:nth-child(2){animation:vzBar2 4.2s cubic-bezier(.4,0,.2,1) infinite}
+.viz .d{animation:vzTwinkle 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.34s)}
+.viz .d[fill="var(--accent)"]{animation:vzPulse 2.2s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.5s)}
+.viz .c{animation:vzTick 3.6s ease-in-out infinite;animation-delay:calc(var(--i,0)*.38s - 3.6s)}
+.case .viz .x,.case .viz .d,.case .viz .c{animation-play-state:paused}
+.case.live .viz .x,.case.live .viz .d,.case.live .viz .c{animation-play-state:running}
 .colon{display:flex;flex-direction:column;gap:.22em;margin:0 .06em}
 .colon i{width:.1em;height:.1em;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite}
 @media (max-width:719px){.funnel text{display:none}}
@@ -490,14 +501,14 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
         </div>
       </section>
 
-      <section class="tile metric m1" tabindex="0" role="button" aria-label="Call prep result: 35 to 3 minutes. Activate to replay the flip.">
+      <div class="tile metric m1" tabindex="0" role="button" aria-describedby="hint-m1">
         <span class="label">Impact</span>
         <div><b class="fl" data-v="35 → 3 min">35 → 3 min</b><p>call prep per account, after I rebuilt our CS tool</p></div>
-      </section>
-      <section class="tile metric m2" tabindex="0" role="button" aria-label="424 UAT test cases. Activate to replay the flip.">
+      <span class="sr" id="hint-m1">Activate to replay the flip animation.</span></div>
+      <div class="tile metric m2" tabindex="0" role="button" aria-describedby="hint-m2">
         <span class="label">Scale</span>
         <div><b class="fl" data-v="424">424</b><p>UAT test cases across 3 US client launches</p></div>
-      </section>
+      <span class="sr" id="hint-m2">Activate to replay the flip animation.</span></div>
 
       <section class="tile player" id="player" aria-label="Music player">
         <span class="label">Now playing</span>
@@ -658,18 +669,18 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <div class="body" id="a3" role="region" aria-labelledby="b3"><p>Regex beat an LLM on accuracy, speed and cost.</p></div></div>
       </section>
 
-      <section class="tile clock" tabindex="0" role="button" aria-pressed="false" aria-label="Local time. Activate to switch between New Delhi time and your own time zone.">
+      <div class="tile clock" tabindex="0" role="button" aria-pressed="false" aria-label="Local time. Activate to switch between New Delhi time and your own time zone.">
         <span class="label" id="clk-h">Local time · click to switch</span>
         <div class="t fl" id="clock" role="img" aria-label="Local time in New Delhi">--:--</div>
         <p id="clk-zone">New Delhi · IST</p>
         <p class="small" style="margin-top:8px">Probably debugging a SQL query. Say hi.</p>
-      </section>
+      </div>
 
       <section class="tile more" aria-labelledby="more-h">
         <span class="label" id="more-h">More projects</span>
         <div class="rows">
           <div class="proj"><span class="label">ML · Fintech</span><h3>Credit Risk and Fraud Detection</h3><p>XGBoost AUC 0.868 on 150K borrowers, 3 risk tiers with a 22x default-rate spread.</p><div class="links"><a href="https://github.com/rajveer-2004/credit-risk-fraud-detection" target="_blank" rel="noopener">GitHub →</a></div></div>
-          <div class="proj"><span class="label">AI · HR tech</span><h3>Veritas</h3><p>Interview-integrity platform (InCruiter hackathon). Alerts need 2+ independent signals.</p><div class="links"><a href="https://github.com/rajveer-2004/veritas" target="_blank" rel="noopener">GitHub →</a></div></div>
+          <div class="proj"><span class="label">AI · HR tech</span><h3>Veritas</h3><p>Interview-integrity platform. Alerts need 2+ independent signals.</p><div class="links"><a href="http://veritas-app-production-1378.up.railway.app/" target="_blank" rel="noopener">Live →</a><a href="https://github.com/rajveer-2004/veritas" target="_blank" rel="noopener">GitHub →</a></div></div>
           <div class="proj"><span class="label">AI · Fintech</span><h3>Zamp Nexus Analyzer</h3><p>Sales-tax exposure map with Gemini risk briefs.</p><div class="links"><a href="https://nexus-analyzer-wine.vercel.app/" target="_blank" rel="noopener">Live →</a><a href="https://github.com/rajveer-2004/nexus-analyzer" target="_blank" rel="noopener">GitHub →</a></div></div>
         </div>
       </section>
@@ -953,6 +964,14 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     });
   })();
 
+  /* card visuals loop only while their card is on screen */
+  (function(){
+    var cs=$$('.case');
+    if(!('IntersectionObserver' in window)){cs.forEach(function(c){c.classList.add('live')});return}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})},{threshold:.1});
+    cs.forEach(function(c){io.observe(c)});
+  })();
+
   /* save work: pause the name ripple while the name card is off screen */
   (function(){
     var h=$('.hero');if(!h||!('IntersectionObserver' in window))return;
@@ -997,13 +1016,13 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'End of Line (From TRON Legacy)',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'The Neighbourhood - Reflections',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
     /* TEST-START (generated placeholder tracks, safe to delete) */
     {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
     {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
