@@ -21,12 +21,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23121213%22/%3E%3Cg fill=%22none%22 stroke=%22%23FF611B%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M21 49V17h12a8.5 8.5 0 0 1 0 17H21M33 34l11 15%22/%3E%3C/g%3E%3Crect y=%2231%22 width=%2264%22 height=%222%22 fill=%22%23000%22 opacity=%22.43%22/%3E%3C/svg%3E" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#E9EEF1">
+<meta name="theme-color" content="#111017">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Doto:wght@400;700&family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
-document.documentElement.className='js';(function(){try{var t=localStorage.getItem('theme');if(['light','dark','graphite','dusk','lichen','porcelain'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+document.documentElement.className='js';document.documentElement.setAttribute('data-theme','dusk');(function(){try{var t=localStorage.getItem('theme');if(['light','dark','graphite','dusk','lichen','porcelain'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <style>
 :root{
@@ -749,7 +749,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       <section class="tile contact" id="contact" aria-labelledby="ct-h">
         <span class="label">Contact</span>
         <h2 id="ct-h">Hiring for product or data roles? <span class="serif ul">Let's talk.<svg viewBox="0 0 100 6" aria-hidden="true"><path pathLength="1" d="M1 4 Q13 .5 25 3.5 T50 3.5 T75 3.5 T99 2.5"/></svg></span></h2>
-        <button class="mail" id="mail" type="button"><span class="dot" aria-hidden="true"></span><span class="stack"><span class="l1">rvs51101@gmail.com</span><span class="l2" aria-hidden="true">Copied ✓</span></span></button><span class="sr" role="status" id="mailsr"></span>
+        <button class="mail" id="mail" type="button"><span class="dot" aria-hidden="true"></span><span class="stack"><span class="l1">rvs51101@gmail.com</span><span class="l2" aria-hidden="true">Opening Gmail…</span></span></button><span class="sr" role="status" id="mailsr"></span>
         <div class="links">
           <a href="https://www.linkedin.com/in/rajveersingh4u/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/rajveer-2004" target="_blank" rel="noopener">GitHub</a>
@@ -906,12 +906,12 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   $$('[data-next]').forEach(function(b){b.addEventListener('click',function(){var n=b.getAttribute('data-next');setCase(n,true);var nb=$('#study-'+n+' [data-next]');if(nb)nb.focus({preventScroll:true})})});
   $$('[data-close]').forEach(function(b){b.addEventListener('click',function(){var id=b.getAttribute('data-close');setCase(null);var t=$('[data-case="'+id+'"]');t.focus();t.scrollIntoView({block:'center'})})});
 
-  /* email copy */
+  /* email: open Gmail compose */
   var mail=$('#mail'),sr=$('#mailsr'),addr='rvs51101@gmail.com',tm;
   mail.addEventListener('click',function(){
-    function done(){mail.classList.add('copied');sr.textContent='Email copied';clearTimeout(tm);tm=setTimeout(function(){mail.classList.remove('copied');sr.textContent=''},1500)}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done,function(){location.href='mailto:'+addr})}
-    else{location.href='mailto:'+addr}
+    var url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(addr);
+    mail.classList.add('copied');sr.textContent='Opening Gmail';clearTimeout(tm);tm=setTimeout(function(){mail.classList.remove('copied');sr.textContent=''},1500);
+    var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';document.body.appendChild(a);a.click();a.remove();
   });
 
   /* life: hero funnel, count-up, scroll reveals */
@@ -1077,16 +1077,20 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'The Neighbourhood - Reflections',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'End of Line (From TRON Legacy)',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
-    {title:'Post Malone, Swae Lee - Sunflower',src:'audio/song8.mp3'},
-    {title:'Justin Beiber - Company',src:'audio/song9.mp3'},
-    {title:'Tame Impala - Loser',src:'audio/song10.mp3'}
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
+    /* TEST-START (generated placeholder tracks, safe to delete) */
+    {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
+    {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
+    {title:'Night Drive',src:'audio/test/night-drive.mp3'},
+    {title:'Glass Hours',src:'audio/test/glass-hours.mp3'},
+    {title:'Paper Planes',src:'audio/test/paper-planes.mp3'}
+    /* TEST-END */
   ];
   function mmss(ms){var s=Math.floor(ms/1000);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}
   var player=$('#player'),audio=null;
