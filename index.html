@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Doto:wght@400;700&family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
-document.documentElement.className='js';document.documentElement.setAttribute('data-theme','dusk');(function(){try{var t=localStorage.getItem('theme');if(['light','dark','graphite','dusk','lichen','porcelain'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+document.documentElement.className='js';document.documentElement.setAttribute('data-theme','dusk');(function(){try{var t=localStorage.getItem('theme-v2');if(['light','dark','graphite','dusk','lichen','porcelain'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <style>
 :root{
@@ -373,6 +373,22 @@ footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
   .exp dl:hover .lrow:not(:hover),.skills dl:hover>div:not(:hover){opacity:.5}
 }
 
+/* touch devices: press/drag equivalents of the hover effects */
+@media (hover:none){
+  .case:active .read .ar{transform:translateX(4px)}
+  .proj{transition:transform 160ms var(--ease-out)}
+  .proj:active{transform:translateX(4px)}
+  .acc button:not([aria-expanded="true"]):active .pm{transform:rotate(90deg);color:var(--accent-text)}
+  .acc button:active sup{color:var(--accent-text)}
+  .pill:active{transform:translateY(-1px)}
+  .skip:active{background:var(--inset)}
+  .dock a:not(.on):active{background:var(--inset)}
+  .grid>.tile.touching::after{opacity:1}
+  .metric.touching,.clock.touching{transform:perspective(700px) translateY(-2px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:var(--shadow-up)}
+  .case.touching{transform:perspective(900px) translateY(-2px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:var(--shadow-up)}
+  .exp dl.touching .lrow:not(.touching),.skills dl.touching>div:not(.touching){opacity:.5}
+}
+
 /* mp3 player, jump dock, nudge */
 .bar[role="slider"]{cursor:pointer}
 .bar[role="slider"]::before{content:"";position:absolute;left:0;right:0;top:-22px;bottom:-22px}
@@ -418,8 +434,9 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 .player .hook{max-width:calc(100% - 56px)}
 .vol-wrap{position:absolute;left:0;top:calc(100% + 8px);width:44px;height:116px;border-radius:22px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow-up);opacity:0;visibility:hidden;transform:translateY(-8px) scaleY(.92);transform-origin:top;transition:opacity 180ms var(--ease-out),transform 240ms var(--ease-out),visibility 0s linear 240ms}
 .vol-wrap::before{content:"";position:absolute;left:-8px;right:-8px;top:-14px;height:14px}
-.pl-vol:hover .vol-wrap,.pl-vol:has(:focus-visible) .vol-wrap{opacity:1;visibility:visible;transform:none;transition-delay:0s}
-@media (hover:none){.vol-wrap{opacity:1;visibility:visible;transform:none}}
+.pl-vol:has(:focus-visible) .vol-wrap,.pl-vol.open .vol-wrap{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+@media (hover:hover){.pl-vol:hover .vol-wrap{opacity:1;visibility:visible;transform:none;transition-delay:0s}}
+@media (hover:none){.vol{pointer-events:none}.vol-wrap{touch-action:none}}
 .pl-vol .skip svg{width:16px;height:16px}
 .v-off{display:none}
 .skip.muted .v-on{display:none}
@@ -487,8 +504,9 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   .metrics-pair{display:contents}
   .hero{order:1}.hero h1{font-size:40px}.hero .one{font-size:26px}
   .m1{order:2}.m2{order:2}
-  .case{order:3}.studies{order:4}
-  .exp{order:5}.how{order:6}.more{order:7}.skills{order:8}.clock{order:9}.player{order:10}.contact{order:11}
+  .player{order:3}
+  .case{order:4}.studies{order:5}
+  .exp{order:6}.how{order:7}.more{order:8}.skills{order:9}.clock{order:10}.contact{order:11}
   .grid{display:grid;grid-template-columns:1fr 1fr}
   .hero,.case,.studies,.exp,.how,.more,.skills,.clock,.player,.contact{grid-column:1/-1}
   .metric{grid-column:span 1;padding:20px 16px}
@@ -836,7 +854,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   function setTheme(n,x,y){
     if(THEMES.indexOf(n)<0||n===effTheme())return;
     var r=document.documentElement;
-    function apply(){r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}syncMeta();markTheme()}
+    function apply(){r.setAttribute('data-theme',n);try{localStorage.setItem('theme-v2',n)}catch(e){}syncMeta();markTheme()}
     if(reduce||!document.startViewTransition){r.classList.add('theme-anim');apply();setTimeout(function(){r.classList.remove('theme-anim')},450);return}
     var rad=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
     document.startViewTransition(apply).ready.then(function(){r.animate({clipPath:['circle(0 at '+x+'px '+y+'px)','circle('+rad+'px at '+x+'px '+y+'px)']},{duration:700,easing:'cubic-bezier(0.23,1,0.32,1)',pseudoElement:'::view-transition-new(root)'})}).catch(function(){});
@@ -993,6 +1011,24 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     dock.addEventListener('pointerleave',function(){pull=0;placeBlobs()});
   }
 
+  /* touch: glow and tilt follow the finger while it is pressed or dragged on a card */
+  if(matchMedia('(hover:none)').matches&&!reduce){
+    var gridT=$('.grid'),tcur=null;
+    var tEnd=function(){if(!tcur)return;tcur.classList.remove('touching');tcur.style.setProperty('--rx','0deg');tcur.style.setProperty('--ry','0deg');tcur=null};
+    var tMove=function(e){
+      if(e.pointerType==='mouse')return;
+      var t=e.target.closest&&e.target.closest('.tile');if(!t){tEnd();return}
+      if(tcur&&tcur!==t)tEnd();
+      var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      t.classList.add('touching');tcur=t;
+      t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');
+      t.style.setProperty('--rx',(-y*6)+'deg');t.style.setProperty('--ry',(x*6)+'deg');
+    };
+    gridT.addEventListener('pointerdown',tMove);
+    gridT.addEventListener('pointermove',function(e){if(tcur)tMove(e)});
+    ['pointerup','pointercancel','pointerleave'].forEach(function(n){gridT.addEventListener(n,tEnd)});
+  }
+
   /* cursor-reactive page: card glow and magnetic buttons (mouse devices only) */
   if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
     var gridEl=$('.grid');
@@ -1077,18 +1113,20 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'The Neighbourhood - Reflections',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'End of Line (From TRON Legacy)',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
-    {title:'Post Malone, Swae Lee - Sunflower',src:'audio/song8.mp3'},
-    {title:'Justin Beiber - Company',src:'audio/song9.mp3'},
-    {title:'Tame Impala - Loser',src:'audio/song10.mp3'},
-    {title:'JOJI - Slow Dancing In The Dark',src:'audio/song11.mp3'},
-    {title:'Arpit Bala - Rakhlo Tum Chupake',src:'audio/song12.mp3'}
+    {title:'Song 1',src:'audio/song1.mp3'},
+    {title:'Song 2',src:'audio/song2.mp3'},
+    {title:'Song 3',src:'audio/song3.mp3'},
+    {title:'Song 4',src:'audio/song4.mp3'},
+    {title:'Song 5',src:'audio/song5.mp3'},
+    {title:'Song 6',src:'audio/song6.mp3'},
+    {title:'Song 7',src:'audio/song7.mp3'},
+    /* TEST-START (generated placeholder tracks, safe to delete) */
+    {title:'Slow Neon',src:'audio/test/slow-neon.mp3'},
+    {title:'Quiet Hours',src:'audio/test/quiet-hours.mp3'},
+    {title:'Night Drive',src:'audio/test/night-drive.mp3'},
+    {title:'Glass Hours',src:'audio/test/glass-hours.mp3'},
+    {title:'Paper Planes',src:'audio/test/paper-planes.mp3'}
+    /* TEST-END */
   ];
   function mmss(ms){var s=Math.floor(ms/1000);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}
   var player=$('#player'),audio=null;
@@ -1173,7 +1211,24 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       try{localStorage.setItem('vol',String(v))}catch(e){}
     };
     volEl.addEventListener('input',function(){audio.muted=false;setVol(+volEl.value)});
-    muteEl.addEventListener('click',function(){audio.muted=!audio.muted;if(!audio.muted&&+volEl.value===0)volEl.value=60;setVol(+volEl.value)});
+    var volBox=$('.pl-vol'),volWrap=$('.vol-wrap'),touchUI=matchMedia('(hover:none)').matches,vt;
+    var closeVol=function(){volBox.classList.remove('open')};
+    var openVol=function(){volBox.classList.add('open');clearTimeout(vt);vt=setTimeout(closeVol,3500)};
+    muteEl.addEventListener('click',function(){
+      if(touchUI&&!volBox.classList.contains('open')){openVol();return}
+      if(touchUI)openVol();
+      audio.muted=!audio.muted;if(!audio.muted&&+volEl.value===0)volEl.value=60;setVol(+volEl.value)
+    });
+    if(touchUI){
+      /* tap the speaker to reveal the slider, then slide up or down to set the level */
+      var fromY=function(e){var r=volWrap.getBoundingClientRect();return Math.round((r.height*.88-(e.clientY-r.top))/(r.width*2)*100)};
+      var dragging=null;
+      volWrap.addEventListener('pointerdown',function(e){dragging=e.pointerId;try{volWrap.setPointerCapture(e.pointerId)}catch(x){}audio.muted=false;setVol(fromY(e));openVol();e.preventDefault()});
+      volWrap.addEventListener('pointermove',function(e){if(dragging===e.pointerId){audio.muted=false;setVol(fromY(e));openVol()}});
+      var vEnd=function(e){if(dragging===e.pointerId)dragging=null};
+      volWrap.addEventListener('pointerup',vEnd);volWrap.addEventListener('pointercancel',vEnd);
+      document.addEventListener('pointerdown',function(e){if(!volBox.contains(e.target))closeVol()});
+    }
     var savedVol=null;try{savedVol=localStorage.getItem('vol')}catch(e){}
     setVol(savedVol!==null&&savedVol!==''?+savedVol:80);
     load(0,false);
