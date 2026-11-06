@@ -910,16 +910,18 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   document.querySelectorAll('.sw').forEach(function(b){b.addEventListener('click',function(){var r=b.getBoundingClientRect();setTheme(b.dataset.t,r.left+r.width/2,r.top+r.height/2);setTimeout(function(){openThemes(false)},350)})});
 
   /* clock */
-  var fmt=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Kolkata'});
-  var fmtYou=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false}),useYou=false;
+  var fmt=new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',hour12:true,timeZone:'Asia/Kolkata'});
+  var fmtYou=new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',hour12:true}),useYou=false;
+  function clockParts(f){var o={};f.formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});return{p:('0'+o.hour).slice(-2)+o.minute,ap:(o.dayPeriod||'').replace(/\./g,'').toUpperCase()}}
   var clk=$('#clock'),colon=document.createElement('span');
   colon.className='colon';colon.setAttribute('aria-hidden','true');colon.innerHTML='<i></i><i></i>';
   clk.textContent='';
-  var c0=mkDigit('0'),c1=mkDigit('0'),c2=mkDigit('0'),c3=mkDigit('0'),cd=[c0,c1,c2,c3],first=true;
-  [c0,c1,colon,c2,c3].forEach(function(n){clk.appendChild(n)});
+  var c0=mkDigit('0'),c1=mkDigit('0'),c2=mkDigit('0'),c3=mkDigit('0'),cd=[c0,c1,c2,c3],first=true,ap=document.createElement('span');
+  ap.className='fs';ap.setAttribute('aria-hidden','true');
+  [c0,c1,colon,c2,c3,ap].forEach(function(n){clk.appendChild(n)});
   function tick(){
-    var p=(useYou?fmtYou:fmt).format(new Date()).replace(':','');
-    clk.setAttribute('aria-label','Local time in New Delhi, '+p.slice(0,2)+':'+p.slice(2));
+    var q=clockParts(useYou?fmtYou:fmt),p=q.p;ap.textContent=q.ap;
+    clk.setAttribute('aria-label','Local time in New Delhi, '+p.slice(0,2)+':'+p.slice(2)+' '+q.ap);
     cd.forEach(function(d,i){if(first)roll(d,p[i],500+i*120,90);else setDigit(d,p[i],420)});
     first=false;
     setTimeout(tick,60000-(Date.now()%60000)+50);
@@ -927,12 +929,12 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   tick();
   function flipZone(){
     useYou=!useYou;
-    var city=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').split('/').pop().replace(/_/g,' ')||'local';
+    var city=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').split('/').pop().replace(/_/g,' ')||'local';city=({'Calcutta':'Kolkata','Katmandu':'Kathmandu','Rangoon':'Yangon','Saigon':'Ho Chi Minh City'})[city]||city;
     $('#clk-zone').textContent=useYou?'Your time · '+city:'New Delhi · IST';
     $('.clock').setAttribute('aria-pressed',useYou?'true':'false');
-    var p=(useYou?fmtYou:fmt).format(new Date()).replace(':','');
+    var q=clockParts(useYou?fmtYou:fmt),p=q.p;ap.textContent=q.ap;
     cd.forEach(function(d,i){setDigit(d,p[i],420)});
-    clk.setAttribute('aria-label',(useYou?'Your local time, ':'Local time in New Delhi, ')+p.slice(0,2)+':'+p.slice(2));
+    clk.setAttribute('aria-label',(useYou?'Your local time, ':'Local time in New Delhi, ')+p.slice(0,2)+':'+p.slice(2)+' '+q.ap);
   }
 
   /* accordion (one open at a time) */
