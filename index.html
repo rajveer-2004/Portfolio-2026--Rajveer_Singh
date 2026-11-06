@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Doto:wght@400;700&family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
-document.documentElement.className='js';document.documentElement.setAttribute('data-theme','dusk');(function(){try{var t=localStorage.getItem('theme-v2');if(['light','dark','graphite','dusk','lichen','porcelain'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+document.documentElement.className='js';document.documentElement.setAttribute('data-theme','dusk');(function(){try{var t=localStorage.getItem('theme-v2');if(['light','dark','graphite','dusk','lichen','porcelain','red'].indexOf(t)>-1)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <style>
 :root{
@@ -92,6 +92,15 @@ document.documentElement.className='js';document.documentElement.setAttribute('d
   --btn-bg:#17171A;--btn-text:#FFFFFF;--fd-bg:#1A1318;--fd-text:#D58BC0;--bar-a:#2C5F6E;--bar-b:#132F37;
   color-scheme:light;
 }
+:root[data-theme="red"]{
+  --page:#130A0B;--tile:#1D1112;--raised:#271718;--inset:#311D1F;
+  --text:#F6EDEB;--muted:#AA9391;--line:#321F21;
+  --accent:#FF4D4D;--accent-text:#FF6B6B;--glow:255,77,77;--teal:#B3262E;--teal-text:#FF8A8A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+  --shadow-up:0 2px 4px rgba(0,0,0,.35),0 14px 36px rgba(0,0,0,.35);
+  --btn-bg:#F6EDEB;--btn-text:#130A0B;--fd-bg:#0D0607;--fd-text:#FF5A5A;--bar-a:#B3262E;--bar-b:#5E1217;
+  color-scheme:dark;
+}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 #cases,#experience,#contact{scroll-margin-top:24px}
@@ -111,7 +120,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .themes.open .themes-list{clip-path:inset(0 0 0 0 round 999px);opacity:1;visibility:visible;pointer-events:auto;transition:clip-path 480ms var(--ease-out),opacity 200ms var(--ease-out),visibility 0s}
 .themes-list .sw{opacity:0;transform:translateX(14px) scale(.6);transition:opacity 120ms var(--ease-out),transform 120ms var(--ease-out)}
 .themes.open .themes-list .sw{opacity:1;transform:none;transition:opacity 260ms var(--ease-out) var(--d,0ms),transform 420ms var(--ease-out) var(--d,0ms)}
-.themes-list .sw:nth-last-child(1){--d:40ms}.themes-list .sw:nth-last-child(2){--d:90ms}.themes-list .sw:nth-last-child(3){--d:140ms}.themes-list .sw:nth-last-child(4){--d:190ms}.themes-list .sw:nth-last-child(5){--d:240ms}.themes-list .sw:nth-last-child(6){--d:290ms}
+.themes-list .sw:nth-last-child(1){--d:40ms}.themes-list .sw:nth-last-child(2){--d:90ms}.themes-list .sw:nth-last-child(3){--d:140ms}.themes-list .sw:nth-last-child(4){--d:190ms}.themes-list .sw:nth-last-child(5){--d:240ms}.themes-list .sw:nth-last-child(6){--d:290ms}.themes-list .sw:nth-last-child(7){--d:340ms}
+@media (max-width:480px){.sw{width:38px}}
 .sw{width:44px;height:32px;position:relative;display:grid;place-items:center;border-radius:999px}
 .sw i{width:16px;height:16px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(128,128,128,.35);transition:transform 160ms var(--ease-out)}
 .sw::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--text);opacity:0;transform:scale(.7);transition:opacity 160ms var(--ease-out),transform 160ms var(--ease-out)}
@@ -549,6 +559,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
       <button class="sw" type="button" data-t="dusk" aria-label="Dusk theme" aria-pressed="false"><i style="background:#8FE3C3"></i></button>
       <button class="sw" type="button" data-t="lichen" aria-label="Lichen theme" aria-pressed="false"><i style="background:#2D6A4F"></i></button>
       <button class="sw" type="button" data-t="porcelain" aria-label="Porcelain theme" aria-pressed="false"><i style="background:#7A2E66"></i></button>
+      <button class="sw" type="button" data-t="red" aria-label="Red theme" aria-pressed="false"><i style="background:linear-gradient(135deg,#130A0B 50%,#FF4D4D 50%)"></i></button>
       </div>
     </div>
   </header>
@@ -857,7 +868,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   });
 
   /* theme */
-  var THEMES=['light','dark','graphite','dusk','lichen','porcelain'];
+  var THEMES=['light','dark','graphite','dusk','lichen','porcelain','red'];
   var metaTC=document.querySelector('meta[name="theme-color"]');
   function effTheme(){var t=document.documentElement.getAttribute('data-theme');return t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
   function syncMeta(){if(metaTC){var c=getComputedStyle(document.documentElement).getPropertyValue('--page').trim();if(c)metaTC.setAttribute('content',c)}}
