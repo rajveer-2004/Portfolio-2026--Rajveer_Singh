@@ -430,6 +430,15 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 
 .player.broken .pl-ctrl,.player.broken .pl-row{opacity:.4;pointer-events:none}
 
+/* lyrics */
+.lyrics{position:relative;height:132px;margin-top:20px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
+.lyrics[hidden]{display:none}
+.lyrics ol{position:relative;list-style:none;padding:0;margin:0;transition:transform 450ms var(--ease-out)}
+.lyrics li{font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-.01em;padding:5px 0;color:var(--muted);opacity:.5;transition:color 250ms var(--ease-out),opacity 250ms var(--ease-out)}
+.lyrics li.on{color:var(--text);opacity:1}
+.lyrics.plain{overflow-y:auto;-webkit-mask-image:none;mask-image:none}
+.lyrics.plain li{opacity:1;font-size:15px;font-weight:400}
+
 .pl-vol{position:absolute;right:var(--pad);top:calc(var(--pad) - 6px);width:44px;z-index:5}
 .player .hook{max-width:calc(100% - 56px)}
 .vol-wrap{position:absolute;left:0;top:calc(100% + 8px);width:44px;height:116px;border-radius:22px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow-up);opacity:0;visibility:hidden;transform:translateY(-8px) scaleY(.92);transform-origin:top;transition:opacity 180ms var(--ease-out),transform 240ms var(--ease-out),visibility 0s linear 240ms}
@@ -588,7 +597,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
             <svg class="disc" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23.5" fill="#0c1a21"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="16.5" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="13" fill="none" stroke="#fff" stroke-opacity=".09"/><path d="M8 24a16 16 0 0 1 16-16" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="9" fill="var(--accent)"/><circle cx="24" cy="24" r="9" fill="none" stroke="var(--teal)" stroke-width="1.4"/><circle cx="24" cy="24" r="2" fill="#0c1a21"/></svg>
             <img class="cover" alt="" hidden>
           </div>
-          <div class="pl-text"><div class="pl-title" id="pltitle">Music</div><div class="byline"><span class="serif">curated by</span> Rajveer</div></div>
+          <div class="pl-text"><div class="pl-title" id="pltitle">Music</div><div class="small" id="plartist"></div><div class="byline"><span class="serif">curated by</span> Rajveer</div></div>
         </div>
         <div class="pl-ctrl">
           <button class="skip" id="prev" type="button" aria-label="Previous track"><svg aria-hidden="true" viewBox="0 0 14 14"><path d="M11 2v10L4.8 7zM2.8 2h1.7v10H2.8z" fill="currentColor"/></svg></button>
@@ -608,6 +617,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <button class="skip" id="mute" type="button" aria-pressed="false" aria-label="Mute"><svg class="v-on" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.6 5.6a3.4 3.4 0 0 1 0 4.8M12.4 3.8a6 6 0 0 1 0 8.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><svg class="v-off" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.5 6l4 4M14.5 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
           <div class="vol-wrap"><input class="vol" id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"></div>
         </div>
+        <div class="lyrics" id="lyrics" aria-live="off" hidden><ol id="lyr-list"></ol></div>
       </section>
 
       <h2 class="sr">Case studies</h2>
@@ -1113,19 +1123,19 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
      The test tracks at the bottom are optional: delete everything between TEST-START and TEST-END
      (and the /audio/test folder) once your own songs are working. Any file that is missing is skipped. */
   var TRACKS=[
-    {title:'The Neighbourhood - Reflections',src:'audio/song1.mp3'},
-    {title:'Timeless (Instrumental)',src:'audio/song2.mp3'},
-    {title:'End of Line (From TRON Legacy)',src:'audio/song3.mp3'},
-    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3'},
-    {title:'Don Toliver - E85',src:'audio/song5.mp3'},
-    {title:'Doja Cat - So High',src:'audio/song6.mp3'},
-    {title:'Die For You (Instrumental)',src:'audio/song7.mp3'},
-    {title:'Post Malone, Swae Lee - Sunflower',src:'audio/song8.mp3'},
-    {title:'Justin Beiber - Company',src:'audio/song9.mp3'},
-    {title:'Tame Impala - Loser',src:'audio/song10.mp3'},
-    {title:'JOJI - Slow Dancing In The Dark',src:'audio/song11.mp3'},
-    {title:'Arpit Bala - Rakhlo Tum Chupake',src:'audio/song12.mp3'},
-    {title:'Tyler The Creator - Like Him',src:'audio/song13.mp3'}
+    {title:'The Neighbourhood - Reflections',src:'audio/song1.mp3',lrc:'audio/lyrics/song1.lrc'},
+    {title:'The Weeknd - Timeless (Instrumental)',src:'audio/song2.mp3',lrc:'audio/lyrics/song2.lrc'},
+    {title:'Daft Punk - End of Line (From TRON Legacy)',src:'audio/song3.mp3',lrc:'audio/lyrics/song3.lrc'},
+    {title:'Kanye West - Flashing Lights',src:'audio/song4.mp3',lrc:'audio/lyrics/song4.lrc'},
+    {title:'Don Toliver - E85',src:'audio/song5.mp3',lrc:'audio/lyrics/song5.lrc'},
+    {title:'Doja Cat - So High',src:'audio/song6.mp3',lrc:'audio/lyrics/song6.lrc'},
+    {title:'The Weeknd - Die For You (Instrumental)',src:'audio/song7.mp3',lrc:'audio/lyrics/song7.lrc'},
+    {title:'Post Malone, Swae Lee - Sunflower',src:'audio/song8.mp3',lrc:'audio/lyrics/song8.lrc'},
+    {title:'Justin Beiber - Company',src:'audio/song9.mp3',lrc:'audio/lyrics/song9.lrc'},
+    {title:'Tame Impala - Loser',src:'audio/song10.mp3',lrc:'audio/lyrics/song10.lrc'},
+    {title:'JOJI - Slow Dancing In The Dark',src:'audio/song11.mp3',lrc:'audio/lyrics/song11.lrc'},
+    {title:'Arpit Bala - Rakhlo Tum Chupake',src:'audio/song12.mp3',lrc:'audio/lyrics/song12.lrc'},
+    {title:'Tyler The Creator - Like Him',src:'audio/song13.mp3',lrc:'audio/lyrics/song13.lrc'}
   ];
   function mmss(ms){var s=Math.floor(ms/1000);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}
   var player=$('#player'),audio=null;
@@ -1135,11 +1145,49 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     var bar=$('.bar'),titleEl=$('#pltitle'),cur=0,raf=0,bad={},wantPlay=false,ac=null,an=null,fdata=null,bars=[],beat=0,barsEl=$('#bars');
     bar.classList.add('seek');bar.removeAttribute('aria-hidden');bar.tabIndex=0;
     bar.setAttribute('role','slider');bar.setAttribute('aria-label','Seek');bar.setAttribute('aria-valuemin','0');
+    var lyrBox=$('#lyrics'),lyrList=$('#lyr-list'),lyr=[],lyrIdx=-1,lyrTok=0,lyrSynced=false;
+    function parseLRC(txt){
+      var out=[],plain=[];
+      txt.split(/\r?\n/).forEach(function(line){
+        var re=/\[(\d+):(\d+(?:\.\d+)?)\]/g,m,ts=[],last=0;
+        while((m=re.exec(line))){ts.push(+m[1]*60+parseFloat(m[2]));last=re.lastIndex}
+        var t=line.slice(last).trim();
+        if(ts.length){ts.forEach(function(x){out.push({t:x,s:t})})}
+        else if(line.trim()&&!/^\[[a-z]+:/i.test(line.trim())){plain.push(line.trim())}
+      });
+      if(out.length){out.sort(function(a,b){return a.t-b.t});return{synced:true,lines:out}}
+      return{synced:false,lines:plain.map(function(s){return{t:0,s:s}})};
+    }
+    function loadLyrics(url){
+      var tok=++lyrTok;lyr=[];lyrIdx=-1;lyrList.textContent='';lyrBox.hidden=true;lyrList.style.transform='';
+      if(!url)return;
+      fetch(url).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(txt){
+        if(tok!==lyrTok)return;
+        var r=parseLRC(txt);if(!r.lines.length)return;
+        lyr=r.lines;lyrSynced=r.synced;
+        lyr.forEach(function(l){var li=document.createElement('li');li.textContent=l.s||'\u266A';lyrList.appendChild(li)});
+        lyrBox.classList.toggle('plain',!lyrSynced);lyrBox.hidden=false;
+        syncLyrics(true);
+      }).catch(function(){});
+    }
+    function syncLyrics(force){
+      if(!lyrSynced||!lyr.length||lyrBox.hidden)return;
+      var t=audio.currentTime||0,i=-1;
+      for(var k=0;k<lyr.length;k++){if(lyr[k].t<=t+0.15)i=k;else break}
+      if(i===lyrIdx&&!force)return;
+      var items=lyrList.children;
+      if(lyrIdx>-1&&items[lyrIdx])items[lyrIdx].classList.remove('on');
+      lyrIdx=i;
+      var ref=i>-1?items[i]:items[0];
+      if(i>-1)ref.classList.add('on');
+      lyrList.style.transform='translateY('+Math.round(lyrBox.clientHeight/2-(ref.offsetTop+ref.offsetHeight/2))+'px)';
+    }
     var draw=function(){
       var d=audio.duration||0,t=audio.currentTime||0,p=d?Math.min(1,t/d):0,w=bar.offsetWidth;
       $('#fill').style.transform='scaleX('+p+')';$('#knob').style.transform='translateX('+(p*w)+'px)';
       $('#tcur').textContent=mmss(t*1000);$('#tdur').textContent=d?mmss(d*1000):'0:00';
       bar.setAttribute('aria-valuemax',Math.round(d));bar.setAttribute('aria-valuenow',Math.round(t));
+      syncLyrics();
     };
     for(var q=0;q<22;q++){var bi=document.createElement('i');bi.style.setProperty('--i',q);barsEl.appendChild(bi);bars.push(bi)}
     var paintBars=function(){
@@ -1168,9 +1216,12 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     var loop=function(){draw();paintBars();raf=requestAnimationFrame(loop)};
     var load=function(i,play){
       cur=(i+TRACKS.length)%TRACKS.length;wantPlay=!!play;audio.src=TRACKS[cur].src;
-      titleEl.textContent=TRACKS[cur].title;
+      var parts=TRACKS[cur].title.split(' - ');
+      titleEl.textContent=parts.length>1?parts.slice(1).join(' - '):parts[0];
+      $('#plartist').textContent=parts.length>1?parts[0]:'';
       var cv=$('.cover'),art=$('.art');
       if(TRACKS[cur].cover){cv.src=TRACKS[cur].cover;cv.hidden=false;art.classList.add('has-cover')}else{cv.hidden=true;art.classList.remove('has-cover')}
+      loadLyrics(TRACKS[cur].lrc);
       draw();
       if('mediaSession' in navigator&&window.MediaMetadata){navigator.mediaSession.metadata=new MediaMetadata({title:TRACKS[cur].title})}
       if(play)audio.play().catch(function(){});
@@ -1178,6 +1229,7 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     audio.addEventListener('play',function(){$('#play').setAttribute('aria-pressed','true');player.classList.add('playing');document.documentElement.classList.add('music-on');setupAnalyser();document.documentElement.classList.toggle('music-fake',!an);if(ac&&ac.state==='suspended')ac.resume();player.classList.toggle('fake',!an);cancelAnimationFrame(raf);loop()});
     audio.addEventListener('pause',function(){$('#play').setAttribute('aria-pressed','false');player.classList.remove('playing');document.documentElement.classList.remove('music-on','music-fake');cancelAnimationFrame(raf);draw();settleBars()});
     audio.addEventListener('loadedmetadata',draw);
+    audio.addEventListener('seeked',draw);
     audio.addEventListener('ended',function(){load(cur+1,TRACKS.length>1)});
     audio.addEventListener('error',function(){
       bad[cur]=true;
