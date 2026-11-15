@@ -159,7 +159,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .metric p{font-size:14px;color:var(--muted);line-height:1.4}
 
 /* player */
-.player{grid-column:8/13}
+.player{grid-column:6/13}
 .pl-head{display:flex;gap:12px;align-items:center;margin-bottom:16px}
 .art{width:48px;height:48px;border-radius:50%;flex:none;position:relative;overflow:hidden}
 .art.has-cover{border-radius:8px}
@@ -185,7 +185,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .player.nojs .pl-head,.player.nojs .pl-row{display:none}
 
 /* cases */
-.case{grid-column:span 4;display:flex;flex-direction:column;transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out);padding:0}
+.case{grid-column:span 6;display:flex;flex-direction:column;transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out);padding:0}
 @media (hover:hover) and (pointer:fine){.case:hover{transform:perspective(900px) translateY(-2px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:var(--shadow-up)}}
 .case>button{padding:var(--pad);display:flex;flex-direction:column;flex:1;border-radius:24px;width:100%;position:relative;transition:transform 160ms var(--ease-out)}
 .case>button:active{transform:scale(.98)}
@@ -200,6 +200,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .case>button:focus-visible .read{background-size:100% 1px}
 @media (hover:hover) and (pointer:fine){.case:hover .read{background-size:100% 1px}}
 
+.case.feat{grid-column:8/13}
 .studies{grid-column:1/-1}
 .study{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .25s,opacity .25s;margin:0}
 .study.open{grid-template-rows:1fr;opacity:1}
@@ -235,7 +236,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .cov-note{font-size:14px;color:var(--muted);margin-top:10px}
 
 /* experience */
-.exp{grid-column:span 5}
+.exp{grid-column:1/6;grid-row:span 2}
 .lrow{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
 .lrow:first-of-type{border-top:0;padding-top:0}
 .lrow dt{font:400 11px/1.8 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -292,6 +293,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-a
 .contact .links{margin-top:20px}
 footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
 
+.contact.has-fluid{isolation:isolate;overflow:hidden}
+.contact.has-fluid::after{display:none}
+.contact>.fluid-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;border-radius:inherit;display:block}
+.contact.has-fluid>:not(.fluid-layer):not(.sr){position:relative;z-index:1}
 /* motion & life */
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
@@ -314,6 +319,51 @@ footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
 .funnel.run .before{animation:draw 900ms var(--ease-out) 100ms both}
 .funnel.run .after{animation:draw 1000ms var(--ease-out) 800ms both}
 .funnel.run .pt{animation:pop 300ms var(--ease-out) both}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 24px;max-width:none}
+.ba-c{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ba-c svg{width:88px;height:88px;flex:none}
+.ba-c strong{display:grid;font-size:22px;line-height:1.1;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ba-c strong small{font-size:.6em;font-weight:500;color:var(--muted);margin-left:.2em}
+.ba-c p{font-size:14px;line-height:1.3;margin-top:4px}
+.ba-c p span{display:block;font:400 11px "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.ba figcaption{grid-column:1/-1;margin-top:2px}
+.ba-c{position:relative;cursor:pointer;border-radius:12px;-webkit-tap-highlight-color:transparent}
+.ba-c svg{transition:transform 450ms cubic-bezier(.22,1,.36,1);overflow:visible}
+.ba-c strong>span{grid-area:1/1;transition:opacity 260ms var(--ease-out),transform 260ms var(--ease-out)}
+.ba-c .lv{opacity:0;transform:translateY(4px)}
+.ba-c.on .v{opacity:0;transform:translateY(-4px)}
+.ba-c.on .lv{opacity:1;transform:none}
+.ba-c:active svg{transform:scale(.95)}
+.ba .hand{stroke:var(--text);stroke-width:2;stroke-linecap:round}
+.ba .scr{display:block;width:88px;height:2px;border-radius:2px;background:var(--line);position:relative;margin:-2px 0;opacity:0;transition:opacity 350ms var(--ease-out)}
+.ba .scr b{position:absolute;top:-3px;left:calc(var(--t,1)*80px);width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.ba-c.on .scr{opacity:1}
+@media (hover:hover) and (pointer:fine){.ba-c:hover svg{transform:scale(1.06)}}
+@media (max-width:719px){.ba .scr{display:none}}
+.ba .trk{fill:none;stroke:var(--line);stroke-width:1.5}
+.ba .tk{stroke:var(--muted);stroke-opacity:.5;stroke-width:1.2;stroke-linecap:round}
+.ba .arc{fill:none;stroke-width:6;stroke-linecap:round;stroke-dashoffset:0}
+.ba .bf{stroke:var(--teal)}.ba .arc.after{stroke:var(--accent)}
+.ba .ring{fill:none;stroke:var(--teal);stroke-width:1.5;stroke-dasharray:3 3}
+.ba .hit{fill:var(--accent);fill-opacity:.22;stroke:var(--accent);stroke-width:1.5;transform-box:fill-box;transform-origin:center}
+.ba .ctr{fill:var(--accent)}
+.ba .cross{stroke:var(--muted);stroke-opacity:.45;stroke-width:1}
+.ba .blk{fill:var(--accent)}
+.ba .cut{fill:var(--teal);fill-opacity:0;stroke:var(--teal);stroke-width:1.2;stroke-dasharray:2.5 2.5}
+.funnel.run .arc{animation:baArc 900ms var(--ease-out) var(--d,100ms) both}
+.funnel.run .ring{animation:baFade 500ms var(--ease-out) 250ms both}
+.funnel.run .hit{animation:baShrink 900ms var(--ease-out) 900ms both}
+.funnel.run .blk{animation:baFade 300ms var(--ease-out) calc(var(--i)*60ms + 400ms) both}
+.funnel.run .cut{animation:baFade 300ms var(--ease-out) calc(var(--i)*60ms + 400ms) both,baCut 500ms var(--ease-out) 1300ms both}
+@keyframes baArc{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes baFade{from{opacity:0}to{opacity:1}}
+@keyframes baShrink{from{transform:scale(1.4286)}to{transform:scale(1)}}
+@keyframes baCut{from{fill-opacity:1}to{fill-opacity:0}}
+@media (max-width:719px){
+  .ba{grid-template-columns:1fr;gap:16px}
+  .ba-c{flex-direction:row;align-items:center;gap:16px}
+  .ba-c svg{width:60px;height:60px}
+}
 .funnel figcaption{display:flex;gap:6px 18px;flex-wrap:wrap;font:400 11px "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 .replay{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--accent-text);min-height:44px;padding:0 4px;margin:-12px 0 -12px auto}
 .k{display:inline-block;width:14px;height:2px;margin-right:6px;vertical-align:middle;background:var(--muted)}
@@ -526,7 +576,8 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   .metric{grid-column:span 3}
   .player{grid-column:1/-1}
   .case{grid-column:span 3}
-  .case:nth-of-type(3){grid-column:1/-1}
+  .case.feat{grid-column:1/-1}
+  .exp{grid-row:auto}
   .exp,.how{grid-column:span 3}
   .clock{grid-column:1/-1}
   .more{grid-column:1/-1}.skills{grid-column:1/-1}
@@ -543,9 +594,8 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   .metrics-pair{display:contents}
   .hero{order:1}.hero h1{font-size:40px}.hero .one{font-size:26px}
   .m1{order:2}.m2{order:2}
-  .player{order:3}
   .case{order:4}.studies{order:5}
-  .exp{order:6}.how{order:7}.more{order:8}.skills{order:9}.clock{order:10}.contact{order:11}
+  .exp{order:6}.how{order:7}.player{order:7}.more{order:8}.skills{order:9}.clock{order:10}.contact{order:11}
   .grid{display:grid;grid-template-columns:1fr 1fr}
   .hero,.case,.studies,.exp,.how,.more,.skills,.clock,.player,.contact{grid-column:1/-1}
   .metric{grid-column:span 1;padding:20px 16px}
@@ -595,15 +645,20 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
           <p class="one">I find where users <span class="serif ul">drop off<svg viewBox="0 0 100 6" aria-hidden="true"><path pathLength="1" d="M1 4 Q13 .5 25 3.5 T50 3.5 T75 3.5 T99 2.5"/></svg></span>, then build the fix.</p>
           <p class="small">NIT Delhi ECE '26. Product at PlaySuper and WizCommerce, data at Corporate Cruise.</p>
         </div>
-        <figure class="funnel" id="funnel">
-          <svg viewBox="0 0 520 130" aria-hidden="true">
-            <line class="gl" x1="10" y1="4" x2="10" y2="108"/><line class="gl" x1="170" y1="4" x2="170" y2="108"/><line class="gl" x1="330" y1="4" x2="330" y2="108"/><line class="gl" x1="490" y1="4" x2="490" y2="108"/>
-            <path class="l before" pathLength="1" d="M10 12 C90 16 120 28 170 34 S280 66 330 78 S440 92 490 96"/>
-            <path class="l after" pathLength="1" d="M10 12 C90 14 120 22 170 26 S280 40 330 44 S440 54 490 56"/>
-            <circle class="pt" cx="170" cy="26" r="3.5" style="animation-delay:1000ms"/><circle class="pt" cx="330" cy="44" r="3.5" style="animation-delay:1250ms"/><circle class="pt" cx="490" cy="56" r="3.5" style="animation-delay:1500ms"/>
-            <text x="10" y="126">Visit</text><text x="170" y="126" text-anchor="middle">Sign up</text><text x="330" y="126" text-anchor="middle">Activate</text><text x="490" y="126" text-anchor="end">Return</text>
-          </svg>
-          <figcaption><span><i class="k"></i>Before</span><span><i class="k a"></i>After the fix</span><span>Illustration, not real data</span><button class="replay" id="replay" type="button">Replay</button></figcaption>
+        <figure class="funnel ba" id="funnel" aria-label="Before and after results from three projects">
+          <div class="ba-c" data-ba="dial" tabindex="0" role="button" aria-label="Call prep per account: 35 minutes before, 4 minutes after. Activate to replay.">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><circle class="trk" cx="40" cy="40" r="32"/><line class="tk" x1="40.0" y1="19.0" x2="40.0" y2="14.5"/><line class="tk" x1="50.5" y1="21.8" x2="52.0" y2="19.2"/><line class="tk" x1="58.2" y1="29.5" x2="60.8" y2="28.0"/><line class="tk" x1="61.0" y1="40.0" x2="65.5" y2="40.0"/><line class="tk" x1="58.2" y1="50.5" x2="60.8" y2="52.0"/><line class="tk" x1="50.5" y1="58.2" x2="52.0" y2="60.8"/><line class="tk" x1="40.0" y1="61.0" x2="40.0" y2="65.5"/><line class="tk" x1="29.5" y1="58.2" x2="28.0" y2="60.8"/><line class="tk" x1="21.8" y1="50.5" x2="19.2" y2="52.0"/><line class="tk" x1="19.0" y1="40.0" x2="14.5" y2="40.0"/><line class="tk" x1="21.8" y1="29.5" x2="19.2" y2="28.0"/><line class="tk" x1="29.5" y1="21.8" x2="28.0" y2="19.2"/><circle class="arc bf" cx="40" cy="40" r="32" pathLength="60" stroke-dasharray="35 60" style="--len:35" transform="rotate(-90 40 40)"/><circle class="arc after" cx="40" cy="40" r="32" pathLength="60" stroke-dasharray="4 60" style="--len:4;--d:900ms" transform="rotate(-90 40 40)"/><line class="hand" x1="40" y1="40" x2="40" y2="19" transform="rotate(24 40 40)"/><circle class="ctr" cx="40" cy="40" r="2.5"/></svg><i class="scr" aria-hidden="true"><b></b></i>
+            <div><strong><span class="v">35 → 4<small>min</small></span><span class="lv" aria-hidden="true"><span>4</span><small>min</small></span></strong><p>Call prep per account<span>CSM Hub</span></p></div>
+          </div>
+          <div class="ba-c" data-ba="target" tabindex="0" role="button" aria-label="Rent prediction error: about 33 percent before, 23.1 percent after. Activate to replay.">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><line class="cross" x1="40" y1="4" x2="40" y2="76"/><line class="cross" x1="4" y1="40" x2="76" y2="40"/><circle class="ring" cx="40" cy="40" r="33"/><circle class="hit after" cx="40" cy="40" r="23.1"/><circle class="ctr" cx="40" cy="40" r="2.5"/></svg><i class="scr" aria-hidden="true"><b></b></i>
+            <div><strong><span class="v">~33 → 23.1<small>%</small></span><span class="lv" aria-hidden="true"><span>23.1</span><small>%</small></span></strong><p>Rent prediction error<span>Renter's Copilot</span></p></div>
+          </div>
+          <div class="ba-c" data-ba="blocks" tabindex="0" role="button" aria-label="KPI report prep time: 40 percent less after automation. Activate to replay.">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><rect class="blk after" style="--i:0" x="8" y="62" width="30" height="11" rx="3.5"/><rect class="blk after" style="--i:1" x="41" y="62" width="30" height="11" rx="3.5"/><rect class="blk after" style="--i:2" x="8" y="48" width="30" height="11" rx="3.5"/><rect class="blk after" style="--i:3" x="41" y="48" width="30" height="11" rx="3.5"/><rect class="blk after" style="--i:4" x="8" y="34" width="30" height="11" rx="3.5"/><rect class="blk after" style="--i:5" x="41" y="34" width="30" height="11" rx="3.5"/><rect class="cut" style="--i:6" x="8" y="20" width="30" height="11" rx="3.5"/><rect class="cut" style="--i:7" x="41" y="20" width="30" height="11" rx="3.5"/><rect class="cut" style="--i:8" x="8" y="6" width="30" height="11" rx="3.5"/><rect class="cut" style="--i:9" x="41" y="6" width="30" height="11" rx="3.5"/></svg><i class="scr" aria-hidden="true"><b></b></i>
+            <div><strong><span class="v">−40<small>%</small></span><span class="lv" aria-hidden="true"><span>−40</span><small>%</small></span></strong><p>KPI report prep time<span>Corporate Cruise</span></p></div>
+          </div>
+          <figcaption><span><i class="k"></i>Before</span><span><i class="k a"></i>After the fix</span><span>Real results</span><button class="replay" id="replay" type="button">Replay</button></figcaption>
         </figure>
         <div class="btns">
           <a class="btn primary" href="#cases">View case studies</a>
@@ -613,47 +668,16 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
 
       <div class="tile metric m1" tabindex="0" role="button" aria-describedby="hint-m1">
         <span class="label">Impact</span>
-        <div><b class="fl" data-v="35 → 4 min">35 → 4 min</b><p>call prep per account, after I rebuilt our CS tool</p></div>
+        <div><b class="fl" data-v="115 / week">115 / week</b><p>underpriced rentals flagged by my live deal finder</p></div>
       <span class="sr" id="hint-m1">Activate to replay the flip animation.</span></div>
       <div class="tile metric m2" tabindex="0" role="button" aria-describedby="hint-m2">
         <span class="label">Scale</span>
         <div><b class="fl" data-v="424">424</b><p>UAT test cases across 3 US client launches</p></div>
       <span class="sr" id="hint-m2">Activate to replay the flip animation.</span></div>
 
-      <section class="tile player" id="player" aria-label="Music player">
-        <span class="label">Now playing</span>
-        <p class="hook serif" id="hook"><span class="a">So you're not boreddddd.</span><span class="b">Now you're really not bored.</span></p>
-        <div class="pl-head">
-          <div class="art" aria-hidden="true">
-            <svg class="disc" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23.5" fill="#0c1a21"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="16.5" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="13" fill="none" stroke="#fff" stroke-opacity=".09"/><path d="M8 24a16 16 0 0 1 16-16" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="9" fill="var(--accent)"/><circle cx="24" cy="24" r="9" fill="none" stroke="var(--teal)" stroke-width="1.4"/><circle cx="24" cy="24" r="2" fill="#0c1a21"/></svg>
-            <img class="cover" alt="" hidden>
-          </div>
-          <div class="pl-text"><div class="pl-title" id="pltitle">Music</div><div class="small" id="plartist"></div><div class="byline"><span class="serif">curated by</span> Rajveer</div></div>
-        </div>
-        <div class="pl-ctrl">
-          <button class="skip" id="prev" type="button" aria-label="Previous track"><svg aria-hidden="true" viewBox="0 0 14 14"><path d="M11 2v10L4.8 7zM2.8 2h1.7v10H2.8z" fill="currentColor"/></svg></button>
-          <button class="play" id="play" type="button" aria-pressed="false" aria-label="Play or pause">
-            <svg class="tri" aria-hidden="true" viewBox="0 0 14 14"><path d="M3 1.5v11L12.5 7z" fill="currentColor"/></svg>
-            <svg class="pause" aria-hidden="true" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg>
-          </button>
-          <button class="skip" id="next" type="button" aria-label="Next track"><svg aria-hidden="true" viewBox="0 0 14 14"><path d="M3 2v10l6.2-5zM9.5 2h1.7v10H9.5z" fill="currentColor"/></svg></button>
-          <div class="bars" id="bars" aria-hidden="true"></div>
-        </div>
-        <div class="pl-row">
-          <span class="time" id="tcur">0:00</span>
-          <div class="bar" aria-hidden="true"><i id="fill"></i><b id="knob"></b></div>
-          <span class="time" id="tdur">0:00</span>
-        </div>
-        <div class="pl-vol">
-          <button class="skip" id="mute" type="button" aria-pressed="false" aria-label="Mute"><svg class="v-on" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.6 5.6a3.4 3.4 0 0 1 0 4.8M12.4 3.8a6 6 0 0 1 0 8.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><svg class="v-off" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.5 6l4 4M14.5 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
-          <div class="vol-wrap"><input class="vol" id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"></div>
-        </div>
-        <div class="lyrics empty" id="lyrics" aria-live="off"><ol id="lyr-list"></ol><p class="none">No lyrics for this track</p></div>
-      </section>
-
       <h2 class="sr">Case studies</h2>
 
-      <article class="tile case" id="cases">
+      <article class="tile case feat" id="cases">
         <button type="button" aria-expanded="false" aria-controls="study-1" data-case="1">
           <svg class="viz" viewBox="0 0 72 40" aria-hidden="true"><rect class="x" x="0" y="6" width="72" height="8" rx="4" fill="var(--inset)"/><rect class="x" x="0" y="26" width="7" height="8" rx="3.5" fill="var(--accent)"/></svg>
           <span class="label">Case 01/03 · 2026</span>
@@ -788,6 +812,37 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
         <p id="clk-zone">New Delhi · IST</p>
         <p class="small" style="margin-top:8px">Probably debugging a SQL query. Say hi.</p>
       </div>
+
+      <section class="tile player" id="player" aria-label="Music player">
+        <span class="label">Now playing</span>
+        <p class="hook serif" id="hook"><span class="a">So you're not boreddddd.</span><span class="b">Now you're really not bored.</span></p>
+        <div class="pl-head">
+          <div class="art" aria-hidden="true">
+            <svg class="disc" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23.5" fill="#0c1a21"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="16.5" fill="none" stroke="#fff" stroke-opacity=".09"/><circle cx="24" cy="24" r="13" fill="none" stroke="#fff" stroke-opacity=".09"/><path d="M8 24a16 16 0 0 1 16-16" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="9" fill="var(--accent)"/><circle cx="24" cy="24" r="9" fill="none" stroke="var(--teal)" stroke-width="1.4"/><circle cx="24" cy="24" r="2" fill="#0c1a21"/></svg>
+            <img class="cover" alt="" hidden>
+          </div>
+          <div class="pl-text"><div class="pl-title" id="pltitle">Music</div><div class="small" id="plartist"></div><div class="byline"><span class="serif">curated by</span> Rajveer</div></div>
+        </div>
+        <div class="pl-ctrl">
+          <button class="skip" id="prev" type="button" aria-label="Previous track"><svg aria-hidden="true" viewBox="0 0 14 14"><path d="M11 2v10L4.8 7zM2.8 2h1.7v10H2.8z" fill="currentColor"/></svg></button>
+          <button class="play" id="play" type="button" aria-pressed="false" aria-label="Play or pause">
+            <svg class="tri" aria-hidden="true" viewBox="0 0 14 14"><path d="M3 1.5v11L12.5 7z" fill="currentColor"/></svg>
+            <svg class="pause" aria-hidden="true" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg>
+          </button>
+          <button class="skip" id="next" type="button" aria-label="Next track"><svg aria-hidden="true" viewBox="0 0 14 14"><path d="M3 2v10l6.2-5zM9.5 2h1.7v10H9.5z" fill="currentColor"/></svg></button>
+          <div class="bars" id="bars" aria-hidden="true"></div>
+        </div>
+        <div class="pl-row">
+          <span class="time" id="tcur">0:00</span>
+          <div class="bar" aria-hidden="true"><i id="fill"></i><b id="knob"></b></div>
+          <span class="time" id="tdur">0:00</span>
+        </div>
+        <div class="pl-vol">
+          <button class="skip" id="mute" type="button" aria-pressed="false" aria-label="Mute"><svg class="v-on" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.6 5.6a3.4 3.4 0 0 1 0 4.8M12.4 3.8a6 6 0 0 1 0 8.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><svg class="v-off" aria-hidden="true" viewBox="0 0 16 16"><path d="M2 6h2.6L8 3v10L4.6 10H2z" fill="currentColor"/><path d="M10.5 6l4 4M14.5 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+          <div class="vol-wrap"><input class="vol" id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"></div>
+        </div>
+        <div class="lyrics empty" id="lyrics" aria-live="off"><ol id="lyr-list"></ol><p class="none">No lyrics for this track</p></div>
+      </section>
 
       <section class="tile more" aria-labelledby="more-h">
         <span class="label" id="more-h">More projects</span>
@@ -983,6 +1038,50 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
   function playFunnel(){fn.classList.remove('run');void fn.offsetWidth;fn.classList.add('run')}
   playFunnel();
   fn.addEventListener('click',playFunnel);
+  /* interactive illustrations: hover scrubs before (left) to after (right), tap or Enter replays one.
+     Everything eases toward a target each frame, so nothing ever jumps. */
+  $$('.ba-c',fn).forEach(function(c){
+    var kind=c.getAttribute('data-ba'),lv=$('.lv span',c),scr=$('.scr',c),t=1,tt=1,tau=90,raf=0,last=0,hov=false,phase='';
+    var arc=$('.arc.after',c),hand=$('.hand',c),hit=$('.hit',c),cuts=$$('.cut',c);
+    function draw(k){
+      t=k;scr.style.setProperty('--t',k.toFixed(3));
+      if(kind==='dial'){var m=35-31*k;arc.setAttribute('stroke-dasharray',m.toFixed(2)+' 60');hand.setAttribute('transform','rotate('+(m*6).toFixed(1)+' 40 40)');lv.textContent=Math.round(m)}
+      else if(kind==='target'){var e=33-9.9*k;hit.setAttribute('r',e.toFixed(2));lv.textContent=k<.01?'~33':e.toFixed(1)}
+      else{var f=10-4*k;cuts.forEach(function(b,i){b.style.fillOpacity=Math.max(0,Math.min(1,f-(6+i)))});var p=Math.round(40*k);lv.textContent=p?'\u2212'+p:'0'}
+    }
+    function frame(ts){
+      var dt=Math.min(50,ts-last);last=ts;
+      var k=t+(tt-t)*(1-Math.exp(-dt/tau));
+      if(Math.abs(tt-k)<.008)k=tt;
+      draw(k);
+      if(k!==tt){raf=requestAnimationFrame(frame);return}
+      raf=0;
+      if(phase==='down'){phase='up';tt=1;tau=260;setTimeout(go,220)}
+      else if(!hov){phase='';if(t===1)setTimeout(function(){if(!hov&&!raf&&t===1)c.classList.remove('on')},300)}
+    }
+    function go(){if(!raf){last=performance.now();raf=requestAnimationFrame(frame)}}
+    function wake(){fn.classList.remove('run');c.classList.add('on')}
+    function play(){
+      wake();
+      if(reduce){draw(t>.5?0:1);if(t===1)setTimeout(function(){c.classList.remove('on')},1200);return}
+      phase='down';tt=0;tau=120;go();
+    }
+    c.addEventListener('click',function(e){e.stopPropagation();play()});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play()}});
+    function scrub(e){
+      if(e.pointerType!=='mouse'||phase)return;
+      var r=c.getBoundingClientRect();hov=true;wake();
+      tt=Math.max(0,Math.min(1,(e.clientX-r.left-6)/(Math.min(r.width,170)-12)));tau=90;
+      if(reduce)draw(tt);else go();
+    }
+    c.addEventListener('pointerenter',scrub);c.addEventListener('pointermove',scrub);
+    c.addEventListener('pointerleave',function(e){
+      if(e.pointerType!=='mouse')return;hov=false;
+      if(phase)return;
+      tt=1;tau=180;
+      if(reduce){draw(1);c.classList.remove('on')}else go();
+    });
+  });
   function count(el,from,to,dur,delay){
     if(reduce)return;
     el.textContent=from;var t0=null;
@@ -1319,6 +1418,149 @@ html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:
     setVol(savedVol!==null&&savedVol!==''?+savedVol:80);
     load(0,false);
   }
+})();
+</script>
+<script>
+/* Contact card splash cursor: a WebGL fluid sim behind the contact card's content,
+   in the theme accent colour. Based on the MIT-licensed WebGL fluid simulation by
+   Pavel Dobryakov. Fine-pointer desktops only; elsewhere the card keeps its normal glow. */
+(function(){
+  var root=document.documentElement;
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var host=document.getElementById('contact');
+  function fallback(){host&&host.classList.remove('has-fluid')}
+  if(!host||!fine||reduce)return;
+
+  var C={SIM:128,DYE:768,DENS_DISS:0.6,VEL_DISS:0.6,PRESSURE:0.1,P_ITERS:20,CURL:1.2,RADIUS:0.55,FORCE:2600,MAX_DENS:1.2,MAX_ALPHA:0.2,IDLE_MS:4000};
+
+  var canvas=document.createElement('canvas');
+  canvas.className='fluid-layer';canvas.setAttribute('aria-hidden','true');
+  var gl=canvas.getContext('webgl2',{alpha:true,premultipliedAlpha:true,depth:false,stencil:false,antialias:false,preserveDrawingBuffer:false});
+  if(!gl||!gl.getExtension('EXT_color_buffer_float')){fallback();return}
+  host.insertBefore(canvas,host.firstChild);host.classList.add('has-fluid');
+
+  function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s}
+  var VS=sh(gl.VERTEX_SHADER,'precision highp float;attribute vec2 aPos;varying vec2 vUv,vL,vR,vT,vB;uniform vec2 texelSize;'+
+    'void main(){vUv=aPos*.5+.5;vL=vUv-vec2(texelSize.x,0.);vR=vUv+vec2(texelSize.x,0.);vT=vUv+vec2(0.,texelSize.y);vB=vUv-vec2(0.,texelSize.y);gl_Position=vec4(aPos,0.,1.);}');
+  var HEAD='precision highp float;precision highp sampler2D;varying vec2 vUv,vL,vR,vT,vB;';
+  function prog(fs){var p=gl.createProgram();gl.attachShader(p,VS);gl.attachShader(p,sh(gl.FRAGMENT_SHADER,HEAD+fs));
+    gl.bindAttribLocation(p,0,'aPos');gl.linkProgram(p);
+    if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));
+    var u={},n=gl.getProgramParameter(p,gl.ACTIVE_UNIFORMS);
+    for(var i=0;i<n;i++){var nm=gl.getActiveUniform(p,i).name;u[nm]=gl.getUniformLocation(p,nm)}
+    return {p:p,u:u}}
+
+  var P;
+  try{P={
+    splat:prog('uniform sampler2D uTarget;uniform float aspectRatio,radius,cap;uniform vec3 color;uniform vec2 point;'+
+      'void main(){vec2 p=vUv-point;p.x*=aspectRatio;vec3 s=exp(-dot(p,p)/radius)*color;vec3 b=texture2D(uTarget,vUv).xyz;gl_FragColor=vec4(min(b+s,vec3(cap)),1.);}'),
+    advect:prog('uniform sampler2D uVelocity,uSource;uniform vec2 texelSize;uniform float dt,dissipation;'+
+      'void main(){vec2 c=vUv-dt*texture2D(uVelocity,vUv).xy*texelSize;gl_FragColor=texture2D(uSource,c)/(1.+dissipation*dt);}'),
+    div:prog('uniform sampler2D uVelocity;void main(){float L=texture2D(uVelocity,vL).x,R=texture2D(uVelocity,vR).x,T=texture2D(uVelocity,vT).y,B=texture2D(uVelocity,vB).y;'+
+      'vec2 C=texture2D(uVelocity,vUv).xy;if(vL.x<0.)L=-C.x;if(vR.x>1.)R=-C.x;if(vT.y>1.)T=-C.y;if(vB.y<0.)B=-C.y;gl_FragColor=vec4(.5*(R-L+T-B),0.,0.,1.);}'),
+    curl:prog('uniform sampler2D uVelocity;void main(){float L=texture2D(uVelocity,vL).y,R=texture2D(uVelocity,vR).y,T=texture2D(uVelocity,vT).x,B=texture2D(uVelocity,vB).x;gl_FragColor=vec4(.5*(R-L-T+B),0.,0.,1.);}'),
+    vort:prog('uniform sampler2D uVelocity,uCurl;uniform float curl,dt;void main(){float L=texture2D(uCurl,vL).x,R=texture2D(uCurl,vR).x,T=texture2D(uCurl,vT).x,B=texture2D(uCurl,vB).x,C=texture2D(uCurl,vUv).x;'+
+      'vec2 f=.5*vec2(abs(T)-abs(B),abs(R)-abs(L));f/=length(f)+.0001;f*=curl*C;f.y*=-1.;vec2 v=texture2D(uVelocity,vUv).xy+f*dt;gl_FragColor=vec4(clamp(v,-1000.,1000.),0.,1.);}'),
+    pres:prog('uniform sampler2D uPressure,uDivergence;void main(){float L=texture2D(uPressure,vL).x,R=texture2D(uPressure,vR).x,T=texture2D(uPressure,vT).x,B=texture2D(uPressure,vB).x,d=texture2D(uDivergence,vUv).x;gl_FragColor=vec4((L+R+B+T-d)*.25,0.,0.,1.);}'),
+    grad:prog('uniform sampler2D uPressure,uVelocity;void main(){float L=texture2D(uPressure,vL).x,R=texture2D(uPressure,vR).x,T=texture2D(uPressure,vT).x,B=texture2D(uPressure,vB).x;vec2 v=texture2D(uVelocity,vUv).xy-vec2(R-L,T-B);gl_FragColor=vec4(v,0.,1.);}'),
+    clear:prog('uniform sampler2D uTexture;uniform float value;void main(){gl_FragColor=value*texture2D(uTexture,vUv);}'),
+    show:prog('uniform sampler2D uTexture;uniform vec3 color;uniform float maxAlpha;void main(){float d=texture2D(uTexture,vUv).r;float a=maxAlpha*(1.-exp(-2.2*max(d,0.)));gl_FragColor=vec4(color*a,a);}')
+  }}catch(e){canvas.remove();fallback();return}
+
+  var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,-1,1,1,1,1,-1]),gl.STATIC_DRAW);
+  var ibuf=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ibuf);
+  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array([0,1,2,0,2,3]),gl.STATIC_DRAW);
+  gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);gl.enableVertexAttribArray(0);
+
+  function blit(t){
+    if(t){gl.viewport(0,0,t.w,t.h);gl.bindFramebuffer(gl.FRAMEBUFFER,t.fbo)}
+    else{gl.viewport(0,0,gl.drawingBufferWidth,gl.drawingBufferHeight);gl.bindFramebuffer(gl.FRAMEBUFFER,null)}
+    gl.drawElements(gl.TRIANGLES,6,gl.UNSIGNED_SHORT,0)}
+  function fbo(w,h,fmt,ifmt){
+    var tex=gl.createTexture();gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+    gl.texImage2D(gl.TEXTURE_2D,0,ifmt,w,h,0,fmt,gl.HALF_FLOAT,null);
+    var f=gl.createFramebuffer();gl.bindFramebuffer(gl.FRAMEBUFFER,f);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,tex,0);
+    gl.viewport(0,0,w,h);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+    return {tex:tex,fbo:f,w:w,h:h,tx:1/w,ty:1/h,attach:function(id){gl.activeTexture(gl.TEXTURE0+id);gl.bindTexture(gl.TEXTURE_2D,tex);return id}}}
+  function dbl(w,h,fmt,ifmt){var a=fbo(w,h,fmt,ifmt),b=fbo(w,h,fmt,ifmt);
+    return {w:w,h:h,tx:1/w,ty:1/h,get read(){return a},get write(){return b},swap:function(){var t=a;a=b;b=t}}}
+  function res(r){var a=gl.drawingBufferWidth/gl.drawingBufferHeight;if(a<1)a=1/a;var mn=Math.round(r),mx=Math.round(r*a);
+    return gl.drawingBufferWidth>gl.drawingBufferHeight?{w:mx,h:mn}:{w:mn,h:mx}}
+
+  var dye,vel,divg,curlT,pres;
+  function initFBOs(){
+    var s=res(C.SIM),d=res(C.DYE);
+    dye=dbl(d.w,d.h,gl.RGBA,gl.RGBA16F);vel=dbl(s.w,s.h,gl.RGBA,gl.RGBA16F);
+    divg=fbo(s.w,s.h,gl.RGBA,gl.RGBA16F);curlT=fbo(s.w,s.h,gl.RGBA,gl.RGBA16F);pres=dbl(s.w,s.h,gl.RGBA,gl.RGBA16F)}
+  function resize(){var dpr=Math.min(window.devicePixelRatio||1,1.5),w=Math.round(host.clientWidth*dpr),h=Math.round(host.clientHeight*dpr);
+    if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;initFBOs();return true}return false}
+  resize();
+
+  var color=[1,.38,.1];
+  function readColor(){var g=getComputedStyle(root).getPropertyValue('--glow').split(',').map(function(x){return parseFloat(x)/255});
+    if(g.length===3&&g.every(function(x){return x>=0}))color=g}
+  readColor();
+  new MutationObserver(function(){readColor();kick()}).observe(root,{attributes:true,attributeFilter:['data-theme']});
+
+  function use(pr){gl.useProgram(pr.p);return pr.u}
+  function splat(x,y,dx,dy,amt){
+    var a=canvas.width/canvas.height,u=use(P.splat);
+    gl.uniform1i(u.uTarget,vel.read.attach(0));gl.uniform1f(u.aspectRatio,a);gl.uniform2f(u.point,x,y);
+    gl.uniform3f(u.color,dx,dy,0);gl.uniform1f(u.cap,1e4);
+    gl.uniform1f(u.radius,C.RADIUS/100*(a>1?a:1));blit(vel.write);vel.swap();
+    gl.uniform1i(u.uTarget,dye.read.attach(0));gl.uniform3f(u.color,amt,amt,amt);gl.uniform1f(u.cap,C.MAX_DENS);blit(dye.write);dye.swap()}
+
+  function step(dt){
+    gl.disable(gl.BLEND);var u;
+    u=use(P.curl);gl.uniform2f(u.texelSize,vel.tx,vel.ty);gl.uniform1i(u.uVelocity,vel.read.attach(0));blit(curlT);
+    u=use(P.vort);gl.uniform2f(u.texelSize,vel.tx,vel.ty);gl.uniform1i(u.uVelocity,vel.read.attach(0));gl.uniform1i(u.uCurl,curlT.attach(1));
+      gl.uniform1f(u.curl,C.CURL);gl.uniform1f(u.dt,dt);blit(vel.write);vel.swap();
+    u=use(P.div);gl.uniform2f(u.texelSize,vel.tx,vel.ty);gl.uniform1i(u.uVelocity,vel.read.attach(0));blit(divg);
+    u=use(P.clear);gl.uniform1i(u.uTexture,pres.read.attach(0));gl.uniform1f(u.value,C.PRESSURE);blit(pres.write);pres.swap();
+    u=use(P.pres);gl.uniform2f(u.texelSize,vel.tx,vel.ty);gl.uniform1i(u.uDivergence,divg.attach(0));
+    for(var i=0;i<C.P_ITERS;i++){gl.uniform1i(u.uPressure,pres.read.attach(1));blit(pres.write);pres.swap()}
+    u=use(P.grad);gl.uniform2f(u.texelSize,vel.tx,vel.ty);gl.uniform1i(u.uPressure,pres.read.attach(0));gl.uniform1i(u.uVelocity,vel.read.attach(1));blit(vel.write);vel.swap();
+    u=use(P.advect);gl.uniform2f(u.texelSize,vel.tx,vel.ty);
+    gl.uniform1i(u.uVelocity,vel.read.attach(0));gl.uniform1i(u.uSource,vel.read.attach(0));gl.uniform1f(u.dt,dt);gl.uniform1f(u.dissipation,C.VEL_DISS);blit(vel.write);vel.swap();
+    gl.uniform1i(u.uVelocity,vel.read.attach(0));gl.uniform1i(u.uSource,dye.read.attach(1));gl.uniform1f(u.dissipation,C.DENS_DISS);blit(dye.write);dye.swap()}
+
+  function render(){
+    var u=use(P.show);gl.uniform2f(u.texelSize,1/gl.drawingBufferWidth,1/gl.drawingBufferHeight);
+    gl.uniform1i(u.uTexture,dye.read.attach(0));gl.uniform3f(u.color,color[0],color[1],color[2]);gl.uniform1f(u.maxAlpha,C.MAX_ALPHA);
+    gl.clearColor(0,0,0,0);gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.clear(gl.COLOR_BUFFER_BIT);blit(null)}
+
+  var ptr={x:0,y:0,dx:0,dy:0,moved:false,has:false},running=false,last=0,lastMove=0;
+  function loop(now){
+    if(!running)return;
+    var dt=Math.min((now-last)/1000,1/60);last=now;
+    if(resize()){}
+    if(ptr.moved){ptr.moved=false;
+      var sp=Math.hypot(ptr.dx,ptr.dy),amt=Math.min(.35,sp*18);
+      splat(ptr.x,ptr.y,ptr.dx*C.FORCE,ptr.dy*C.FORCE,amt)}
+    step(dt);render();
+    if(now-lastMove>C.IDLE_MS){running=false;gl.clear(gl.COLOR_BUFFER_BIT);return}
+    requestAnimationFrame(loop)}
+  var onScreen=false;
+  new IntersectionObserver(function(es){onScreen=es[0].isIntersecting;if(!onScreen)running=false}).observe(host);
+  function kick(){if(!running&&onScreen&&!document.hidden){running=true;last=performance.now();requestAnimationFrame(loop)}}
+
+  host.addEventListener('pointermove',function(e){
+    if(e.pointerType&&e.pointerType!=='mouse')return;
+    var r=host.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=1-(e.clientY-r.top)/r.height;
+    if(!ptr.has){ptr.has=true;ptr.x=x;ptr.y=y;return}
+    var a=r.width/r.height,dx=x-ptr.x,dy=y-ptr.y;
+    if(a<1)dx*=a;if(a>1)dy/=a;
+    ptr.dx=dx;ptr.dy=dy;ptr.x=x;ptr.y=y;ptr.moved=Math.abs(dx)+Math.abs(dy)>0;
+    lastMove=performance.now();kick()},{passive:true});
+  host.addEventListener('pointerleave',function(){ptr.has=false});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)running=false;else if(performance.now()-lastMove<C.IDLE_MS)kick()});
+  canvas.addEventListener('webglcontextlost',function(e){e.preventDefault();running=false;canvas.remove();fallback()});
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
